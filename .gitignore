@@ -99,3 +99,6 @@ data/raw/*
 
 logs/*
 !logs/.gitkeep
+
+models/*
+!models/.gitkeep
