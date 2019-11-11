@@ -88,3 +88,4 @@ target/
 # Mypy cache
 .mypy_cache/
 ./ns_docker.sh
+ns_docker.sh
