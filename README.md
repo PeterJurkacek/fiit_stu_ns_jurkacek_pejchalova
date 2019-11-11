@@ -6,50 +6,38 @@ Repositar projektu rieseneho v ramci predmetu neuronove siete na FIIT STU
 Project Organization
 ------------
 
-    ├── LICENSE
-    ├── Makefile           <- Makefile with commands like `make data` or `make train`
-    ├── README.md          <- The top-level README for developers using this project.
-    ├── data
-    │   ├── external       <- Data from third party sources.
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+<br/><br/>
+
+```
+├── .gitignore          <- You usually don't want to push your data, logs or models to your repo
+├── README.md
+│
+├── data
+│   ├── processed       <- The data prepared to be fed into your model
+│   └── raw             <- The original data you got
+│
+├── docker
+│   ├── Dockerfile      <- Dockerfile to build the image for your project
+│   └── setup           <- Additional files needed for Dockerfile
+│
+├── logs                <- Saved evaluation results
+│
+├── models              <- Saved models
+│
+├── notebooks           <- Jupyter notebooks for data analysis and model interaction.
+│
+└── src
     │
-    ├── docs               <- A default Sphinx project; see sphinx-doc.org for details
+    ├── data            <- Scripts that load your data, e.g. tf.data pipeline
+    │   └── load_data.py
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
-    │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
-    │
-    ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
-    │
-    ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
-    │   └── figures        <- Generated graphics and figures to be used in reporting
-    │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
-    │   ├── __init__.py    <- Makes src a Python module
-    │   │
-    │   ├── data           <- Scripts to download or generate data
-    │   │   └── make_dataset.py
-    │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
-    │   │   └── build_features.py
-    │   │
-    │   ├── models         <- Scripts to train models and then use trained models to make
-    │   │   │                 predictions
-    │   │   ├── predict_model.py
-    │   │   └── train_model.py
-    │   │
-    │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-    │       └── visualize.py
-    │
-    └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
+    └── models         
+        ├── model.py    <- Your model definition
+        ├── predict.py  <- Makes prediction with trained model on new data
+        └── train.py    <- Training loop
+
+```
+<br/><br/>
 
 
 --------
