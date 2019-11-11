@@ -96,3 +96,6 @@ data/processed/*
 
 data/raw/*
 !data/raw/.gitkeep
+
+logs/*
+!logs/.gitkeep
