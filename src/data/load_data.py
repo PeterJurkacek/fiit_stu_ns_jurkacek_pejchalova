@@ -17,8 +17,8 @@ class DataLoader:
         self.BATCH_SIZE = batch_size
         self.IMG_WIDTH = image_width
         self.IMG_HEIGHT = image_height
-        trainDataDir = Path('/labs/data/raw/test_dataset/TRAIN')
-        testDataDir = Path('/labs/data/raw/test_dataset/TEST')
+        trainDataDir = Path('/labs/data/raw/DATASET/TRAIN')
+        testDataDir = Path('/labs/data/raw/DATASET/TEST')
         self.train_data_path = trainDataDir.resolve()
         self.test_data_path = testDataDir.resolve()
         self.train_image_generator = ImageDataGenerator(rescale=1. / self.IMG_WIDTH)  # Generator for our training data
