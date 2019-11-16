@@ -1,0 +1,52 @@
+Vytvaranie infrastruktury: https://blogs.technet.microsoft.com/machinelearning/2018/03/15/demystifying-docker-for-data-scientists-a-docker-tutorial-for-your-deep-learning-projects/
+
+USE EXISTING IMAGE
+1. docker pull mcr.microsoft.com/cntk/release:2.7-cpu-python3.5
+2. docker run --name ns_project mcr.microsoft.com/cntk/release:2.7-cpu-python3.5 /bin/bash
+3. Create working directory in docker lab/
+4. pip install cohokolvek co neobsauhje pullnuty image v directory lab
+
+To run an interactive shell in the image, the docker run command can be executed using the following options.
+
+docker run -i -t --name ns_project mcr.microsoft.com/cntk/release:2.7-cpu-python3.5 /bin/bash
+
+-t, –tty=false     Allocate a pseudo-TTY
+
+-i, –interactive     Keep STDIN open even if not attached
+
+We can exit out of the container by typing exit on the command line. This will stop the container. To restart the stopped container and jump inside to the container shell we can use docker start command with the -a option.
+
+docker start -ia ns_project
+
+If we want to exit out of the container while still leaving the container running, we can do so by using the escape sequence Ctrl-p + Ctrl-q. The container will still be running in the background.
+
+docker attach ns_project
+
+We could also use docker exec command as below to be put back in the container shell.The docker exec is used to run a command in a running container, the command above was /bin/bash which would give us a bash shell and the -it flags would put us inside the container.
+
+docker exec -it ns_project /bin/bash
+
+Alternatively we could map the folder C:\dockertut on our machine (host machine) to the directory mylightgbmex in the Docker container when starting the container by using the -v flag with docker run command.
+
+docker run -it –name ns_project -v "local/project/":/docker/project microsoft/cntk:2.2-cpu-python3.5 /bin/bash
+
+If we want to save our container, we need to commit the container’s file changes or settings into a new image. The way to do this is to create a new image from the container’s changes by using the docker commit command.
+
+docker commit ns_project ns_project:version1
+
+Riziko vzniku "GOLDEN IMAGE". Takze rozsirovanie existujucich imagov sa casom nemusi vyplatit. Oplati sa vytvorit vlastny Dockerfile
+
+The docker build command automatically creates an image by reading from the dockerfile.  Each layer in the image corresponds to an instruction in the dockerfile.
+
+docker build -f "/Volumes/GoogleDrive/Môj disk/STU_FIIT/inzinier/3_semester/ns/projekt/fiit_stu_ns_jurkacek_pejchalova/docker/Dockerfile" -t pjurkacek:version0.0 .
+
+docker run -it -p 8888:8888 –name ns_project [image_name] /bin/bash
+
+Once in the container shell, the Jupyter notebook application can be started using the command
+
+jupyter notebook --notebook-dir=/labs --ip 0.0.0.0 --no-browser --allow-root
+
+Alternatively, we could do it in one step as:
+
+docker run -it -p 8888:8888 –name mycntkdemo2 microsoft/cntk:2.2-cpu-python3.5 bash -c “source /cntk/activate-cntk && jupyter-notebook –no-browser –port=8888 –ip=0.0.0.0 –notebook-dir=/cntk/Tutorials –allow-root”
+

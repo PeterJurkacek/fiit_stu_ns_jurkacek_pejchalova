@@ -1,0 +1,1 @@
+sudo docker run -u $(id -u):$(id -g) --mount 'type=bind,src=/home/xjurkacekp/fiit_stu_ns_jurkacek_pejchalova,destination=/project' --gpus all -it tensorflow/tensorflow:2.0.0-gpu-py3
