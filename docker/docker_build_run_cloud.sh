@@ -7,5 +7,5 @@ docker run\
  -u $(id -u):$(id -g)\
  -p 8888:8888\
  -p 6006:6006\
- -v ~/fiit_stu_ns_jurkacek_pejchalova:/labs\
+ -v /home/xjurkacekp/fiit_stu_ns_jurkacek_pejchalova:/labs\
  -it $image_name
