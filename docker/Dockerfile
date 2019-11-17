@@ -51,6 +51,8 @@ RUN ${PIP} install scikit-learn
 RUN ${PIP} install scipy
 RUN ${PIP} install Pillow
 RUN ${PIP} install timestamp
+RUN ${PIP} search yaml
+RUN ${PIP} install pyyaml
 
 RUN jupyter serverextension enable --py jupyter_http_over_ws
 
