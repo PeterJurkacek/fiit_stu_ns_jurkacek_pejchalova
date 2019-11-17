@@ -17,7 +17,7 @@ class Trainer:
     def __init__(self, logger: Logger, loader: DataLoader,
                  learning_rate=0.001,
                  loss='binary_crossentropy',
-                 epochs=10):
+                 epochs=7):
         self.epochs = epochs
         self.loader = loader
         self.logger = logger
