@@ -9,15 +9,12 @@ from src.utils import timestamp
 
 class Logger():
     def __init__(self):
-
-        self.logs_dir = self.get_logs_dir()
+        path = Path('/labs/logs')
+        path = path.resolve()
+        self.logs_dir = path / timestamp()
         self.callbacks = [
             tf.keras.callbacks.TensorBoard(
-                log_dir=self.logs_dir / timestamp(),
+                log_dir=self.logs_dir,
                 histogram_freq=1,
                 profile_batch=0)
         ]
-
-    def get_logs_dir(self):
-        path = Path('/labs/logs')
-        return path.resolve()

@@ -10,5 +10,5 @@ from src.logger import Logger
 from src.models.train import Trainer
 
 if __name__ == "__main__":
-    trainer = Trainer(logger=Logger(), loader=DataLoader(batch_size=10))
+    trainer = Trainer(logger=Logger(), loader=DataLoader(batch_size=64))
     trainer.train()
