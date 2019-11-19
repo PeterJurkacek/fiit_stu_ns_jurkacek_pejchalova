@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-sys.path.append('/labs')
+sys.path.append(Path('.').resolve())
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
@@ -17,15 +17,14 @@ class DataLoader:
         self.BATCH_SIZE = batch_size
         self.IMG_WIDTH = image_width
         self.IMG_HEIGHT = image_height
-        #dataset = 'test_dataset'
-        dataset = 'DATASET'
+        dataset = 'test_dataset'
+        #dataset = 'DATASET'
         trainDataDir = Path(f"/labs/data/raw/{dataset}/TRAIN")
         testDataDir = Path(f"/labs/data/raw/{dataset}/TEST")
         self.train_data_path = trainDataDir.resolve()
         self.test_data_path = testDataDir.resolve()
         self.train_image_generator = ImageDataGenerator(rescale=1. / self.IMG_WIDTH)  # Generator for our training data
-        self.validation_image_generator = ImageDataGenerator(
-            rescale=1. / self.IMG_HEIGHT)  # Generator for our validation data
+        self.validation_image_generator = ImageDataGenerator(rescale=1. / self.IMG_HEIGHT)  # Generator for our validation data
         # Unique classes
         self.classes = self.get_classes()
         self.train_data_count = images_count(self.train_data_path)
