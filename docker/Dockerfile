@@ -18,12 +18,16 @@ FROM ubuntu:${UBUNTU_VERSION} as base
 
 RUN apt-get update && apt-get install -y curl
 
+ARG CONTAINER_PROJECT_DIR=/labs
 ARG _PY_SUFFIX=3
 ARG PYTHON=python${_PY_SUFFIX}
 ARG PIP=pip${_PY_SUFFIX}
 
 # See http://bugs.python.org/issue19846
 ENV LANG C.UTF-8
+
+# Enable import own project moduls
+ENV PYTHONPATH "${PYTHONPATH}:${CONTAINER_PROJECT_DIR}"
 
 RUN apt-get update && apt-get install -y \
     ${PYTHON} \
@@ -40,8 +44,9 @@ ARG TF_PACKAGE=tensorflow
 ARG TF_PACKAGE_VERSION=2.0.0
 RUN ${PIP} install ${TF_PACKAGE}${TF_PACKAGE_VERSION:+==${TF_PACKAGE_VERSION}}
 
-COPY bashrc /etc/bash.bashrc
-RUN chmod a+rwx /etc/bash.bashrc
+ARG BASHRC_PATH=/etc/bash.bashrc
+COPY bashrc ${BASHRC_PATH}
+RUN chmod a+rwx ${BASHRC_PATH}
 
 RUN ${PIP} install jupyter matplotlib
 RUN ${PIP} install jupyter_http_over_ws
@@ -50,15 +55,18 @@ RUN ${PIP} install pandas
 RUN ${PIP} install scikit-learn
 RUN ${PIP} install scipy
 RUN ${PIP} install Pillow
-RUN ${PIP} install timestamp
 RUN ${PIP} search yaml
 RUN ${PIP} install pyyaml
+RUN ${PIP} install click
+
 
 RUN jupyter serverextension enable --py jupyter_http_over_ws
 
-RUN mkdir -p /labs && chmod -R a+rwx /labs/
+RUN mkdir -p ${CONTAINER_PROJECT_DIR} && chmod -R a+rwx ${CONTAINER_PROJECT_DIR}/
+
 #This is directive for CMD command to be executed.
-WORKDIR /labs
+WORKDIR ${CONTAINER_PROJECT_DIR}
+
 RUN mkdir /.local && chmod a+rwx /.local
 
 # jupyter
@@ -68,4 +76,4 @@ EXPOSE 6006
 
 RUN ${PYTHON} -m ipykernel.kernelspec
 
-CMD ["bash", "-c", "source /etc/bash.bashrc && jupyter notebook --notebook-dir=/labs --ip 0.0.0.0 --no-browser --allow-root"]
+# CMD ["bash", "-c", "source ${BASHRC_PATH} && jupyter notebook --notebook-dir=${CONTAINER_PROJECT_DIR} --ip 0.0.0.0 --no-browser --allow-root"]
