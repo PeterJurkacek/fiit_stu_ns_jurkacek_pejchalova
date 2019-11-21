@@ -5,22 +5,22 @@ sys.path.append(Path('.').resolve())
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from src import config
 
 from src.utils import images_count, get_dirs
 
 
 class DataLoader:
-    def __init__(self, batch_size, image_width=224, image_height=224):
+    def __init__(self, batch_size, image_width=config.image_width, image_height=config.image_height):
         # load data here
         # To load the files as a tf.data.Dataset first create a dataset of the file paths
         self.AUTOTUNE = tf.data.experimental.AUTOTUNE
         self.BATCH_SIZE = batch_size
         self.IMG_WIDTH = image_width
         self.IMG_HEIGHT = image_height
-        dataset = 'test_dataset'
         #dataset = 'DATASET'
-        trainDataDir = Path(f"/labs/data/raw/{dataset}/TRAIN")
-        testDataDir = Path(f"/labs/data/raw/{dataset}/TEST")
+        trainDataDir = Path(f"/labs/data/raw/{config.dataset}/TRAIN")
+        testDataDir = Path(f"/labs/data/raw/{config.dataset}/TEST")
         self.train_data_path = trainDataDir.resolve()
         self.test_data_path = testDataDir.resolve()
         self.train_image_generator = ImageDataGenerator(rescale=1. / self.IMG_WIDTH)  # Generator for our training data

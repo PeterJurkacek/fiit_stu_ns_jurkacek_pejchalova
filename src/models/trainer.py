@@ -10,15 +10,15 @@ from src.models.cnn import ConvolutionalNeuralNetwork
 from src.logger import Logger
 from src.data.load_dataset import ImageDataLoader
 from src.utils import calculate_steps_per_epoch
-
+from src import config
 
 class Trainer:
     def __init__(self,
                  loader: ImageDataLoader,
                  model: Sequential,
-                 optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
-                 loss='binary_crossentropy',
-                 epochs=7):
+                 optimizer=tf.keras.optimizers.Adam(learning_rate=config.learning_rate),
+                 loss=config.loss,
+                 epochs=config.epochs):
         self.loss = loss
         self.epochs = epochs
         self.loader = loader

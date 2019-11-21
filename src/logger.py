@@ -1,11 +1,11 @@
-import sys
+import sys, os
 from pathlib import Path
 import tensorflow as tf
 
 #Umozni pracovat s vlastnymi modulmi
 sys.path.append('/labs')
 from src.utils import timestamp
-
+from src import config
 
 class Logger():
     def __init__(self, log_id=timestamp()):
@@ -18,8 +18,8 @@ class Logger():
         self.callbacks = [
             tf.keras.callbacks.TensorBoard(
                 log_dir=self.logs_dir,
-                histogram_freq=1,
-                profile_batch=0)
+                histogram_freq=config.histogram_freq,
+                profile_batch=config.profile_batch)
         ]
         self.logs = []
 
@@ -30,5 +30,8 @@ class Logger():
         self.logs.append(log)
 
     def close(self):
-        print(f"TODO: Zapíš do súboru")
+        # print(f"TODO: Zapíš do súboru")
+        f = open(os.path.join(self.logs_dir, self.log_id), "w+")
+        f.write(self.logs),
+        f.close()
         # self.logs zapíš do súboru

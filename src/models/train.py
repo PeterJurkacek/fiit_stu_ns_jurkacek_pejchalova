@@ -11,13 +11,13 @@ from src.data.load_data import DataLoader
 from src.utils import calculate_steps_per_epoch
 from src.models.model import get_model
 from tensorflow.keras.metrics import binary_accuracy
-
+from src import config
 
 class Trainer:
     def __init__(self, loader: DataLoader,
-                 learning_rate=0.001,
-                 loss='binary_crossentropy',
-                 epochs=7):
+                 learning_rate=config.learning_rate,
+                 loss=config.loss,
+                 epochs=config.epochs):
         self.learning_rate = learning_rate
         self.loss = loss
         self.epochs = epochs
