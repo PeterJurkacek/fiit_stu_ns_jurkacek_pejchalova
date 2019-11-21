@@ -41,4 +41,4 @@ resnet_weights = 'imagenet'
 
 # logger
 histogram_freq = 1
-profile_batch = 0
+profile_batch = 3
