@@ -10,10 +10,10 @@ from src.utils import timestamp
 
 
 def main():
-    log_name = "log_name"
+    log_name = "experiment_cnn"
     logger = Logger(log_name=log_name)
     logger.start()
-    loader = ImageDataLoader(batch_size=10, greyscale=False, dataset_name="test_dataset")
+    loader = ImageDataLoader(batch_size=10, greyscale=False, dataset_name="DATASET")
     trainer = Trainer(loader=loader, logger=logger,
                       model=get_cnn(loader.get_input_shape(), loader.get_unique_classes()), epochs=2)
 
