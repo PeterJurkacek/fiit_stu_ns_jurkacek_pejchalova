@@ -1,15 +1,12 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
-
-from pathlib import Path
-
 import tensorflow as tf
-# Umozni pracovat s vlastnymi modulmi
 import logging
 
 from src.models.custom_model import ConvolutionalNeuralNetwork
 from src.logger import Logger
 from src.data.load_dataset import ImageDataLoader
 from src.utils import calculate_steps_per_epoch
+from src import config
 
 
 class Trainer:
@@ -17,9 +14,9 @@ class Trainer:
                  loader: ImageDataLoader,
                  logger: Logger,
                  model,
-                 learning_rate=0.001,
+                 learning_rate=config.learning_rate,
                  loss='sparse_categorical_crossentropy',
-                 epochs=7,
+                 epochs=config.epochs,
                  metrics=['accuracy']):
         self.logger = logger
         self.epochs = epochs
@@ -61,7 +58,6 @@ class Trainer:
 
         # Show the model architecture
         model.summary()
-        logging.debug("model.evaluate")
         model.evaluate(self.loader.load_test_dataset(),
                        steps=self.loader.test_data_count,
                        callbacks=self.logger.get_callbacks('evaluate', run_id))

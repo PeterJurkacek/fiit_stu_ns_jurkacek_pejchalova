@@ -35,7 +35,7 @@ def show_loaded_data(labeled_ds, number_of_images=2):
 
 
 def timestamp():
-    _timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    _timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
     logging.info(f"timestamp: {timestamp}")
     return _timestamp
 
@@ -49,18 +49,18 @@ def get_dirs(path: Path):
 
 def count_dirs(path: Path):
     count = len(get_dirs(path))
-    logging.info(f"count_dirs:{count}")
+    logging.info(f"count_dirs: {count}")
     return count
 
 
 def images_count(path: Path):
     count = len(list(jpg_images_from(path)))
-    logging.info(f"images_count{count}")
+    logging.info(f"images_count: {count}")
     return count
 
 
 def jpg_images_from(path: Path):
-    logging.info(f"from path{path}")
+    logging.info(f"from path: {path}")
     return path.glob('**/*.jpg')
 
 

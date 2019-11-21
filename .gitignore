@@ -102,3 +102,4 @@ logs/*
 
 models/*
 !models/.gitkeep
+/models/

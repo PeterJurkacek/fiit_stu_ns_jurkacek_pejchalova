@@ -3,41 +3,41 @@ from tensorflow.python.ops import control_flow_util
 control_flow_util.ENABLE_CONTROL_FLOW_V2 = True
 import tensorflow as tf
 from tensorflow.keras.layers import Conv2D, Dense, MaxPooling2D, Flatten, Input
-
+from src import config
 
 class ConvolutionalNeuralNetwork(tf.keras.models.Model):
 
-    def __init__(self, input_shape=(224, 224, 3), output_shape=1):
+    def __init__(self, input_shape=config.input_shape, output_shape=config.output_shape):
         super(ConvolutionalNeuralNetwork, self).__init__(name='convolutional_neural_network')
 
         self.model_layers = [
             Input(shape=input_shape),
             Conv2D(
-                filters=16,  # Number of neurons
-                kernel_size=3,
-                padding='same',  # 'same' for zero padding, 'valid' for no padding
-                activation='relu'),
-            MaxPooling2D(pool_size=(3, 3)),
+                filters=config.filters1,  # Number of neurons
+                kernel_size=config.kernel_size1,
+                padding=config.padding_same,  # 'same' for zero padding, 'valid' for no padding
+                activation=config.activation_relu),
+            MaxPooling2D(pool_size=config.pool_size1),
             Conv2D(
-                filters=32,
-                kernel_size=3,
-                padding='same',
-                activation='relu'),
-            MaxPooling2D(pool_size=(3, 3)),
+                filters=config.filters2,
+                kernel_size=config.kernel_size2,
+                padding=config.padding_same,
+                activation=config.activation_relu),
+            MaxPooling2D(pool_size=config.pool_size2),
             Conv2D(
-                filters=64,
-                kernel_size=3,
-                padding='same',
-                activation='relu'),
-            MaxPooling2D(pool_size=(3, 3)),
+                filters=config.filters3,
+                kernel_size=config.kernel_size3,
+                padding=config.padding_same,
+                activation=config.activation_relu),
+            MaxPooling2D(pool_size=config.pool_size3),
             Flatten(),  # Flatten the sample from (width x height x channel) 3D matrix into a simple array.
             # We need to use it for the dense layer.
             Dense(
-                units=512,
-                activation='relu'),
+                units=config.units,
+                activation=config.activation_relu),
             Dense(
                 units=output_shape,
-                activation='sigmoid')
+                activation=config.activation_sigmoid)
         ]
 
     @tf.function

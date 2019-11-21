@@ -6,13 +6,14 @@ import tensorflow as tf
 import os
 
 from src.utils import images_count, get_dirs
+from src import config
 
 #dataset_name = 'DATASET'
 
 class ImageDataLoader:
     def __init__(self, batch_size,
-                 image_shape=(224, 224),
-                 dataset_name='test_dataset',
+                 image_shape=config.image_shape,
+                 dataset_name = config.dataset_name,
                  greyscale=False):
         # load data here
         # To load the files as a tf.data.Dataset first create a dataset of the file paths
