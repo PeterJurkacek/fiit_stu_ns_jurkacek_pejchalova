@@ -1,18 +1,23 @@
 #!/usr/bin/python3
 import tensorflow as tf
-import sys
-if not '/labs' in sys.path:
-    sys.path.append('/labs')
-import getopt
-
 from src.data.load_dataset import ImageDataLoader
 from src.logger import Logger
 from src.models.trainer import Trainer
-from src.models.model import get_model
-import timeit
+from src.models.keras_models import get_cnn, get_resnet50
+from src.utils import timestamp
 
-if __name__ == "__main__":
-    loader = ImageDataLoader(batch_size=64, greyscale=False, dataset_name='DATASET')
-    trainer = Trainer(loader, model=get_model(loader.get_input_shape()), epochs=7)
-    trainer.train()
-    trainer.evaluate()
+def main():
+    log_id = "log_id"
+    logger = Logger(log_id=log_id)
+    logger.start()
+    loader = ImageDataLoader(batch_size=10, greyscale=False, dataset_name="test_dataset")
+    trainer = Trainer(loader=loader, logger=logger, model=get_cnn(loader.get_input_shape(), loader.get_unique_classes(), 'softmax'), epochs=2)
+
+    run_id = f"model_{timestamp()}"
+    trainer.train(run_id)
+    trainer.evaluate(run_id)
+    logger.end()
+
+if __name__ == '__main__':
+    main()
+

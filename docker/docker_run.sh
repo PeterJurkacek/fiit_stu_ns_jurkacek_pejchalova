@@ -1,8 +1,3 @@
-#!/bin/sh
-
-image_name=pjurkacek/data-science:version1.0.0
-#docker build -t $image_name .
-
 docker run\
  -u $(id -u):$(id -g)\
  --rm\
@@ -11,4 +6,3 @@ docker run\
  -v /Users/peterjurkacek/STU_FIIT_OFFLINE/ns/fiit_stu_ns_jurkacek_pejchalova:/labs\
  --name datascience\
  -it $image_name
-

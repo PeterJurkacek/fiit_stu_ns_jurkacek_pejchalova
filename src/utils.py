@@ -1,10 +1,11 @@
-# %%
 from pathlib import Path
+import logging
 
 import matplotlib.pyplot as plt
 import datetime
-import os
-import tensorflow as tf
+import time
+
+default_timeit_steps = 1000
 
 
 def show(image, label):
@@ -24,6 +25,7 @@ def plotImages(images_arr):
     plt.tight_layout()
     plt.show()
 
+
 def show_loaded_data(labeled_ds, number_of_images=2):
     print(f"Loaded_number_of_images: {number_of_images}")
     for image_raw, label_text in labeled_ds.take(number_of_images):
@@ -33,32 +35,55 @@ def show_loaded_data(labeled_ds, number_of_images=2):
 
 
 def timestamp():
-    return datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    _timestamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+    logging.info(f"timestamp: {timestamp}")
+    return _timestamp
 
 
 def get_dirs(path: Path):
     dirs = [item.stem for item in path.iterdir() if item.is_dir()]
-    print(f"DIRS: {dirs} on PATH: {path}")
+    # print(f"DIRS: {dirs} on PATH: {path}")
+    logging.info(f"dirs: {dirs}, from: {path}")
     return dirs
 
 
 def count_dirs(path: Path):
     count = len(get_dirs(path))
-    print(f"COUNT: {count}")
+    logging.info(f"count_dirs:{count}")
     return count
 
 
 def images_count(path: Path):
     count = len(list(jpg_images_from(path)))
-    print(f"IMAGE_COUNTS: {count} on PATH: {path}")
+    logging.info(f"images_count{count}")
     return count
 
 
 def jpg_images_from(path: Path):
+    logging.info(f"from path{path}")
     return path.glob('**/*.jpg')
 
 
 def calculate_steps_per_epoch(total_num_of_samples, batch_size):
     steps_per_epoch = total_num_of_samples // batch_size
-    print(f'STEPS_PER_EPOCH: {steps_per_epoch}, TOTAL_NUM_OF_SAMPLES: {total_num_of_samples}, BATCH_SIZE: {batch_size}')
+    # logging.info("steps_per_epoch", steps_per_epoch)
+    # logging.info("total_num_of_samples", total_num_of_samples)
+    # logging.info("batch_size", batch_size)
+    if steps_per_epoch == 0:
+        steps_per_epoch = total_num_of_samples
     return steps_per_epoch
+
+
+def timeit(ds, batch_size, steps=default_timeit_steps):
+    start = time.time()
+    it = iter(ds)
+    for i in range(steps):
+        batch = next(it)
+        if i % 10 == 0:
+            print('.', end='')
+    print()
+    end = time.time()
+
+    duration = end - start
+    print("{} batches: {} s".format(steps, duration))
+    print("{:0.5f} Images/s".format(batch_size * steps / duration))
