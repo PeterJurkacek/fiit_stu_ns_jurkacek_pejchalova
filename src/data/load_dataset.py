@@ -7,9 +7,6 @@ import os
 
 from src.utils import images_count, get_dirs
 from src import config
-
-#dataset_name = 'DATASET'
-
 class ImageDataLoader:
     def __init__(self, batch_size,
                  image_shape=config.image_shape,
@@ -110,5 +107,5 @@ class ImageDataLoader:
         ds = ds.batch(self.batch_size)
         # `prefetch` lets the dataset fetch batches in the background while the model
         # is training.
-        ds = ds.prefetch(buffer_size=self.AUTOTUNE)
+        #ds = ds.prefetch(buffer_size=self.AUTOTUNE)
         return ds
