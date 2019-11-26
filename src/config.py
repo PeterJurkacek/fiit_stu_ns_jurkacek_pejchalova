@@ -2,7 +2,7 @@ from tensorboard.plugins.hparams import api as hp
 import tensorflow as tf
 
 # data
-dataset_name = 'test_dataset'
+dataset_name = 'DATASET'
 image_shape = (224, 224)
 OUTPUT_CLASSES = 2
 
@@ -49,11 +49,11 @@ image_height = 224
 learning_rate = 0.001
 loss = 'sparse_categorical_crossentropy'
 epochs = 7
-batch_size = 8
+batch_size = 256
 buffer_size = 1024
-cache = True
+cache = "cache_file"
 # cnn & model
-input_shape = (224, 224, 3)
+input_shape = (224, 224)
 output_shape = 1
 
 padding_same = 'same'
@@ -86,6 +86,6 @@ histogram_freq = 1
 profile_batch = 3
 
 
-num_session_groups = 2
-experiment_name = 'test_experiment'
-summary_freq = 600
+num_session_groups = 5
+experiment_name = 'tunning_parametrov_cnn'
+summary_freq = 256
