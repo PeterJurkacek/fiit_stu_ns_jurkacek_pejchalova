@@ -13,7 +13,7 @@ from src import config
 class ImageDataLoader:
     def __init__(self, batch_size,
                  image_shape=config.image_shape,
-                 dataset_name = config.dataset_name,
+                 dataset_name=config.dataset_name,
                  greyscale=False):
         # load data here
         # To load the files as a tf.data.Dataset first create a dataset of the file paths
@@ -26,6 +26,8 @@ class ImageDataLoader:
         self.train_data_count = images_count(self.train_data_path)
         self.test_data_count = images_count(self.test_data_path)
         self.greyscale = greyscale
+        self.train_ds = self.load_train_dataset()
+        self.test_ds = self.load_test_dataset()
 
     def get_unique_classes(self):
         all_classes_from_train = get_dirs(self.train_data_path)
@@ -47,7 +49,7 @@ class ImageDataLoader:
         #print(f"list_ds next: {self.process_path(next(iter(list_ds)))[1]}")
         # Set `num_parallel_calls` so multiple images are loaded/processed in parallel.
         labeled_ds = list_ds.map(self.process_path, num_parallel_calls=self.AUTOTUNE)
-        ds = self.prepare_for_training(labeled_ds, shuffle_buffer_size=images_count(dir_data_path))
+        ds = self.prepare_for_training(labeled_ds, shuffle_buffer_size=config.buffer_size, cache=config.cache)#images_count(dir_data_path))
         return ds
 
     def process_path(self, file_path: str):
@@ -88,10 +90,12 @@ class ImageDataLoader:
         else:
             return -1
 
-    def prepare_for_training(self, ds, cache=True, shuffle_buffer_size=1000):
+    def prepare_for_training(self, ds, cache=True, shuffle_buffer_size=1024):
         # This is a small dataset, only load it once, and keep it in memory.
         # use `.cache(filename)` to cache preprocessing work for datasets that don't
         # fit in memory.
+        # filename: A tf.string scalar tf.Tensor, representing the name of a directory on the filesystem to use for caching elements in this Dataset.
+        # If a filename is not provided, the dataset will be cached in memory.
         if cache:
             if isinstance(cache, str):
                 ds = ds.cache(cache)

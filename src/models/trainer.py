@@ -10,41 +10,30 @@ from src import config
 
 
 class Trainer:
-    def __init__(self,
+    def __init__(self, hparams,
                  loader: ImageDataLoader,
                  logger: Logger,
                  model,
-                 learning_rate=config.learning_rate,
-                 loss='sparse_categorical_crossentropy',
-                 epochs=config.epochs,
-                 metrics=['accuracy']):
+                 session_id,
+                 epochs):
         self.logger = logger
         self.epochs = epochs
-        logging.info(f"epochs:{self.epochs}")
         self.loader = loader
-        self.model = self.compile(model, learning_rate, loss, metrics)
-
-    def compile(self, model, learning_rate, loss, metrics):
-        logging.debug(f"model.compile(model)")
-        logging.info(f"learning_rate:{learning_rate}")
-        logging.info(f"loss:{loss}")
-        logging.info(f"metrics:{metrics}")
-        model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate),
-                      loss=loss,
-                      metrics=metrics)
-        # tf.keras.metrics.Precision(),
-        # tf.keras.metrics.Recall()])
-        return model
+        self.hparams = hparams
+        self.model = model
+        self.train(session_id)
+        # accuracy = self.evaluate(session_id)
 
     def train(self, run_id):
         logging.info(f"run_id: {run_id}")
         logging.debug("model.fit")
-        history = self.model.fit(self.loader.load_train_dataset(),
+        history = self.model.fit(self.loader.train_ds,
                                  steps_per_epoch=self.steps_per_epoch_train(),
                                  epochs=self.epochs,
-                                 validation_data=self.loader.load_test_dataset(),
+                                 validation_data=self.loader.test_ds,
                                  validation_steps=self.steps_per_epoch_validate(),
-                                 callbacks=self.logger.get_callbacks('train', run_id))
+                                 callbacks=self.logger.get_callbacks(train_or_test='train', run_id=run_id,
+                                                                     hparams=self.hparams))
         # Save the model
         model_path = self.logger.get_model_path(run_id)
         self.model.save(model_path)
@@ -58,10 +47,11 @@ class Trainer:
 
         # Show the model architecture
         model.summary()
-        model.evaluate(self.loader.load_test_dataset(),
-                       steps=self.loader.test_data_count,
-                       callbacks=self.logger.get_callbacks('evaluate', run_id))
+        _, accuracy = model.evaluate(self.loader.load_test_dataset(),
+                                     steps=self.loader.test_data_count,
+                                     callbacks=self.logger.get_callbacks('evaluate', run_id, self.hparams))
         self.model = model
+        return accuracy
 
     def steps_per_epoch_train(self):
         return calculate_steps_per_epoch(self.loader.train_data_count, self.loader.batch_size)
