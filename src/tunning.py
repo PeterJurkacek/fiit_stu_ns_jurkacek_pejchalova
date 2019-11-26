@@ -63,6 +63,11 @@ flags.DEFINE_string(
     config.experiment_name,
     "The directory to write the summary information to.",
 )
+flags.DEFINE_string(
+    "dataset_name",
+    config.dataset_name,
+    "Use Dataset",
+)
 flags.DEFINE_integer(
     "summary_freq",
     config.summary_freq,
