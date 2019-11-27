@@ -36,39 +36,39 @@ def show_loaded_data(labeled_ds, number_of_images=2):
 
 def timestamp():
     _timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    logging.info(f"timestamp: {timestamp}")
+    #logging.info(f"timestamp: {timestamp}")
     return _timestamp
 
 
 def get_dirs(path: Path):
     dirs = [item.stem for item in path.iterdir() if item.is_dir()]
     # print(f"DIRS: {dirs} on PATH: {path}")
-    logging.info(f"dirs: {dirs}, from: {path}")
+    #logging.info(f"dirs: {dirs}, from: {path}")
     return dirs
 
 
 def count_dirs(path: Path):
     count = len(get_dirs(path))
-    logging.info(f"count_dirs: {count}")
+    #logging.info(f"count_dirs: {count}")
     return count
 
 
 def images_count(path: Path):
     count = len(list(jpg_images_from(path)))
-    logging.info(f"images_count: {count}")
+    #logging.info(f"images_count: {count}")
     return count
 
 
 def jpg_images_from(path: Path):
-    logging.info(f"from path: {path}")
+    #logging.info(f"from path: {path}")
     return path.glob('**/*.jpg')
 
 
 def calculate_steps_per_epoch(total_num_of_samples, batch_size):
     steps_per_epoch = total_num_of_samples // batch_size
-    # logging.info("steps_per_epoch", steps_per_epoch)
-    # logging.info("total_num_of_samples", total_num_of_samples)
-    # logging.info("batch_size", batch_size)
+    logging.info(f"steps_per_epoch: {steps_per_epoch}")
+    logging.info(f"total_num_of_samples: {total_num_of_samples}")
+    logging.info(f"batch_size: {batch_size}")
     if steps_per_epoch == 0:
         steps_per_epoch = total_num_of_samples
     return steps_per_epoch

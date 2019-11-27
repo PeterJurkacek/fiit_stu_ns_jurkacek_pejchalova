@@ -32,8 +32,8 @@ class Trainer:
                                  epochs=self.epochs,
                                  validation_data=self.loader.test_ds,
                                  validation_steps=self.steps_per_epoch_validate(),
-                                 callbacks=self.logger.get_callbacks(train_or_test='train', run_id=run_id,
-                                                                     hparams=self.hparams))
+                                 callbacks=self.logger.get_callbacks_with_hparams(train_or_test='train', run_id=run_id,
+                                                                                  hparams=self.hparams))
         # Save the model
         model_path = self.logger.get_model_path(run_id)
         self.model.save(model_path)
@@ -49,7 +49,7 @@ class Trainer:
         model.summary()
         _, accuracy = model.evaluate(self.loader.load_test_dataset(),
                                      steps=self.loader.test_data_count,
-                                     callbacks=self.logger.get_callbacks('evaluate', run_id, self.hparams))
+                                     callbacks=self.logger.get_callbacks_with_hparams('evaluate', run_id, self.hparams))
         self.model = model
         return accuracy
 

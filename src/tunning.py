@@ -38,20 +38,10 @@ from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
 from src import config
-from src.data.load_dataset import ImageDataLoader
+import src.data.load_dataset as loader
+import src.logger as logger
+from src.models import hyper_trainer
 from src.models.keras_models import get_cnn_with
-
-from tensorboard.plugins.hparams import api as hp
-
-from src.logger import Logger
-from src.models.trainer import Trainer
-from src.utils import calculate_steps_per_epoch
-
-if int(tf.__version__.split(".")[0]) < 2:
-    # The tag names emitted for Keras metrics changed from "acc" (in 1.x)
-    # to "accuracy" (in 2.x), so this demo does not work properly in
-    # TensorFlow 1.x (even with `tf.enable_eager_execution()`).
-    raise ImportError("TensorFlow 2.x is required to run this demo.")
 
 flags.DEFINE_integer(
     "num_session_groups",
@@ -81,34 +71,27 @@ flags.DEFINE_integer(
 )
 
 
-def run(loader, logger, session_id, hparams):
-    Trainer(hparams=hparams,
-            loader=loader,
-            logger=logger,
-            session_id=session_id,
-            model=get_cnn_with(hparams=hparams,
-                               seed=session_id,
-                               input_shape=loader.get_input_shape(),
-                               classes=loader.get_unique_classes()),
-            epochs=flags.FLAGS.num_epochs)
+def run(session_id, hparams):
+    input_shape = loader.get_input_shape()
+    classes = loader.get_unique_classes()
+    hyper_trainer.start(model=get_cnn_with(hparams=hparams, seed=session_id,
+                                           classes=classes),
+                        run_id=session_id, hparams=hparams)
 
 
-def run_all(logger: Logger, verbose=False):
+def start(verbose=False):
     """Perform random search over the hyperparameter space.
-
+    np.random.seed(0)
     Arguments:
       logdir: The top-level directory into which to write data. This
         directory should be empty or nonexistent.
       verbose: If true, print out each run's name as it begins.
     """
     rng = random.Random(0)
-    loader = ImageDataLoader(batch_size=config.batch_size)
-    logger.setup_hparams_config()
-
     sessions_per_group = 2
-    num_sessions = flags.FLAGS.num_session_groups * sessions_per_group
+    num_sessions = config.num_session_groups * sessions_per_group
     session_index = 0  # across all session groups
-    for group_index in xrange(flags.FLAGS.num_session_groups):
+    for group_index in xrange(config.num_session_groups):
         hparams = {h: h.domain.sample_uniform(rng) for h in config.HPARAMS}
         hparams_string = str(hparams)
         for repeat_index in xrange(sessions_per_group):
@@ -118,30 +101,4 @@ def run_all(logger: Logger, verbose=False):
                 logging.info(f"--- Running training session {session_index}, {num_sessions}")
                 logging.info(hparams_string)
                 logging.info("--- repeat #: %d" % (repeat_index + 1))
-            run(logger=logger,
-                loader=loader,
-                session_id=session_id,
-                hparams=hparams)
-
-
-def steps_per_epoch_train(loader):
-    return calculate_steps_per_epoch(loader.train_data_count, loader.batch_size)
-
-
-def steps_per_epoch_validate(loader):
-    return calculate_steps_per_epoch(loader.test_data_count, loader.batch_size)
-
-
-def main(unused_argv):
-    np.random.seed(0)
-    experiment_name = flags.FLAGS.experiment_name
-    logger = Logger(log_name=experiment_name)
-    logger.start()
-    logging.info("Saving output to %s." % logger.logs_dir)
-    run_all(logger=logger, verbose=True)
-    logging.info("Done. Output saved to %s." % logger.logs_dir)
-    logger.end()
-
-
-if __name__ == "__main__":
-    app.run(main)
+            run(session_id=session_id,hparams=hparams)

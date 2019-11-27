@@ -15,26 +15,26 @@ class ConvolutionalNeuralNetwork(tf.keras.models.Model):
             Conv2D(
                 filters=config.filters1,  # Number of neurons
                 kernel_size=config.kernel_size1,
-                padding=config.padding_same,  # 'same' for zero padding, 'valid' for no padding
-                activation=config.activation_relu),
+                padding=config.padding,  # 'same' for zero padding, 'valid' for no padding
+                activation=config.hidden_activation),
             MaxPooling2D(pool_size=config.pool_size1),
             Conv2D(
                 filters=config.filters2,
                 kernel_size=config.kernel_size2,
-                padding=config.padding_same,
-                activation=config.activation_relu),
+                padding=config.padding,
+                activation=config.hidden_activation),
             MaxPooling2D(pool_size=config.pool_size2),
             Conv2D(
                 filters=config.filters3,
                 kernel_size=config.kernel_size3,
-                padding=config.padding_same,
-                activation=config.activation_relu),
+                padding=config.padding,
+                activation=config.hidden_activation),
             MaxPooling2D(pool_size=config.pool_size3),
             Flatten(),  # Flatten the sample from (width x height x channel) 3D matrix into a simple array.
             # We need to use it for the dense layer.
             Dense(
                 units=config.units,
-                activation=config.activation_relu),
+                activation=config.hidden_activation),
             Dense(
                 units=output_shape,
                 activation=config.activation_sigmoid)

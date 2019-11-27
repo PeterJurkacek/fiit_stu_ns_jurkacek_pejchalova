@@ -1,17 +1,15 @@
+import logging
 import random
 
-from tensorboard.plugins.hparams import api as hp
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D, Input
-from tensorflow_core.python.keras.engine.input_layer import Input
-
 from six.moves import xrange
+from tensorflow.keras.applications.resnet import ResNet50
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import MaxPooling2D, Input, Flatten, Dropout, Dense, Conv2D
 
 from src import config
-from tensorflow.keras.applications import ResNet50
 
 
-def get_cnn_with(hparams, seed, input_shape, classes):
+def get_cnn_with(hparams, seed, classes):
     """Create a Keras model with the given hyperparameters.
 
     Args:
@@ -24,17 +22,28 @@ def get_cnn_with(hparams, seed, input_shape, classes):
     """
     rng = random.Random(seed)
 
+    logging.info(f"config.image_shape: {config.image_shape}")
     model = Sequential()
     # Add convolutional layers.
     conv_filters = 8
-    for _ in xrange(hparams[config.HP_CONV_LAYERS]):
-        model.add(Conv2D(
-            filters=conv_filters,
-            kernel_size=hparams[config.HP_CONV_KERNEL_SIZE],
-            padding="same",
-            activation="relu",
-        ))
-        model.add(MaxPooling2D(pool_size=config.pool_size2, padding=config.padding_same))
+    for index, _ in enumerate(xrange(hparams[config.HP_CONV_LAYERS])):
+        logging.info(f"index: {index}")
+        if index == 0:
+            model.add(Conv2D(
+                filters=conv_filters,
+                kernel_size=hparams[config.HP_CONV_KERNEL_SIZE],
+                padding=config.padding,
+                activation=config.hidden_activation,
+                input_shape=config.input_shape
+            ))
+        else:
+            model.add(Conv2D(
+                filters=conv_filters,
+                kernel_size=hparams[config.HP_CONV_KERNEL_SIZE],
+                padding=config.padding,
+                activation=config.hidden_activation,
+            ))
+        model.add(MaxPooling2D())
         conv_filters *= 2
 
     model.add(Flatten())
@@ -43,33 +52,32 @@ def get_cnn_with(hparams, seed, input_shape, classes):
     # Add fully connected layers.
     dense_neurons = 32
     for _ in xrange(hparams[config.HP_DENSE_LAYERS]):
-        model.add(Dense(dense_neurons, activation=config.activation_relu))
+        model.add(Dense(dense_neurons, activation=config.hidden_activation))
         dense_neurons *= 2
 
     # Add the final output layer.
-    model.add(Dense(len(classes), activation=config.activation_softmax))
+    model.add(Dense(len(classes), activation=config.output_activation))
 
     model.compile(
-        loss="sparse_categorical_crossentropy",
+        loss=config.loss,
         optimizer=hparams[config.HP_OPTIMIZER],
-        metrics=["accuracy"],
+        metrics=config.metrics,
     )
     return model
 
 
-def get_cnn(input_shape, classes, hparams):
+def get_cnn(input_shape, classes):
     return Sequential([
-        Conv2D(config.filters1, config.kernel_size1, padding=config.padding_same, activation=config.activation_relu,
+        Conv2D(config.filters1, config.kernel_size1, padding=config.padding, activation=config.hidden_activation,
                input_shape=input_shape),
         MaxPooling2D(),
-        Conv2D(config.filters2, config.kernel_size2, padding=config.padding_same, activation=config.activation_relu),
+        Conv2D(config.filters2, config.kernel_size2, padding=config.padding, activation=config.hidden_activation),
         MaxPooling2D(),
-        Conv2D(config.filters3, config.kernel_size3, padding=config.padding_same, activation=config.activation_relu),
+        Conv2D(config.filters3, config.kernel_size3, padding=config.padding, activation=config.hidden_activation),
         MaxPooling2D(),
         Flatten(),
-        Dense(hparams[config.HP_NUM_UNITS], activation=config.activation_relu),
-        Dropout(hparams[config.HP_DROPOUT]),
-        Dense(len(classes), activation=config.activation_softmax)
+        Dense(config.num_units, activation=config.hidden_activation),
+        Dense(len(classes), activation=config.output_activation)
     ])
 
 
@@ -80,6 +88,6 @@ def get_resnet50(input_shape, classes):
     return Sequential([
         resnet50,
         Flatten(),
-        Dense(config.units, activation=config.activation_relu),
-        Dense(len(classes), activation=config.activation_softmax)
+        Dense(config.units, activation=config.hidden_activation),
+        Dense(len(classes), activation=config.output_activation)
     ])
