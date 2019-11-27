@@ -4,7 +4,7 @@ from tensorboard.plugins.hparams import api as hp
 import tensorflow as tf
 
 path = Path('/labs').resolve()
-dataset_name = 'test_dataset'
+dataset_name = 'DATASET'
 logs_name = 'tunning_parametrov_cnn_2'
 
 # data
