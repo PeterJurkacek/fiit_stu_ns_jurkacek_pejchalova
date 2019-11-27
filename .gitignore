@@ -100,3 +100,4 @@ data/raw/*
 models/*
 !models/.gitkeep
 /models/
+Icon[]
