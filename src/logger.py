@@ -2,7 +2,7 @@ import shutil
 import tensorflow as tf
 from src import config
 import logging
-from tensorflow_core.python.keras.callbacks import CSVLogger, TensorBoard, EarlyStopping, ModelCheckpoint
+from tensorflow.keras.callbacks import CSVLogger, TensorBoard, EarlyStopping, ModelCheckpoint
 from tensorboard.plugins.hparams import api as hp
 
 # https://docs.python.org/2/howto/logging.html
@@ -35,7 +35,6 @@ def end():
 def get_model_path(run_id):
     model_path = models_dir / f"model_{run_id}.h5"
     return model_path
-
 
 def create_tensorboard_callback(run_id):
     return TensorBoard(
