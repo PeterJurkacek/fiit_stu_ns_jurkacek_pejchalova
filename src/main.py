@@ -6,7 +6,7 @@ import tensorflow as tf
 import src.data.load_dataset as loader
 import src.logger as logger
 import src.tunning as tunning
-from src.models import trainer
+import src.models.simple_trainer as trainer
 from src.models.keras_models import get_cnn
 
 if int(tf.__version__.split(".")[0]) < 2:

@@ -59,4 +59,4 @@ def start(verbose=False):
                 logging.info(f"--- Running training session {session_index}, {num_sessions}")
                 logging.info(hparams_string)
                 logging.info("--- repeat #: %d" % (repeat_index + 1))
-            run(session_id=session_id,hparams=hparams)
+            run(session_id=session_id, hparams=hparams)
