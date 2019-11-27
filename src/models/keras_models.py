@@ -1,12 +1,14 @@
 import logging
 import random
-
+import tensorflow as tf
 from six.moves import xrange
 from tensorflow.keras.applications.resnet import ResNet50
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import MaxPool2D, Input, Flatten, Dropout, Dense, Conv2D, Reshape
 
 from src import config
+
+logging.info(tf.__version__)
 
 
 def get_cnn_with(hparams, seed, classes):

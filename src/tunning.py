@@ -29,36 +29,8 @@ from src import config
 from src.models import hyper_trainer
 from src.models.keras_models import get_cnn_with
 
-flags.DEFINE_integer(
-    "num_session_groups",
-    config.num_session_groups,
-    "The approximate number of session groups to create.",
-)
-flags.DEFINE_string(
-    "experiment_name",
-    config.experiment_name,
-    "The directory to write the summary information to.",
-)
-flags.DEFINE_string(
-    "dataset_name",
-    config.dataset_name,
-    "Use Dataset",
-)
-flags.DEFINE_integer(
-    "summary_freq",
-    config.summary_freq,
-    "Summaries will be written every n steps, where n is the value of "
-    "this flag.",
-)
-flags.DEFINE_integer(
-    "num_epochs",
-    config.epochs,
-    "Number of epochs per trial.",
-)
-
 
 def run(session_id, hparams):
-    input_shape = loader.get_input_shape()
     classes = loader.get_unique_classes()
     hyper_trainer.start(model=get_cnn_with(hparams=hparams, seed=session_id,
                                            classes=classes),
