@@ -46,7 +46,7 @@ class ImageDataLoader:
         #print(f"list_ds next: {self.process_path(next(iter(list_ds)))[1]}")
         # Set `num_parallel_calls` so multiple images are loaded/processed in parallel.
         labeled_ds = list_ds.map(self.process_path, num_parallel_calls=self.AUTOTUNE)
-        ds = self.prepare_for_training(labeled_ds, shuffle_buffer_size=config.buffer_size, cache=config.cache)#images_count(dir_data_path))
+        ds = self.prepare_for_training(labeled_ds, shuffle_buffer_size=images_count(dir_data_path), cache=config.cache)#images_count(dir_data_path))
         return ds
 
     def process_path(self, file_path: str):
