@@ -1,13 +1,7 @@
 import shutil
-from pathlib import Path
-
-import numpy as np
-import sklearn
 import tensorflow as tf
-from src.utils import timestamp
 from src import config
 import logging
-import src.data.load_dataset as loader
 from tensorflow_core.python.keras.callbacks import CSVLogger, TensorBoard, EarlyStopping, ModelCheckpoint
 from tensorboard.plugins.hparams import api as hp
 
