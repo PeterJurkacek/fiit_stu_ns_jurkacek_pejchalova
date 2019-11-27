@@ -35,8 +35,11 @@ from pathlib import Path
 import six
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
+from tensorboard._vendor.tensorflow_serving.apis.input_pb2 import Input
 
 from tensorboard.plugins.hparams import api as hp
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Conv2D, Dense, Dropout, Flatten, MaxPool2D, Reshape
 
 if int(tf.__version__.split(".")[0]) < 2:
     # The tag names emitted for Keras metrics changed from "acc" (in 1.x)
@@ -46,7 +49,7 @@ if int(tf.__version__.split(".")[0]) < 2:
 
 flags.DEFINE_integer(
     "num_session_groups",
-    10,
+    2,
     "The approximate number of session groups to create.",
 )
 flags.DEFINE_string(
@@ -62,7 +65,7 @@ flags.DEFINE_integer(
 )
 flags.DEFINE_integer(
     "num_epochs",
-    2,
+    1,
     "Number of epochs per trial.",
 )
 
@@ -122,33 +125,33 @@ def model_fn(hparams, seed):
     """
     rng = random.Random(seed)
 
-    model = tf.keras.models.Sequential()
-    model.add(tf.keras.layers.Input(INPUT_SHAPE))
-    model.add(tf.keras.layers.Reshape(INPUT_SHAPE + (1,)))  # grayscale channel
+    model = Sequential()
+    model.add(Input(INPUT_SHAPE))
+    model.add(Reshape(INPUT_SHAPE + (1,)))  # grayscale channel
 
     # Add convolutional layers.
     conv_filters = 8
     for _ in xrange(hparams[HP_CONV_LAYERS]):
-        model.add(tf.keras.layers.Conv2D(
+        model.add(Conv2D(
             filters=conv_filters,
             kernel_size=hparams[HP_CONV_KERNEL_SIZE],
             padding="same",
             activation="relu",
         ))
-        model.add(tf.keras.layers.MaxPool2D(pool_size=2, padding="same"))
+        model.add(MaxPool2D(pool_size=2, padding="same"))
         conv_filters *= 2
 
-    model.add(tf.keras.layers.Flatten())
-    model.add(tf.keras.layers.Dropout(hparams[HP_DROPOUT], seed=rng.random()))
+    model.add(Flatten())
+    model.add(Dropout(hparams[HP_DROPOUT], seed=rng.random()))
 
     # Add fully connected layers.
     dense_neurons = 32
     for _ in xrange(hparams[HP_DENSE_LAYERS]):
-        model.add(tf.keras.layers.Dense(dense_neurons, activation="relu"))
+        model.add(Dense(dense_neurons, activation="relu"))
         dense_neurons *= 2
 
     # Add the final output layer.
-    model.add(tf.keras.layers.Dense(OUTPUT_CLASSES, activation="softmax"))
+    model.add(Dense(OUTPUT_CLASSES, activation="softmax"))
 
     model.compile(
         loss="sparse_categorical_crossentropy",
