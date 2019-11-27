@@ -51,7 +51,7 @@ loss = 'sparse_categorical_crossentropy'
 epochs = 7
 batch_size = 128
 buffer_size = 1024
-cache = True
+cache = "cache_file"
 # cnn & model
 input_shape = (224, 224)
 output_shape = 1
