@@ -20,8 +20,8 @@ def main():
     logger.start()
     input_shape = loader.get_input_shape()
     classes = loader.get_unique_classes()
-    trainer.start(model=get_cnn(input_shape=input_shape, classes=classes))
-    #tunning.start(verbose=True)
+    #trainer.start(model=get_cnn(input_shape=input_shape, classes=classes))
+    tunning.start(verbose=True)
     logger.end()
 
 
