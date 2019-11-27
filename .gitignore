@@ -97,8 +97,8 @@ data/processed/*
 data/raw/*
 !data/raw/.gitkeep
 
-logs/*
-!logs/.gitkeep
+# logs/*
+# !logs/.gitkeep
 
 models/*
 !models/.gitkeep
