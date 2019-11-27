@@ -6,6 +6,8 @@ import tensorflow as tf
 import src.data.load_dataset as loader
 import src.logger as logger
 import src.tunning as tunning
+from src.models import trainer
+from src.models.keras_models import get_cnn
 
 if int(tf.__version__.split(".")[0]) < 2:
     # The tag names emitted for Keras metrics changed from "acc" (in 1.x)
@@ -18,8 +20,8 @@ def main():
     logger.start()
     input_shape = loader.get_input_shape()
     classes = loader.get_unique_classes()
-    #trainer.start(model=get_cnn(input_shape=input_shape, classes=classes))
-    tunning.start(verbose=True)
+    trainer.start(model=get_cnn(input_shape=input_shape, classes=classes))
+    #tunning.start(verbose=True)
     logger.end()
 
 
