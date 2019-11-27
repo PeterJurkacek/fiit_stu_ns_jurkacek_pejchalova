@@ -1,7 +1,7 @@
 #!/bin/sh
 
-image_name=pjurkacek/data-science:version-cloud
-#docker build -t $image_name .
+image_name=pjurkacek/data-science:version1.0.0
+docker build -t $image_name .
 
 docker run\
  -u $(id -u):$(id -g)\
