@@ -4,7 +4,7 @@ from tensorboard.plugins.hparams import api as hp
 import tensorflow as tf
 
 path = Path('/labs').resolve()
-dataset_name = 'DATASET'
+dataset_name = 'test_dataset'
 logs_name = 'tunning_parametrov_cnn_2'
 
 # data
@@ -46,6 +46,7 @@ num_units = 500
 padding = 'same'
 hidden_activation = 'relu'
 output_activation = 'softmax'
+
 
 # Hyperparams
 HP_CONV_LAYERS = hp.HParam("conv_layers", hp.IntInterval(1, 3))
