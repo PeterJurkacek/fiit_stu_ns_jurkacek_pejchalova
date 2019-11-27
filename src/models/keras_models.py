@@ -25,13 +25,13 @@ def get_cnn_with(hparams, seed, classes):
     rng = random.Random(seed)
 
     logging.info(f"config.image_shape: {config.image_shape}")
-    model = Sequential()
+    model = tf.keras.models.Sequential()
     # Add convolutional layers.
     conv_filters = 8
     for index, _ in enumerate(xrange(hparams[config.HP_CONV_LAYERS])):
         logging.info(f"index: {index}")
         if index == 0:
-            model.add(Conv2D(
+            model.add(tf.keras.layers.Conv2D(
                 filters=conv_filters,
                 kernel_size=hparams[config.HP_CONV_KERNEL_SIZE],
                 padding=config.padding,
@@ -39,17 +39,17 @@ def get_cnn_with(hparams, seed, classes):
                 input_shape=config.input_shape
             ))
         else:
-            model.add(Conv2D(
+            model.add(tf.keras.layers.Conv2D(
                 filters=conv_filters,
                 kernel_size=hparams[config.HP_CONV_KERNEL_SIZE],
                 padding=config.padding,
                 activation=config.hidden_activation,
             ))
-        model.add(MaxPool2D(pool_size=2, padding=config.padding))
+        model.add(tf.keras.layers.MaxPool2D(pool_size=2, padding=config.padding))
         conv_filters *= 2
 
-    model.add(Flatten())
-    model.add(Dropout(hparams[config.HP_DROPOUT], seed=rng.random()))
+    model.add(tf.keras.layers.Flatten())
+    model.add(tf.keras.layers.Dropout(hparams[config.HP_DROPOUT], seed=rng.random()))
 
     # Add fully connected layers.
     dense_neurons = 32
@@ -58,7 +58,7 @@ def get_cnn_with(hparams, seed, classes):
         dense_neurons *= 2
 
     # Add the final output layer.
-    model.add(Dense(len(classes), activation=config.output_activation))
+    model.add(tf.keras.layers.Dense(len(classes), activation=config.output_activation))
 
     model.compile(
         loss=config.loss,
