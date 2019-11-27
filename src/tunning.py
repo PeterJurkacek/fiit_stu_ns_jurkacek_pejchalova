@@ -18,28 +18,14 @@ See also `hparams_minimal_demo.py` in this directory for a demo that
 runs much faster, using synthetic data instead of actually training
 MNIST models.
 """
-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import logging
-import math
-import os.path
 import random
-import shutil
 
-from absl import app
 from absl import flags
-import numpy as np
-from pathlib import Path
-import six
 from six.moves import xrange  # pylint: disable=redefined-builtin
-import tensorflow as tf
 
-from src import config
 import src.data.load_dataset as loader
-import src.logger as logger
+from src import config
 from src.models import hyper_trainer
 from src.models.keras_models import get_cnn_with
 

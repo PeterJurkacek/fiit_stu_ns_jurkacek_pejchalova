@@ -4,7 +4,7 @@ import random
 from six.moves import xrange
 from tensorflow.keras.applications.resnet import ResNet50
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import MaxPooling2D, Input, Flatten, Dropout, Dense, Conv2D
+from tensorflow.keras.layers import MaxPool2D, Input, Flatten, Dropout, Dense, Conv2D, Reshape
 
 from src import config
 
@@ -43,7 +43,7 @@ def get_cnn_with(hparams, seed, classes):
                 padding=config.padding,
                 activation=config.hidden_activation,
             ))
-        model.add(MaxPooling2D())
+        model.add(MaxPool2D(pool_size=2, padding=config.padding))
         conv_filters *= 2
 
     model.add(Flatten())
@@ -70,11 +70,11 @@ def get_cnn(input_shape, classes):
     return Sequential([
         Conv2D(config.filters1, config.kernel_size1, padding=config.padding, activation=config.hidden_activation,
                input_shape=input_shape),
-        MaxPooling2D(),
+        MaxPool2D(),
         Conv2D(config.filters2, config.kernel_size2, padding=config.padding, activation=config.hidden_activation),
-        MaxPooling2D(),
+        MaxPool2D(),
         Conv2D(config.filters3, config.kernel_size3, padding=config.padding, activation=config.hidden_activation),
-        MaxPooling2D(),
+        MaxPool2D(),
         Flatten(),
         Dense(config.num_units, activation=config.hidden_activation),
         Dense(len(classes), activation=config.output_activation)

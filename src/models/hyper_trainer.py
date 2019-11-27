@@ -1,4 +1,3 @@
-from __future__ import absolute_import, division, print_function, unicode_literals
 import tensorflow as tf
 import logging
 import src.logger as logger
@@ -10,7 +9,7 @@ from src import config
 def start(model, hparams, run_id=timestamp()):
     train_data = loader.load_train_dataset()
     validation_data = loader.load_test_dataset()
-    compile(model, hparams)
+    compile(model=model, hparams=hparams)
     train(model=model, train_data=train_data, validation_data=validation_data, run_id=run_id, hparams=hparams)
     evaluate(run_id=run_id, test_data=validation_data, steps=loader.test_data_count)
 
