@@ -73,7 +73,7 @@ def experiment_4():
 
 
 if __name__ == '__main__':
-    experiment_1()
+    #experiment_1()
     experiment_2()
     experiment_3()
     experiment_4()
