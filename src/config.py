@@ -5,7 +5,7 @@ import tensorflow as tf
 
 path = Path('/labs').resolve()
 dataset_name = 'test_dataset'
-logs_name = 'tunning_parametrov_cnn_2'
+logs_name = 'test_data_cnn_trenovanie'
 
 # data
 logs_dir = path / 'logs' / logs_name
