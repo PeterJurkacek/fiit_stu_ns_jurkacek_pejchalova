@@ -1,0 +1,979 @@
+INFO - root - 2019-11-28 17:08:28,712 - LOGGING START. Data are saving to logs_dir: /labs/logs/experiment_0, models_dir: /labs/models/experiment_0
+INFO - root - 2019-11-28 17:08:28,712 - Greyscale: False
+INFO - root - 2019-11-28 17:08:28,713 - dirs: ['O', 'R'], from: /labs/data/raw/test_dataset/TRAIN
+INFO - root - 2019-11-28 17:08:28,714 - dirs: ['O', 'R'], from: /labs/data/raw/test_dataset/TEST
+INFO - root - 2019-11-28 17:08:28,714 - Number of channels: 3
+INFO - root - 2019-11-28 17:08:28,714 - labels: [('O', 0), ('R', 1)]
+DEBUG - root - 2019-11-28 17:08:28,715 - self.name_by_number: {0: 'O', 1: 'R'}
+DEBUG - root - 2019-11-28 17:08:28,715 - self.num_by_name: {'O': 0, 'R': 1}
+DEBUG - root - 2019-11-28 17:08:31,510 - file_path: Tensor("args_0:0", shape=(), dtype=string)
+DEBUG - root - 2019-11-28 17:08:34,352 - label: Tensor("Equal:0", shape=(2,), dtype=bool)
+DEBUG - root - 2019-11-28 17:08:34,532 - file_path: Tensor("args_0:0", shape=(), dtype=string)
+DEBUG - root - 2019-11-28 17:08:34,592 - label: Tensor("Equal:0", shape=(2,), dtype=bool)
+INFO - root - 2019-11-28 17:08:34,621 - input_shape:(224, 224, 3)
+INFO - root - 2019-11-28 17:08:34,622 - number_of_classes:2
+INFO - root - 2019-11-28 17:08:34,622 - steps_per_epoch: 2
+INFO - root - 2019-11-28 17:08:34,622 - total_num_of_samples: 42
+INFO - root - 2019-11-28 17:08:34,622 - batch_size: 16
+INFO - root - 2019-11-28 17:08:34,622 - steps_per_epoch: 1
+INFO - root - 2019-11-28 17:08:34,623 - total_num_of_samples: 23
+INFO - root - 2019-11-28 17:08:34,623 - batch_size: 16
+INFO - root - 2019-11-28 17:08:34,728 - model.compile()
+INFO - root - 2019-11-28 17:08:34,729 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:08:34,729 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:08:34,729 - optimizer:adam
+INFO - root - 2019-11-28 17:08:34,775 - model.fit()
+INFO - root - 2019-11-28 17:08:34,775 - run_id: cnn_model
+INFO - root - 2019-11-28 17:08:34,775 - epochs:2
+INFO - root - 2019-11-28 17:08:34,775 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:08:34,775 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:08:37,060 - Method (on_train_batch_end) is slow compared to the batch update (0.104147). Check your callbacks.
+INFO - root - 2019-11-28 17:08:37,867 - Model cnn_model saved to model_path: /labs/models/experiment_0/model_cnn_model.h5
+INFO - root - 2019-11-28 17:08:45,888 - model.compile()
+INFO - root - 2019-11-28 17:08:45,888 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:08:45,888 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:08:45,889 - optimizer:adam
+INFO - root - 2019-11-28 17:08:45,971 - model.fit()
+INFO - root - 2019-11-28 17:08:45,971 - run_id: resnet50_model
+INFO - root - 2019-11-28 17:08:45,971 - epochs:2
+INFO - root - 2019-11-28 17:08:45,972 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:08:45,972 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:07,211 - Method (on_train_batch_end) is slow compared to the batch update (3.350685). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:07,736 - Method (on_train_batch_end) is slow compared to the batch update (1.675372). Check your callbacks.
+INFO - root - 2019-11-28 17:09:11,311 - Model resnet50_model saved to model_path: /labs/models/experiment_0/model_resnet50_model.h5
+INFO - root - 2019-11-28 17:09:11,312 - steps_per_epoch: 2
+INFO - root - 2019-11-28 17:09:11,313 - total_num_of_samples: 42
+INFO - root - 2019-11-28 17:09:11,313 - batch_size: 16
+INFO - root - 2019-11-28 17:09:11,313 - steps_per_epoch: 1
+INFO - root - 2019-11-28 17:09:11,313 - total_num_of_samples: 23
+INFO - root - 2019-11-28 17:09:11,313 - batch_size: 16
+INFO - root - 2019-11-28 17:09:11,313 - input_shape:(224, 224, 3)
+INFO - root - 2019-11-28 17:09:11,313 - number_of_classes:2
+INFO - root - 2019-11-28 17:09:11,315 - index: 0
+INFO - root - 2019-11-28 17:09:11,338 - index: 1
+INFO - root - 2019-11-28 17:09:11,413 - model.build()
+INFO - root - 2019-11-28 17:09:11,413 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:11,414 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:11,414 - optimizer:adam
+INFO - root - 2019-11-28 17:09:11,457 - model.fit()
+INFO - root - 2019-11-28 17:09:11,458 - run_id: 0
+INFO - root - 2019-11-28 17:09:11,458 - epochs:2
+INFO - root - 2019-11-28 17:09:11,458 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:11,458 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:13,198 - Method (on_train_batch_end) is slow compared to the batch update (0.159574). Check your callbacks.
+INFO - root - 2019-11-28 17:09:13,468 - Model 0 saved to model_path: /labs/models/experiment_0/model_0.h5
+INFO - root - 2019-11-28 17:09:13,469 - model.evaluate()
+INFO - root - 2019-11-28 17:09:13,469 - run_id: 0
+INFO - root - 2019-11-28 17:09:13,469 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:13,470 - steps: 23
+INFO - root - 2019-11-28 17:09:14,387 - model was loaded from/labs/models/experiment_0/model_0.h5
+INFO - root - 2019-11-28 17:09:14,387 - Model: "sequential_2"
+INFO - root - 2019-11-28 17:09:14,387 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:14,388 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:14,388 - =================================================================
+INFO - root - 2019-11-28 17:09:14,388 - conv2d_3 (Conv2D)            (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:09:14,388 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:14,389 - max_pooling2d_3 (MaxPooling2 (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:14,389 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:14,389 - conv2d_4 (Conv2D)            (None, 112, 112, 16)      3216      
+INFO - root - 2019-11-28 17:09:14,389 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:14,390 - max_pooling2d_4 (MaxPooling2 (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:14,390 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:14,390 - flatten_2 (Flatten)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:14,390 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:14,390 - dropout (Dropout)            (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:14,391 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:14,391 - dense_4 (Dense)              (None, 32)                1605664   
+INFO - root - 2019-11-28 17:09:14,391 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:14,392 - dense_5 (Dense)              (None, 2)                 66        
+INFO - root - 2019-11-28 17:09:14,392 - =================================================================
+INFO - root - 2019-11-28 17:09:14,393 - Total params: 1,609,554
+INFO - root - 2019-11-28 17:09:14,393 - Trainable params: 1,609,554
+INFO - root - 2019-11-28 17:09:14,393 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:14,394 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:15,360 - index: 0
+INFO - root - 2019-11-28 17:09:15,384 - index: 1
+INFO - root - 2019-11-28 17:09:15,459 - model.build()
+INFO - root - 2019-11-28 17:09:15,459 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:15,460 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:15,460 - optimizer:adam
+INFO - root - 2019-11-28 17:09:15,503 - model.fit()
+INFO - root - 2019-11-28 17:09:15,503 - run_id: 1
+INFO - root - 2019-11-28 17:09:15,504 - epochs:2
+INFO - root - 2019-11-28 17:09:15,504 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:15,504 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:17,110 - Method (on_train_batch_end) is slow compared to the batch update (0.214660). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:17,143 - Method (on_train_batch_end) is slow compared to the batch update (0.107353). Check your callbacks.
+INFO - root - 2019-11-28 17:09:17,385 - Model 1 saved to model_path: /labs/models/experiment_0/model_1.h5
+INFO - root - 2019-11-28 17:09:17,386 - model.evaluate()
+INFO - root - 2019-11-28 17:09:17,386 - run_id: 1
+INFO - root - 2019-11-28 17:09:17,387 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:17,387 - steps: 23
+INFO - root - 2019-11-28 17:09:18,773 - model was loaded from/labs/models/experiment_0/model_1.h5
+INFO - root - 2019-11-28 17:09:18,774 - Model: "sequential_3"
+INFO - root - 2019-11-28 17:09:18,774 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:18,774 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:18,774 - =================================================================
+INFO - root - 2019-11-28 17:09:18,775 - conv2d_5 (Conv2D)            (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:09:18,775 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:18,775 - max_pooling2d_5 (MaxPooling2 (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:18,775 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:18,776 - conv2d_6 (Conv2D)            (None, 112, 112, 16)      3216      
+INFO - root - 2019-11-28 17:09:18,776 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:18,776 - max_pooling2d_6 (MaxPooling2 (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:18,776 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:18,776 - flatten_3 (Flatten)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:18,777 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:18,777 - dropout_1 (Dropout)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:18,777 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:18,777 - dense_6 (Dense)              (None, 32)                1605664   
+INFO - root - 2019-11-28 17:09:18,777 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:18,778 - dense_7 (Dense)              (None, 2)                 66        
+INFO - root - 2019-11-28 17:09:18,778 - =================================================================
+INFO - root - 2019-11-28 17:09:18,779 - Total params: 1,609,554
+INFO - root - 2019-11-28 17:09:18,779 - Trainable params: 1,609,554
+INFO - root - 2019-11-28 17:09:18,779 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:18,779 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:19,797 - index: 0
+INFO - root - 2019-11-28 17:09:19,821 - index: 1
+INFO - root - 2019-11-28 17:09:19,909 - model.build()
+INFO - root - 2019-11-28 17:09:19,910 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:19,910 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:19,910 - optimizer:adam
+INFO - root - 2019-11-28 17:09:19,954 - model.fit()
+INFO - root - 2019-11-28 17:09:19,954 - run_id: 2
+INFO - root - 2019-11-28 17:09:19,955 - epochs:2
+INFO - root - 2019-11-28 17:09:19,955 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:19,955 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:21,716 - Method (on_train_batch_end) is slow compared to the batch update (0.227077). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:21,750 - Method (on_train_batch_end) is slow compared to the batch update (0.113562). Check your callbacks.
+INFO - root - 2019-11-28 17:09:21,981 - Model 2 saved to model_path: /labs/models/experiment_0/model_2.h5
+INFO - root - 2019-11-28 17:09:21,981 - model.evaluate()
+INFO - root - 2019-11-28 17:09:21,981 - run_id: 2
+INFO - root - 2019-11-28 17:09:21,982 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:21,982 - steps: 23
+INFO - root - 2019-11-28 17:09:22,965 - model was loaded from/labs/models/experiment_0/model_2.h5
+INFO - root - 2019-11-28 17:09:22,965 - Model: "sequential_4"
+INFO - root - 2019-11-28 17:09:22,965 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,966 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:22,966 - =================================================================
+INFO - root - 2019-11-28 17:09:22,967 - conv2d_7 (Conv2D)            (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:09:22,967 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,967 - max_pooling2d_7 (MaxPooling2 (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:22,967 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,968 - conv2d_8 (Conv2D)            (None, 112, 112, 16)      3216      
+INFO - root - 2019-11-28 17:09:22,968 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,968 - max_pooling2d_8 (MaxPooling2 (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:22,969 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,969 - flatten_4 (Flatten)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:22,969 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,969 - dropout_2 (Dropout)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:22,970 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,970 - dense_8 (Dense)              (None, 32)                1605664   
+INFO - root - 2019-11-28 17:09:22,970 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,971 - dense_9 (Dense)              (None, 64)                2112      
+INFO - root - 2019-11-28 17:09:22,971 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:22,972 - dense_10 (Dense)             (None, 2)                 130       
+INFO - root - 2019-11-28 17:09:22,972 - =================================================================
+INFO - root - 2019-11-28 17:09:22,973 - Total params: 1,611,730
+INFO - root - 2019-11-28 17:09:22,973 - Trainable params: 1,611,730
+INFO - root - 2019-11-28 17:09:22,974 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:22,974 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:24,027 - index: 0
+INFO - root - 2019-11-28 17:09:24,048 - index: 1
+INFO - root - 2019-11-28 17:09:24,136 - model.build()
+INFO - root - 2019-11-28 17:09:24,136 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:24,136 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:24,136 - optimizer:adam
+INFO - root - 2019-11-28 17:09:24,179 - model.fit()
+INFO - root - 2019-11-28 17:09:24,180 - run_id: 3
+INFO - root - 2019-11-28 17:09:24,180 - epochs:2
+INFO - root - 2019-11-28 17:09:24,180 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:24,180 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:26,206 - Method (on_train_batch_end) is slow compared to the batch update (0.252092). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:26,240 - Method (on_train_batch_end) is slow compared to the batch update (0.126071). Check your callbacks.
+INFO - root - 2019-11-28 17:09:26,470 - Model 3 saved to model_path: /labs/models/experiment_0/model_3.h5
+INFO - root - 2019-11-28 17:09:26,471 - model.evaluate()
+INFO - root - 2019-11-28 17:09:26,471 - run_id: 3
+INFO - root - 2019-11-28 17:09:26,472 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:26,472 - steps: 23
+INFO - root - 2019-11-28 17:09:27,463 - model was loaded from/labs/models/experiment_0/model_3.h5
+INFO - root - 2019-11-28 17:09:27,464 - Model: "sequential_5"
+INFO - root - 2019-11-28 17:09:27,464 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,464 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:27,465 - =================================================================
+INFO - root - 2019-11-28 17:09:27,465 - conv2d_9 (Conv2D)            (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:09:27,466 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,466 - max_pooling2d_9 (MaxPooling2 (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:27,466 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,467 - conv2d_10 (Conv2D)           (None, 112, 112, 16)      3216      
+INFO - root - 2019-11-28 17:09:27,467 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,468 - max_pooling2d_10 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:27,468 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,468 - flatten_5 (Flatten)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:27,468 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,469 - dropout_3 (Dropout)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:27,469 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,470 - dense_11 (Dense)             (None, 32)                1605664   
+INFO - root - 2019-11-28 17:09:27,470 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,471 - dense_12 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:09:27,471 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:27,471 - dense_13 (Dense)             (None, 2)                 130       
+INFO - root - 2019-11-28 17:09:27,472 - =================================================================
+INFO - root - 2019-11-28 17:09:27,473 - Total params: 1,611,730
+INFO - root - 2019-11-28 17:09:27,473 - Trainable params: 1,611,730
+INFO - root - 2019-11-28 17:09:27,474 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:27,474 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:28,559 - index: 0
+INFO - root - 2019-11-28 17:09:28,581 - index: 1
+INFO - root - 2019-11-28 17:09:28,601 - index: 2
+INFO - root - 2019-11-28 17:09:28,689 - model.build()
+INFO - root - 2019-11-28 17:09:28,690 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:28,690 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:28,691 - optimizer:adam
+INFO - root - 2019-11-28 17:09:28,736 - model.fit()
+INFO - root - 2019-11-28 17:09:28,736 - run_id: 4
+INFO - root - 2019-11-28 17:09:28,736 - epochs:2
+INFO - root - 2019-11-28 17:09:28,737 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:28,737 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:30,841 - Method (on_train_batch_end) is slow compared to the batch update (0.297735). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:30,873 - Method (on_train_batch_end) is slow compared to the batch update (0.148893). Check your callbacks.
+INFO - root - 2019-11-28 17:09:31,043 - Model 4 saved to model_path: /labs/models/experiment_0/model_4.h5
+INFO - root - 2019-11-28 17:09:31,044 - model.evaluate()
+INFO - root - 2019-11-28 17:09:31,044 - run_id: 4
+INFO - root - 2019-11-28 17:09:31,044 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:31,045 - steps: 23
+INFO - root - 2019-11-28 17:09:32,123 - model was loaded from/labs/models/experiment_0/model_4.h5
+INFO - root - 2019-11-28 17:09:32,123 - Model: "sequential_6"
+INFO - root - 2019-11-28 17:09:32,124 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,124 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:32,125 - =================================================================
+INFO - root - 2019-11-28 17:09:32,125 - conv2d_11 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:09:32,125 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,125 - max_pooling2d_11 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:32,126 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,126 - conv2d_12 (Conv2D)           (None, 112, 112, 16)      1168      
+INFO - root - 2019-11-28 17:09:32,126 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,126 - max_pooling2d_12 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:32,126 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,127 - conv2d_13 (Conv2D)           (None, 56, 56, 32)        4640      
+INFO - root - 2019-11-28 17:09:32,127 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,127 - max_pooling2d_13 (MaxPooling (None, 28, 28, 32)        0         
+INFO - root - 2019-11-28 17:09:32,127 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,127 - flatten_6 (Flatten)          (None, 25088)             0         
+INFO - root - 2019-11-28 17:09:32,128 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,128 - dropout_4 (Dropout)          (None, 25088)             0         
+INFO - root - 2019-11-28 17:09:32,128 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,128 - dense_14 (Dense)             (None, 32)                802848    
+INFO - root - 2019-11-28 17:09:32,128 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,129 - dense_15 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:09:32,129 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:32,129 - dense_16 (Dense)             (None, 2)                 130       
+INFO - root - 2019-11-28 17:09:32,129 - =================================================================
+INFO - root - 2019-11-28 17:09:32,131 - Total params: 811,122
+INFO - root - 2019-11-28 17:09:32,131 - Trainable params: 811,122
+INFO - root - 2019-11-28 17:09:32,131 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:32,131 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:33,461 - index: 0
+INFO - root - 2019-11-28 17:09:33,483 - index: 1
+INFO - root - 2019-11-28 17:09:33,503 - index: 2
+INFO - root - 2019-11-28 17:09:33,593 - model.build()
+INFO - root - 2019-11-28 17:09:33,594 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:33,594 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:33,594 - optimizer:adam
+INFO - root - 2019-11-28 17:09:33,638 - model.fit()
+INFO - root - 2019-11-28 17:09:33,639 - run_id: 5
+INFO - root - 2019-11-28 17:09:33,639 - epochs:2
+INFO - root - 2019-11-28 17:09:33,639 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:33,640 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:35,620 - Method (on_train_batch_end) is slow compared to the batch update (0.294955). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:35,658 - Method (on_train_batch_end) is slow compared to the batch update (0.147499). Check your callbacks.
+INFO - root - 2019-11-28 17:09:35,825 - Model 5 saved to model_path: /labs/models/experiment_0/model_5.h5
+INFO - root - 2019-11-28 17:09:35,826 - model.evaluate()
+INFO - root - 2019-11-28 17:09:35,826 - run_id: 5
+INFO - root - 2019-11-28 17:09:35,827 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:35,827 - steps: 23
+INFO - root - 2019-11-28 17:09:36,912 - model was loaded from/labs/models/experiment_0/model_5.h5
+INFO - root - 2019-11-28 17:09:36,913 - Model: "sequential_7"
+INFO - root - 2019-11-28 17:09:36,913 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,913 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:36,914 - =================================================================
+INFO - root - 2019-11-28 17:09:36,914 - conv2d_14 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:09:36,914 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,914 - max_pooling2d_14 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:36,915 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,915 - conv2d_15 (Conv2D)           (None, 112, 112, 16)      1168      
+INFO - root - 2019-11-28 17:09:36,915 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,915 - max_pooling2d_15 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:36,915 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,916 - conv2d_16 (Conv2D)           (None, 56, 56, 32)        4640      
+INFO - root - 2019-11-28 17:09:36,916 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,916 - max_pooling2d_16 (MaxPooling (None, 28, 28, 32)        0         
+INFO - root - 2019-11-28 17:09:36,916 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,916 - flatten_7 (Flatten)          (None, 25088)             0         
+INFO - root - 2019-11-28 17:09:36,917 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,917 - dropout_5 (Dropout)          (None, 25088)             0         
+INFO - root - 2019-11-28 17:09:36,917 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,917 - dense_17 (Dense)             (None, 32)                802848    
+INFO - root - 2019-11-28 17:09:36,917 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,918 - dense_18 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:09:36,918 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:36,918 - dense_19 (Dense)             (None, 2)                 130       
+INFO - root - 2019-11-28 17:09:36,918 - =================================================================
+INFO - root - 2019-11-28 17:09:36,920 - Total params: 811,122
+INFO - root - 2019-11-28 17:09:36,920 - Trainable params: 811,122
+INFO - root - 2019-11-28 17:09:36,920 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:36,920 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:38,050 - index: 0
+INFO - root - 2019-11-28 17:09:38,074 - index: 1
+INFO - root - 2019-11-28 17:09:38,095 - index: 2
+INFO - root - 2019-11-28 17:09:38,202 - model.build()
+INFO - root - 2019-11-28 17:09:38,202 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:38,203 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:38,203 - optimizer:adam
+INFO - root - 2019-11-28 17:09:38,248 - model.fit()
+INFO - root - 2019-11-28 17:09:38,248 - run_id: 6
+INFO - root - 2019-11-28 17:09:38,248 - epochs:2
+INFO - root - 2019-11-28 17:09:38,249 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:38,249 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:40,500 - Method (on_train_batch_end) is slow compared to the batch update (0.409995). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:40,537 - Method (on_train_batch_end) is slow compared to the batch update (0.205019). Check your callbacks.
+INFO - root - 2019-11-28 17:09:40,726 - Model 6 saved to model_path: /labs/models/experiment_0/model_6.h5
+INFO - root - 2019-11-28 17:09:40,726 - model.evaluate()
+INFO - root - 2019-11-28 17:09:40,726 - run_id: 6
+INFO - root - 2019-11-28 17:09:40,727 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:40,727 - steps: 23
+INFO - root - 2019-11-28 17:09:42,200 - model was loaded from/labs/models/experiment_0/model_6.h5
+INFO - root - 2019-11-28 17:09:42,200 - Model: "sequential_8"
+INFO - root - 2019-11-28 17:09:42,201 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,201 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:42,201 - =================================================================
+INFO - root - 2019-11-28 17:09:42,202 - conv2d_17 (Conv2D)           (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:09:42,202 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,203 - max_pooling2d_17 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:42,203 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,203 - conv2d_18 (Conv2D)           (None, 112, 112, 16)      3216      
+INFO - root - 2019-11-28 17:09:42,203 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,204 - max_pooling2d_18 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:42,204 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,204 - conv2d_19 (Conv2D)           (None, 56, 56, 32)        12832     
+INFO - root - 2019-11-28 17:09:42,205 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,205 - max_pooling2d_19 (MaxPooling (None, 28, 28, 32)        0         
+INFO - root - 2019-11-28 17:09:42,205 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,205 - flatten_8 (Flatten)          (None, 25088)             0         
+INFO - root - 2019-11-28 17:09:42,206 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,206 - dropout_6 (Dropout)          (None, 25088)             0         
+INFO - root - 2019-11-28 17:09:42,206 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,206 - dense_20 (Dense)             (None, 32)                802848    
+INFO - root - 2019-11-28 17:09:42,207 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,207 - dense_21 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:09:42,207 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,208 - dense_22 (Dense)             (None, 128)               8320      
+INFO - root - 2019-11-28 17:09:42,208 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:42,208 - dense_23 (Dense)             (None, 2)                 258       
+INFO - root - 2019-11-28 17:09:42,208 - =================================================================
+INFO - root - 2019-11-28 17:09:42,210 - Total params: 830,194
+INFO - root - 2019-11-28 17:09:42,210 - Trainable params: 830,194
+INFO - root - 2019-11-28 17:09:42,210 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:42,210 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:43,475 - index: 0
+INFO - root - 2019-11-28 17:09:43,499 - index: 1
+INFO - root - 2019-11-28 17:09:43,521 - index: 2
+INFO - root - 2019-11-28 17:09:43,634 - model.build()
+INFO - root - 2019-11-28 17:09:43,634 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:43,634 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:43,635 - optimizer:adam
+INFO - root - 2019-11-28 17:09:43,680 - model.fit()
+INFO - root - 2019-11-28 17:09:43,680 - run_id: 7
+INFO - root - 2019-11-28 17:09:43,681 - epochs:2
+INFO - root - 2019-11-28 17:09:43,681 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:43,681 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:45,906 - Method (on_train_batch_end) is slow compared to the batch update (0.397222). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:45,944 - Method (on_train_batch_end) is slow compared to the batch update (0.198643). Check your callbacks.
+INFO - root - 2019-11-28 17:09:46,133 - Model 7 saved to model_path: /labs/models/experiment_0/model_7.h5
+INFO - root - 2019-11-28 17:09:46,133 - model.evaluate()
+INFO - root - 2019-11-28 17:09:46,133 - run_id: 7
+INFO - root - 2019-11-28 17:09:46,134 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:46,134 - steps: 23
+INFO - root - 2019-11-28 17:09:47,332 - model was loaded from/labs/models/experiment_0/model_7.h5
+INFO - root - 2019-11-28 17:09:47,333 - Model: "sequential_9"
+INFO - root - 2019-11-28 17:09:47,333 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,333 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:47,333 - =================================================================
+INFO - root - 2019-11-28 17:09:47,334 - conv2d_20 (Conv2D)           (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:09:47,334 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,334 - max_pooling2d_20 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:47,334 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,334 - conv2d_21 (Conv2D)           (None, 112, 112, 16)      3216      
+INFO - root - 2019-11-28 17:09:47,335 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,335 - max_pooling2d_21 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:47,335 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,335 - conv2d_22 (Conv2D)           (None, 56, 56, 32)        12832     
+INFO - root - 2019-11-28 17:09:47,335 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,336 - max_pooling2d_22 (MaxPooling (None, 28, 28, 32)        0         
+INFO - root - 2019-11-28 17:09:47,336 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,336 - flatten_9 (Flatten)          (None, 25088)             0         
+INFO - root - 2019-11-28 17:09:47,336 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,336 - dropout_7 (Dropout)          (None, 25088)             0         
+INFO - root - 2019-11-28 17:09:47,336 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,337 - dense_24 (Dense)             (None, 32)                802848    
+INFO - root - 2019-11-28 17:09:47,337 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,337 - dense_25 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:09:47,337 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,338 - dense_26 (Dense)             (None, 128)               8320      
+INFO - root - 2019-11-28 17:09:47,338 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:47,338 - dense_27 (Dense)             (None, 2)                 258       
+INFO - root - 2019-11-28 17:09:47,338 - =================================================================
+INFO - root - 2019-11-28 17:09:47,340 - Total params: 830,194
+INFO - root - 2019-11-28 17:09:47,340 - Trainable params: 830,194
+INFO - root - 2019-11-28 17:09:47,340 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:47,340 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:48,616 - index: 0
+INFO - root - 2019-11-28 17:09:48,640 - index: 1
+INFO - root - 2019-11-28 17:09:48,747 - model.build()
+INFO - root - 2019-11-28 17:09:48,747 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:48,748 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:48,748 - optimizer:adam
+INFO - root - 2019-11-28 17:09:48,795 - model.fit()
+INFO - root - 2019-11-28 17:09:48,795 - run_id: 8
+INFO - root - 2019-11-28 17:09:48,795 - epochs:2
+INFO - root - 2019-11-28 17:09:48,795 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:48,796 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:51,112 - Method (on_train_batch_end) is slow compared to the batch update (0.289040). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:51,142 - Method (on_train_batch_end) is slow compared to the batch update (0.144543). Check your callbacks.
+INFO - root - 2019-11-28 17:09:51,396 - Model 8 saved to model_path: /labs/models/experiment_0/model_8.h5
+INFO - root - 2019-11-28 17:09:51,396 - model.evaluate()
+INFO - root - 2019-11-28 17:09:51,396 - run_id: 8
+INFO - root - 2019-11-28 17:09:51,397 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:51,397 - steps: 23
+INFO - root - 2019-11-28 17:09:52,462 - model was loaded from/labs/models/experiment_0/model_8.h5
+INFO - root - 2019-11-28 17:09:52,462 - Model: "sequential_10"
+INFO - root - 2019-11-28 17:09:52,462 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,463 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:52,463 - =================================================================
+INFO - root - 2019-11-28 17:09:52,464 - conv2d_23 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:09:52,464 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,464 - max_pooling2d_23 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:52,464 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,465 - conv2d_24 (Conv2D)           (None, 112, 112, 16)      1168      
+INFO - root - 2019-11-28 17:09:52,465 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,465 - max_pooling2d_24 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:52,466 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,466 - flatten_10 (Flatten)         (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:52,466 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,466 - dropout_8 (Dropout)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:52,466 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,467 - dense_28 (Dense)             (None, 32)                1605664   
+INFO - root - 2019-11-28 17:09:52,467 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,468 - dense_29 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:09:52,468 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,468 - dense_30 (Dense)             (None, 128)               8320      
+INFO - root - 2019-11-28 17:09:52,468 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:52,469 - dense_31 (Dense)             (None, 2)                 258       
+INFO - root - 2019-11-28 17:09:52,469 - =================================================================
+INFO - root - 2019-11-28 17:09:52,470 - Total params: 1,617,746
+INFO - root - 2019-11-28 17:09:52,470 - Trainable params: 1,617,746
+INFO - root - 2019-11-28 17:09:52,471 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:52,471 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:53,654 - index: 0
+INFO - root - 2019-11-28 17:09:53,677 - index: 1
+INFO - root - 2019-11-28 17:09:53,782 - model.build()
+INFO - root - 2019-11-28 17:09:53,783 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:53,783 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:53,783 - optimizer:adam
+INFO - root - 2019-11-28 17:09:53,827 - model.fit()
+INFO - root - 2019-11-28 17:09:53,827 - run_id: 9
+INFO - root - 2019-11-28 17:09:53,827 - epochs:2
+INFO - root - 2019-11-28 17:09:53,827 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:53,827 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:09:55,874 - Method (on_train_batch_end) is slow compared to the batch update (0.298371). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:09:55,902 - Method (on_train_batch_end) is slow compared to the batch update (0.149206). Check your callbacks.
+INFO - root - 2019-11-28 17:09:56,151 - Model 9 saved to model_path: /labs/models/experiment_0/model_9.h5
+INFO - root - 2019-11-28 17:09:56,152 - model.evaluate()
+INFO - root - 2019-11-28 17:09:56,152 - run_id: 9
+INFO - root - 2019-11-28 17:09:56,152 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:09:56,152 - steps: 23
+INFO - root - 2019-11-28 17:09:57,237 - model was loaded from/labs/models/experiment_0/model_9.h5
+INFO - root - 2019-11-28 17:09:57,238 - Model: "sequential_11"
+INFO - root - 2019-11-28 17:09:57,238 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,238 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:09:57,238 - =================================================================
+INFO - root - 2019-11-28 17:09:57,239 - conv2d_25 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:09:57,239 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,239 - max_pooling2d_25 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:09:57,239 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,240 - conv2d_26 (Conv2D)           (None, 112, 112, 16)      1168      
+INFO - root - 2019-11-28 17:09:57,240 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,240 - max_pooling2d_26 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:09:57,240 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,241 - flatten_11 (Flatten)         (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:57,241 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,241 - dropout_9 (Dropout)          (None, 50176)             0         
+INFO - root - 2019-11-28 17:09:57,242 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,242 - dense_32 (Dense)             (None, 32)                1605664   
+INFO - root - 2019-11-28 17:09:57,242 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,243 - dense_33 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:09:57,243 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,244 - dense_34 (Dense)             (None, 128)               8320      
+INFO - root - 2019-11-28 17:09:57,244 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:57,244 - dense_35 (Dense)             (None, 2)                 258       
+INFO - root - 2019-11-28 17:09:57,244 - =================================================================
+INFO - root - 2019-11-28 17:09:57,246 - Total params: 1,617,746
+INFO - root - 2019-11-28 17:09:57,246 - Trainable params: 1,617,746
+INFO - root - 2019-11-28 17:09:57,246 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:09:57,246 - _________________________________________________________________
+INFO - root - 2019-11-28 17:09:58,473 - index: 0
+INFO - root - 2019-11-28 17:09:58,496 - index: 1
+INFO - root - 2019-11-28 17:09:58,586 - model.build()
+INFO - root - 2019-11-28 17:09:58,586 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:09:58,586 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:09:58,586 - optimizer:adam
+INFO - root - 2019-11-28 17:09:58,631 - model.fit()
+INFO - root - 2019-11-28 17:09:58,631 - run_id: 10
+INFO - root - 2019-11-28 17:09:58,631 - epochs:2
+INFO - root - 2019-11-28 17:09:58,632 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:09:58,632 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:01,081 - Method (on_train_batch_end) is slow compared to the batch update (0.344403). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:01,112 - Method (on_train_batch_end) is slow compared to the batch update (0.172228). Check your callbacks.
+INFO - root - 2019-11-28 17:10:01,342 - Model 10 saved to model_path: /labs/models/experiment_0/model_10.h5
+INFO - root - 2019-11-28 17:10:01,342 - model.evaluate()
+INFO - root - 2019-11-28 17:10:01,342 - run_id: 10
+INFO - root - 2019-11-28 17:10:01,343 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:01,343 - steps: 23
+INFO - root - 2019-11-28 17:10:02,401 - model was loaded from/labs/models/experiment_0/model_10.h5
+INFO - root - 2019-11-28 17:10:02,401 - Model: "sequential_12"
+INFO - root - 2019-11-28 17:10:02,401 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,401 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:02,402 - =================================================================
+INFO - root - 2019-11-28 17:10:02,402 - conv2d_27 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:10:02,402 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,402 - max_pooling2d_27 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:02,403 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,403 - conv2d_28 (Conv2D)           (None, 112, 112, 16)      1168      
+INFO - root - 2019-11-28 17:10:02,403 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,404 - max_pooling2d_28 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:10:02,404 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,404 - flatten_12 (Flatten)         (None, 50176)             0         
+INFO - root - 2019-11-28 17:10:02,404 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,405 - dropout_10 (Dropout)         (None, 50176)             0         
+INFO - root - 2019-11-28 17:10:02,405 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,405 - dense_36 (Dense)             (None, 32)                1605664   
+INFO - root - 2019-11-28 17:10:02,405 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,406 - dense_37 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:10:02,406 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:02,406 - dense_38 (Dense)             (None, 2)                 130       
+INFO - root - 2019-11-28 17:10:02,407 - =================================================================
+INFO - root - 2019-11-28 17:10:02,408 - Total params: 1,609,298
+INFO - root - 2019-11-28 17:10:02,408 - Trainable params: 1,609,298
+INFO - root - 2019-11-28 17:10:02,408 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:02,408 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:03,630 - index: 0
+INFO - root - 2019-11-28 17:10:03,652 - index: 1
+INFO - root - 2019-11-28 17:10:03,740 - model.build()
+INFO - root - 2019-11-28 17:10:03,740 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:03,740 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:03,741 - optimizer:adam
+INFO - root - 2019-11-28 17:10:03,786 - model.fit()
+INFO - root - 2019-11-28 17:10:03,786 - run_id: 11
+INFO - root - 2019-11-28 17:10:03,786 - epochs:2
+INFO - root - 2019-11-28 17:10:03,786 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:03,786 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:05,899 - Method (on_train_batch_end) is slow compared to the batch update (0.333672). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:05,929 - Method (on_train_batch_end) is slow compared to the batch update (0.166858). Check your callbacks.
+INFO - root - 2019-11-28 17:10:06,157 - Model 11 saved to model_path: /labs/models/experiment_0/model_11.h5
+INFO - root - 2019-11-28 17:10:06,157 - model.evaluate()
+INFO - root - 2019-11-28 17:10:06,157 - run_id: 11
+INFO - root - 2019-11-28 17:10:06,158 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:06,158 - steps: 23
+INFO - root - 2019-11-28 17:10:07,225 - model was loaded from/labs/models/experiment_0/model_11.h5
+INFO - root - 2019-11-28 17:10:07,226 - Model: "sequential_13"
+INFO - root - 2019-11-28 17:10:07,226 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,226 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:07,226 - =================================================================
+INFO - root - 2019-11-28 17:10:07,227 - conv2d_29 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:10:07,227 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,228 - max_pooling2d_29 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:07,228 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,228 - conv2d_30 (Conv2D)           (None, 112, 112, 16)      1168      
+INFO - root - 2019-11-28 17:10:07,228 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,229 - max_pooling2d_30 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:10:07,229 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,229 - flatten_13 (Flatten)         (None, 50176)             0         
+INFO - root - 2019-11-28 17:10:07,229 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,230 - dropout_11 (Dropout)         (None, 50176)             0         
+INFO - root - 2019-11-28 17:10:07,230 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,230 - dense_39 (Dense)             (None, 32)                1605664   
+INFO - root - 2019-11-28 17:10:07,230 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,231 - dense_40 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:10:07,231 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:07,231 - dense_41 (Dense)             (None, 2)                 130       
+INFO - root - 2019-11-28 17:10:07,232 - =================================================================
+INFO - root - 2019-11-28 17:10:07,233 - Total params: 1,609,298
+INFO - root - 2019-11-28 17:10:07,233 - Trainable params: 1,609,298
+INFO - root - 2019-11-28 17:10:07,233 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:07,233 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:08,477 - index: 0
+INFO - root - 2019-11-28 17:10:08,499 - index: 1
+INFO - root - 2019-11-28 17:10:08,521 - index: 2
+INFO - root - 2019-11-28 17:10:08,611 - model.build()
+INFO - root - 2019-11-28 17:10:08,611 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:08,612 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:08,612 - optimizer:adam
+INFO - root - 2019-11-28 17:10:08,655 - model.fit()
+INFO - root - 2019-11-28 17:10:08,655 - run_id: 12
+INFO - root - 2019-11-28 17:10:08,656 - epochs:2
+INFO - root - 2019-11-28 17:10:08,656 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:08,656 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:10,895 - Method (on_train_batch_end) is slow compared to the batch update (0.446680). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:10,933 - Method (on_train_batch_end) is slow compared to the batch update (0.223362). Check your callbacks.
+INFO - root - 2019-11-28 17:10:11,116 - Model 12 saved to model_path: /labs/models/experiment_0/model_12.h5
+INFO - root - 2019-11-28 17:10:11,117 - model.evaluate()
+INFO - root - 2019-11-28 17:10:11,117 - run_id: 12
+INFO - root - 2019-11-28 17:10:11,117 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:11,117 - steps: 23
+INFO - root - 2019-11-28 17:10:12,569 - model was loaded from/labs/models/experiment_0/model_12.h5
+INFO - root - 2019-11-28 17:10:12,569 - Model: "sequential_14"
+INFO - root - 2019-11-28 17:10:12,569 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,570 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:12,570 - =================================================================
+INFO - root - 2019-11-28 17:10:12,571 - conv2d_31 (Conv2D)           (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:10:12,571 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,571 - max_pooling2d_31 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:12,571 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,572 - conv2d_32 (Conv2D)           (None, 112, 112, 16)      3216      
+INFO - root - 2019-11-28 17:10:12,572 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,572 - max_pooling2d_32 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:10:12,572 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,573 - conv2d_33 (Conv2D)           (None, 56, 56, 32)        12832     
+INFO - root - 2019-11-28 17:10:12,573 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,573 - max_pooling2d_33 (MaxPooling (None, 28, 28, 32)        0         
+INFO - root - 2019-11-28 17:10:12,574 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,574 - flatten_14 (Flatten)         (None, 25088)             0         
+INFO - root - 2019-11-28 17:10:12,574 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,575 - dropout_12 (Dropout)         (None, 25088)             0         
+INFO - root - 2019-11-28 17:10:12,575 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,575 - dense_42 (Dense)             (None, 32)                802848    
+INFO - root - 2019-11-28 17:10:12,575 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,576 - dense_43 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:10:12,576 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:12,577 - dense_44 (Dense)             (None, 2)                 130       
+INFO - root - 2019-11-28 17:10:12,577 - =================================================================
+INFO - root - 2019-11-28 17:10:12,578 - Total params: 821,746
+INFO - root - 2019-11-28 17:10:12,578 - Trainable params: 821,746
+INFO - root - 2019-11-28 17:10:12,578 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:12,579 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:13,969 - index: 0
+INFO - root - 2019-11-28 17:10:13,993 - index: 1
+INFO - root - 2019-11-28 17:10:14,014 - index: 2
+INFO - root - 2019-11-28 17:10:14,106 - model.build()
+INFO - root - 2019-11-28 17:10:14,107 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:14,107 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:14,107 - optimizer:adam
+INFO - root - 2019-11-28 17:10:14,152 - model.fit()
+INFO - root - 2019-11-28 17:10:14,152 - run_id: 13
+INFO - root - 2019-11-28 17:10:14,152 - epochs:2
+INFO - root - 2019-11-28 17:10:14,153 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:14,153 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:16,458 - Method (on_train_batch_end) is slow compared to the batch update (0.448905). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:16,494 - Method (on_train_batch_end) is slow compared to the batch update (0.224478). Check your callbacks.
+INFO - root - 2019-11-28 17:10:16,682 - Model 13 saved to model_path: /labs/models/experiment_0/model_13.h5
+INFO - root - 2019-11-28 17:10:16,682 - model.evaluate()
+INFO - root - 2019-11-28 17:10:16,682 - run_id: 13
+INFO - root - 2019-11-28 17:10:16,683 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:16,683 - steps: 23
+INFO - root - 2019-11-28 17:10:17,808 - model was loaded from/labs/models/experiment_0/model_13.h5
+INFO - root - 2019-11-28 17:10:17,808 - Model: "sequential_15"
+INFO - root - 2019-11-28 17:10:17,809 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,809 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:17,809 - =================================================================
+INFO - root - 2019-11-28 17:10:17,810 - conv2d_34 (Conv2D)           (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:10:17,810 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,810 - max_pooling2d_34 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:17,811 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,811 - conv2d_35 (Conv2D)           (None, 112, 112, 16)      3216      
+INFO - root - 2019-11-28 17:10:17,811 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,812 - max_pooling2d_35 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:10:17,812 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,812 - conv2d_36 (Conv2D)           (None, 56, 56, 32)        12832     
+INFO - root - 2019-11-28 17:10:17,812 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,813 - max_pooling2d_36 (MaxPooling (None, 28, 28, 32)        0         
+INFO - root - 2019-11-28 17:10:17,813 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,813 - flatten_15 (Flatten)         (None, 25088)             0         
+INFO - root - 2019-11-28 17:10:17,813 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,814 - dropout_13 (Dropout)         (None, 25088)             0         
+INFO - root - 2019-11-28 17:10:17,814 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,814 - dense_45 (Dense)             (None, 32)                802848    
+INFO - root - 2019-11-28 17:10:17,815 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,815 - dense_46 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:10:17,815 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:17,816 - dense_47 (Dense)             (None, 2)                 130       
+INFO - root - 2019-11-28 17:10:17,816 - =================================================================
+INFO - root - 2019-11-28 17:10:17,817 - Total params: 821,746
+INFO - root - 2019-11-28 17:10:17,817 - Trainable params: 821,746
+INFO - root - 2019-11-28 17:10:17,817 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:17,818 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:19,218 - index: 0
+INFO - root - 2019-11-28 17:10:19,296 - model.build()
+INFO - root - 2019-11-28 17:10:19,297 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:19,297 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:19,297 - optimizer:adam
+INFO - root - 2019-11-28 17:10:19,340 - model.fit()
+INFO - root - 2019-11-28 17:10:19,340 - run_id: 14
+INFO - root - 2019-11-28 17:10:19,341 - epochs:2
+INFO - root - 2019-11-28 17:10:19,341 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:19,341 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:21,452 - Method (on_train_batch_end) is slow compared to the batch update (0.300081). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:21,477 - Method (on_train_batch_end) is slow compared to the batch update (0.150064). Check your callbacks.
+INFO - root - 2019-11-28 17:10:21,844 - Model 14 saved to model_path: /labs/models/experiment_0/model_14.h5
+INFO - root - 2019-11-28 17:10:21,844 - model.evaluate()
+INFO - root - 2019-11-28 17:10:21,844 - run_id: 14
+INFO - root - 2019-11-28 17:10:21,845 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:21,845 - steps: 23
+INFO - root - 2019-11-28 17:10:22,819 - model was loaded from/labs/models/experiment_0/model_14.h5
+INFO - root - 2019-11-28 17:10:22,819 - Model: "sequential_16"
+INFO - root - 2019-11-28 17:10:22,820 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:22,820 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:22,820 - =================================================================
+INFO - root - 2019-11-28 17:10:22,821 - conv2d_37 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:10:22,821 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:22,821 - max_pooling2d_37 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:22,821 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:22,821 - flatten_16 (Flatten)         (None, 100352)            0         
+INFO - root - 2019-11-28 17:10:22,821 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:22,822 - dropout_14 (Dropout)         (None, 100352)            0         
+INFO - root - 2019-11-28 17:10:22,822 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:22,822 - dense_48 (Dense)             (None, 32)                3211296   
+INFO - root - 2019-11-28 17:10:22,822 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:22,823 - dense_49 (Dense)             (None, 2)                 66        
+INFO - root - 2019-11-28 17:10:22,823 - =================================================================
+INFO - root - 2019-11-28 17:10:22,824 - Total params: 3,211,586
+INFO - root - 2019-11-28 17:10:22,824 - Trainable params: 3,211,586
+INFO - root - 2019-11-28 17:10:22,824 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:22,824 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:24,111 - index: 0
+INFO - root - 2019-11-28 17:10:24,188 - model.build()
+INFO - root - 2019-11-28 17:10:24,188 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:24,188 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:24,189 - optimizer:adam
+INFO - root - 2019-11-28 17:10:24,230 - model.fit()
+INFO - root - 2019-11-28 17:10:24,231 - run_id: 15
+INFO - root - 2019-11-28 17:10:24,231 - epochs:2
+INFO - root - 2019-11-28 17:10:24,231 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:24,231 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:26,724 - Method (on_train_batch_end) is slow compared to the batch update (0.293315). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:26,748 - Method (on_train_batch_end) is slow compared to the batch update (0.146684). Check your callbacks.
+INFO - root - 2019-11-28 17:10:27,114 - Model 15 saved to model_path: /labs/models/experiment_0/model_15.h5
+INFO - root - 2019-11-28 17:10:27,114 - model.evaluate()
+INFO - root - 2019-11-28 17:10:27,114 - run_id: 15
+INFO - root - 2019-11-28 17:10:27,115 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:27,115 - steps: 23
+INFO - root - 2019-11-28 17:10:28,084 - model was loaded from/labs/models/experiment_0/model_15.h5
+INFO - root - 2019-11-28 17:10:28,084 - Model: "sequential_17"
+INFO - root - 2019-11-28 17:10:28,085 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:28,085 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:28,085 - =================================================================
+INFO - root - 2019-11-28 17:10:28,086 - conv2d_38 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:10:28,086 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:28,087 - max_pooling2d_38 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:28,087 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:28,087 - flatten_17 (Flatten)         (None, 100352)            0         
+INFO - root - 2019-11-28 17:10:28,088 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:28,088 - dropout_15 (Dropout)         (None, 100352)            0         
+INFO - root - 2019-11-28 17:10:28,088 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:28,089 - dense_50 (Dense)             (None, 32)                3211296   
+INFO - root - 2019-11-28 17:10:28,089 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:28,090 - dense_51 (Dense)             (None, 2)                 66        
+INFO - root - 2019-11-28 17:10:28,090 - =================================================================
+INFO - root - 2019-11-28 17:10:28,091 - Total params: 3,211,586
+INFO - root - 2019-11-28 17:10:28,091 - Trainable params: 3,211,586
+INFO - root - 2019-11-28 17:10:28,092 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:28,092 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:29,378 - index: 0
+INFO - root - 2019-11-28 17:10:29,400 - index: 1
+INFO - root - 2019-11-28 17:10:29,421 - index: 2
+INFO - root - 2019-11-28 17:10:29,529 - model.build()
+INFO - root - 2019-11-28 17:10:29,529 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:29,530 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:29,530 - optimizer:adam
+INFO - root - 2019-11-28 17:10:29,573 - model.fit()
+INFO - root - 2019-11-28 17:10:29,573 - run_id: 16
+INFO - root - 2019-11-28 17:10:29,574 - epochs:2
+INFO - root - 2019-11-28 17:10:29,574 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:29,574 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:31,951 - Method (on_train_batch_end) is slow compared to the batch update (0.412069). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:31,987 - Method (on_train_batch_end) is slow compared to the batch update (0.206059). Check your callbacks.
+INFO - root - 2019-11-28 17:10:32,182 - Model 16 saved to model_path: /labs/models/experiment_0/model_16.h5
+INFO - root - 2019-11-28 17:10:32,183 - model.evaluate()
+INFO - root - 2019-11-28 17:10:32,183 - run_id: 16
+INFO - root - 2019-11-28 17:10:32,183 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:32,184 - steps: 23
+INFO - root - 2019-11-28 17:10:33,400 - model was loaded from/labs/models/experiment_0/model_16.h5
+INFO - root - 2019-11-28 17:10:33,400 - Model: "sequential_18"
+INFO - root - 2019-11-28 17:10:33,401 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,401 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:33,401 - =================================================================
+INFO - root - 2019-11-28 17:10:33,402 - conv2d_39 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:10:33,402 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,402 - max_pooling2d_39 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:33,402 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,403 - conv2d_40 (Conv2D)           (None, 112, 112, 16)      1168      
+INFO - root - 2019-11-28 17:10:33,403 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,403 - max_pooling2d_40 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:10:33,403 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,404 - conv2d_41 (Conv2D)           (None, 56, 56, 32)        4640      
+INFO - root - 2019-11-28 17:10:33,404 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,404 - max_pooling2d_41 (MaxPooling (None, 28, 28, 32)        0         
+INFO - root - 2019-11-28 17:10:33,405 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,405 - flatten_18 (Flatten)         (None, 25088)             0         
+INFO - root - 2019-11-28 17:10:33,405 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,405 - dropout_16 (Dropout)         (None, 25088)             0         
+INFO - root - 2019-11-28 17:10:33,406 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,406 - dense_52 (Dense)             (None, 32)                802848    
+INFO - root - 2019-11-28 17:10:33,406 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,407 - dense_53 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:10:33,407 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,407 - dense_54 (Dense)             (None, 128)               8320      
+INFO - root - 2019-11-28 17:10:33,407 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:33,408 - dense_55 (Dense)             (None, 2)                 258       
+INFO - root - 2019-11-28 17:10:33,408 - =================================================================
+INFO - root - 2019-11-28 17:10:33,409 - Total params: 819,570
+INFO - root - 2019-11-28 17:10:33,410 - Trainable params: 819,570
+INFO - root - 2019-11-28 17:10:33,410 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:33,410 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:34,823 - index: 0
+INFO - root - 2019-11-28 17:10:34,849 - index: 1
+INFO - root - 2019-11-28 17:10:34,869 - index: 2
+INFO - root - 2019-11-28 17:10:34,979 - model.build()
+INFO - root - 2019-11-28 17:10:34,979 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:34,980 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:34,980 - optimizer:adam
+INFO - root - 2019-11-28 17:10:35,025 - model.fit()
+INFO - root - 2019-11-28 17:10:35,025 - run_id: 17
+INFO - root - 2019-11-28 17:10:35,026 - epochs:2
+INFO - root - 2019-11-28 17:10:35,026 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:35,026 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:37,456 - Method (on_train_batch_end) is slow compared to the batch update (0.431517). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:37,492 - Method (on_train_batch_end) is slow compared to the batch update (0.215786). Check your callbacks.
+INFO - root - 2019-11-28 17:10:37,684 - Model 17 saved to model_path: /labs/models/experiment_0/model_17.h5
+INFO - root - 2019-11-28 17:10:37,684 - model.evaluate()
+INFO - root - 2019-11-28 17:10:37,684 - run_id: 17
+INFO - root - 2019-11-28 17:10:37,685 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:37,685 - steps: 23
+INFO - root - 2019-11-28 17:10:38,923 - model was loaded from/labs/models/experiment_0/model_17.h5
+INFO - root - 2019-11-28 17:10:38,924 - Model: "sequential_19"
+INFO - root - 2019-11-28 17:10:38,924 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,924 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:38,924 - =================================================================
+INFO - root - 2019-11-28 17:10:38,925 - conv2d_42 (Conv2D)           (None, 224, 224, 8)       224       
+INFO - root - 2019-11-28 17:10:38,925 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,925 - max_pooling2d_42 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:38,926 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,926 - conv2d_43 (Conv2D)           (None, 112, 112, 16)      1168      
+INFO - root - 2019-11-28 17:10:38,926 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,927 - max_pooling2d_43 (MaxPooling (None, 56, 56, 16)        0         
+INFO - root - 2019-11-28 17:10:38,927 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,927 - conv2d_44 (Conv2D)           (None, 56, 56, 32)        4640      
+INFO - root - 2019-11-28 17:10:38,927 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,927 - max_pooling2d_44 (MaxPooling (None, 28, 28, 32)        0         
+INFO - root - 2019-11-28 17:10:38,928 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,928 - flatten_19 (Flatten)         (None, 25088)             0         
+INFO - root - 2019-11-28 17:10:38,928 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,928 - dropout_17 (Dropout)         (None, 25088)             0         
+INFO - root - 2019-11-28 17:10:38,928 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,929 - dense_56 (Dense)             (None, 32)                802848    
+INFO - root - 2019-11-28 17:10:38,929 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,929 - dense_57 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:10:38,929 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,929 - dense_58 (Dense)             (None, 128)               8320      
+INFO - root - 2019-11-28 17:10:38,930 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:38,930 - dense_59 (Dense)             (None, 2)                 258       
+INFO - root - 2019-11-28 17:10:38,930 - =================================================================
+INFO - root - 2019-11-28 17:10:38,931 - Total params: 819,570
+INFO - root - 2019-11-28 17:10:38,931 - Trainable params: 819,570
+INFO - root - 2019-11-28 17:10:38,932 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:38,932 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:40,396 - index: 0
+INFO - root - 2019-11-28 17:10:40,500 - model.build()
+INFO - root - 2019-11-28 17:10:40,501 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:40,501 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:40,501 - optimizer:adam
+INFO - root - 2019-11-28 17:10:40,543 - model.fit()
+INFO - root - 2019-11-28 17:10:40,544 - run_id: 18
+INFO - root - 2019-11-28 17:10:40,544 - epochs:2
+INFO - root - 2019-11-28 17:10:40,544 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:40,544 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:43,577 - Method (on_train_batch_end) is slow compared to the batch update (0.521521). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:43,606 - Method (on_train_batch_end) is slow compared to the batch update (0.260793). Check your callbacks.
+INFO - root - 2019-11-28 17:10:43,961 - Model 18 saved to model_path: /labs/models/experiment_0/model_18.h5
+INFO - root - 2019-11-28 17:10:43,961 - model.evaluate()
+INFO - root - 2019-11-28 17:10:43,962 - run_id: 18
+INFO - root - 2019-11-28 17:10:43,962 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:43,962 - steps: 23
+INFO - root - 2019-11-28 17:10:45,098 - model was loaded from/labs/models/experiment_0/model_18.h5
+INFO - root - 2019-11-28 17:10:45,099 - Model: "sequential_20"
+INFO - root - 2019-11-28 17:10:45,099 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:45,099 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:45,099 - =================================================================
+INFO - root - 2019-11-28 17:10:45,100 - conv2d_45 (Conv2D)           (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:10:45,100 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:45,100 - max_pooling2d_45 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:45,100 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:45,101 - flatten_20 (Flatten)         (None, 100352)            0         
+INFO - root - 2019-11-28 17:10:45,101 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:45,101 - dropout_18 (Dropout)         (None, 100352)            0         
+INFO - root - 2019-11-28 17:10:45,101 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:45,102 - dense_60 (Dense)             (None, 32)                3211296   
+INFO - root - 2019-11-28 17:10:45,102 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:45,103 - dense_61 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:10:45,103 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:45,103 - dense_62 (Dense)             (None, 128)               8320      
+INFO - root - 2019-11-28 17:10:45,103 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:45,104 - dense_63 (Dense)             (None, 2)                 258       
+INFO - root - 2019-11-28 17:10:45,104 - =================================================================
+INFO - root - 2019-11-28 17:10:45,105 - Total params: 3,222,594
+INFO - root - 2019-11-28 17:10:45,105 - Trainable params: 3,222,594
+INFO - root - 2019-11-28 17:10:45,106 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:45,106 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:46,548 - index: 0
+INFO - root - 2019-11-28 17:10:46,653 - model.build()
+INFO - root - 2019-11-28 17:10:46,653 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:10:46,654 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:10:46,654 - optimizer:adam
+INFO - root - 2019-11-28 17:10:46,696 - model.fit()
+INFO - root - 2019-11-28 17:10:46,696 - run_id: 19
+INFO - root - 2019-11-28 17:10:46,697 - epochs:2
+INFO - root - 2019-11-28 17:10:46,697 - steps_per_epoch:2
+INFO - root - 2019-11-28 17:10:46,697 - validation_steps:1
+WARNING - tensorflow - 2019-11-28 17:10:49,370 - Method (on_train_batch_end) is slow compared to the batch update (0.528922). Check your callbacks.
+WARNING - tensorflow - 2019-11-28 17:10:49,399 - Method (on_train_batch_end) is slow compared to the batch update (0.264485). Check your callbacks.
+INFO - root - 2019-11-28 17:10:49,760 - Model 19 saved to model_path: /labs/models/experiment_0/model_19.h5
+INFO - root - 2019-11-28 17:10:49,760 - model.evaluate()
+INFO - root - 2019-11-28 17:10:49,761 - run_id: 19
+INFO - root - 2019-11-28 17:10:49,761 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+INFO - root - 2019-11-28 17:10:49,762 - steps: 23
+INFO - root - 2019-11-28 17:10:50,907 - model was loaded from/labs/models/experiment_0/model_19.h5
+INFO - root - 2019-11-28 17:10:50,908 - Model: "sequential_21"
+INFO - root - 2019-11-28 17:10:50,908 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:50,908 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 17:10:50,908 - =================================================================
+INFO - root - 2019-11-28 17:10:50,909 - conv2d_46 (Conv2D)           (None, 224, 224, 8)       608       
+INFO - root - 2019-11-28 17:10:50,909 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:50,910 - max_pooling2d_46 (MaxPooling (None, 112, 112, 8)       0         
+INFO - root - 2019-11-28 17:10:50,910 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:50,910 - flatten_21 (Flatten)         (None, 100352)            0         
+INFO - root - 2019-11-28 17:10:50,910 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:50,910 - dropout_19 (Dropout)         (None, 100352)            0         
+INFO - root - 2019-11-28 17:10:50,911 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:50,911 - dense_64 (Dense)             (None, 32)                3211296   
+INFO - root - 2019-11-28 17:10:50,911 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:50,912 - dense_65 (Dense)             (None, 64)                2112      
+INFO - root - 2019-11-28 17:10:50,912 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:50,912 - dense_66 (Dense)             (None, 128)               8320      
+INFO - root - 2019-11-28 17:10:50,912 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:50,912 - dense_67 (Dense)             (None, 2)                 258       
+INFO - root - 2019-11-28 17:10:50,913 - =================================================================
+INFO - root - 2019-11-28 17:10:50,914 - Total params: 3,222,594
+INFO - root - 2019-11-28 17:10:50,914 - Trainable params: 3,222,594
+INFO - root - 2019-11-28 17:10:50,914 - Non-trainable params: 0
+INFO - root - 2019-11-28 17:10:50,914 - _________________________________________________________________
+INFO - root - 2019-11-28 17:10:52,394 - LOGGING END. Data was saved to logs_dir: /labs/logs/experiment_0, models_dir: /labs/models/experiment_0
