@@ -4,7 +4,7 @@ from __future__ import print_function
 
 import logging
 
-from src.config import get_experiment_1_2_config
+from src.config import get_experiment_1_config
 from src.data.load_dataset import ImageDataLoader
 from src.logger import Logger
 from src.models.keras_models import get_cnn
@@ -12,7 +12,7 @@ from src.models.simple_trainer import Trainer
 
 
 def main():
-    config = get_experiment_1_2_config()
+    config = get_experiment_1_config()
     logger = Logger(config)
     logger.start()
     loader = ImageDataLoader(config)

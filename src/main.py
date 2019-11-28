@@ -4,17 +4,17 @@ from __future__ import print_function
 
 import logging
 
-from src import tunning
-from src.config import get_experiment_0_config, get_experiment_1_2_config, get_experiment_4_config, \
-    get_experiment_3_config
+from src.config import get_experiment_1_config, get_experiment_2_config, get_experiment_3_config, \
+    get_experiment_4_config
 from src.data.load_dataset import ImageDataLoader
 from src.logger import Logger
-from src.models.keras_models import get_cnn, get_cnn_with, get_resnet50
+from src.models.keras_models import get_cnn, get_resnet50
 from src.models.simple_trainer import Trainer
 from src.tunning import HyperTrainer
 
+
 def experiment_1():
-    config = get_experiment_1_2_config()
+    config = get_experiment_1_config()
     logger = Logger(config)
     logger.start()
     loader = ImageDataLoader(config)
@@ -31,7 +31,7 @@ def experiment_1():
 
 
 def experiment_2():
-    config = get_experiment_1_2_config()
+    config = get_experiment_2_config()
     logger = Logger(config)
     logger.start()
     loader = ImageDataLoader(config)
