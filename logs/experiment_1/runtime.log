@@ -1,0 +1,29 @@
+INFO - root - 2019-11-28 17:23:09,101 - LOGGING START. Data are saving to logs_dir: /labs/logs/experiment_1, models_dir: /labs/models/experiment_1
+INFO - root - 2019-11-28 17:23:09,101 - Greyscale: False
+INFO - root - 2019-11-28 17:23:09,390 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-28 17:23:09,416 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-28 17:23:09,416 - Number of channels: 3
+INFO - root - 2019-11-28 17:23:09,417 - labels: [('R', 0), ('O', 1)]
+DEBUG - root - 2019-11-28 17:23:09,417 - self.name_by_number: {0: 'R', 1: 'O'}
+DEBUG - root - 2019-11-28 17:23:09,417 - self.num_by_name: {'R': 0, 'O': 1}
+DEBUG - root - 2019-11-28 17:23:12,515 - file_path: Tensor("args_0:0", shape=(), dtype=string)
+DEBUG - root - 2019-11-28 17:23:15,380 - label: Tensor("Equal:0", shape=(2,), dtype=bool)
+DEBUG - root - 2019-11-28 17:23:15,578 - file_path: Tensor("args_0:0", shape=(), dtype=string)
+DEBUG - root - 2019-11-28 17:23:15,639 - label: Tensor("Equal:0", shape=(2,), dtype=bool)
+INFO - root - 2019-11-28 17:23:15,668 - input_shape:(224, 224, 3)
+INFO - root - 2019-11-28 17:23:15,668 - number_of_classes:2
+INFO - root - 2019-11-28 17:23:15,668 - steps_per_epoch: 88
+INFO - root - 2019-11-28 17:23:15,668 - total_num_of_samples: 22564
+INFO - root - 2019-11-28 17:23:15,669 - batch_size: 256
+INFO - root - 2019-11-28 17:23:15,669 - steps_per_epoch: 9
+INFO - root - 2019-11-28 17:23:15,669 - total_num_of_samples: 2513
+INFO - root - 2019-11-28 17:23:15,669 - batch_size: 256
+INFO - root - 2019-11-28 17:23:22,135 - model.compile()
+INFO - root - 2019-11-28 17:23:22,135 - loss:categorical_crossentropy
+INFO - root - 2019-11-28 17:23:22,136 - metrics:['accuracy']
+INFO - root - 2019-11-28 17:23:22,136 - optimizer:adam
+INFO - root - 2019-11-28 17:23:22,219 - model.fit()
+INFO - root - 2019-11-28 17:23:22,219 - run_id: resnet50_model
+INFO - root - 2019-11-28 17:23:22,219 - epochs:7
+INFO - root - 2019-11-28 17:23:22,219 - steps_per_epoch:88
+INFO - root - 2019-11-28 17:23:22,220 - validation_steps:9
