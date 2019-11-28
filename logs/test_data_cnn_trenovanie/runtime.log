@@ -1,0 +1,53 @@
+INFO - root - 2019-11-28 09:09:28,266 - LOGGING START. Data are saving to logs_dir: /labs/logs/test_data_cnn_trenovanie, models_dir: /labs/models/test_data_cnn_trenovanie
+INFO - root - 2019-11-28 09:09:29,656 - /labs/data/raw/test_dataset/TRAIN image_count: /labs/data/raw/test_dataset/TRAIN
+INFO - root - 2019-11-28 09:09:29,742 - /labs/data/raw/test_dataset/TEST image_count: /labs/data/raw/test_dataset/TEST
+INFO - root - 2019-11-28 09:09:29,744 - model.compile()
+INFO - root - 2019-11-28 09:09:29,745 - loss:sparse_categorical_crossentropy
+INFO - root - 2019-11-28 09:09:29,745 - metrics:['accuracy']
+INFO - root - 2019-11-28 09:09:29,745 - optimizer:<tensorflow.python.keras.optimizer_v2.adam.Adam object at 0x7f83ff4d5128>
+INFO - root - 2019-11-28 09:09:29,755 - learning_rate:<tf.Variable 'learning_rate:0' shape=() dtype=float32, numpy=0.001>
+INFO - root - 2019-11-28 09:09:29,807 - model.fit()
+INFO - root - 2019-11-28 09:09:29,808 - run_id: 20191128_090928
+INFO - root - 2019-11-28 09:09:29,808 - epochs:10
+INFO - root - 2019-11-28 09:09:29,808 - steps_per_epoch: 42
+INFO - root - 2019-11-28 09:09:29,808 - total_num_of_samples: 42
+INFO - root - 2019-11-28 09:09:29,808 - batch_size: 1
+INFO - root - 2019-11-28 09:09:29,809 - steps_per_epoch: 23
+INFO - root - 2019-11-28 09:09:29,809 - total_num_of_samples: 23
+INFO - root - 2019-11-28 09:09:29,809 - batch_size: 1
+INFO - root - 2019-11-28 09:09:29,809 - steps_per_epoch:42
+INFO - root - 2019-11-28 09:09:29,809 - validation_steps:23
+WARNING - tensorflow - 2019-11-28 09:09:31,888 - Method (on_train_batch_end) is slow compared to the batch update (0.104681). Check your callbacks.
+INFO - root - 2019-11-28 09:10:02,993 - Model 20191128_090928 saved to model_path: /labs/models/test_data_cnn_trenovanie/model_20191128_090928.h5
+INFO - root - 2019-11-28 09:10:02,994 - model.evaluate()
+INFO - root - 2019-11-28 09:10:02,994 - run_id: 20191128_090928
+INFO - root - 2019-11-28 09:10:02,995 - test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 1), (None,)), types: (tf.float32, tf.int32)>
+INFO - root - 2019-11-28 09:10:02,995 - steps: 23
+INFO - root - 2019-11-28 09:10:04,268 - model was loaded from/labs/models/test_data_cnn_trenovanie/model_20191128_090928.h5
+INFO - root - 2019-11-28 09:10:04,268 - Model: "sequential"
+INFO - root - 2019-11-28 09:10:04,268 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,269 - Layer (type)                 Output Shape              Param #   
+INFO - root - 2019-11-28 09:10:04,269 - =================================================================
+INFO - root - 2019-11-28 09:10:04,270 - conv2d (Conv2D)              (None, 224, 224, 16)      160       
+INFO - root - 2019-11-28 09:10:04,270 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,271 - max_pooling2d (MaxPooling2D) (None, 112, 112, 16)      0         
+INFO - root - 2019-11-28 09:10:04,271 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,272 - conv2d_1 (Conv2D)            (None, 112, 112, 32)      4640      
+INFO - root - 2019-11-28 09:10:04,272 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,272 - max_pooling2d_1 (MaxPooling2 (None, 56, 56, 32)        0         
+INFO - root - 2019-11-28 09:10:04,273 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,273 - conv2d_2 (Conv2D)            (None, 56, 56, 64)        18496     
+INFO - root - 2019-11-28 09:10:04,273 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,274 - max_pooling2d_2 (MaxPooling2 (None, 28, 28, 64)        0         
+INFO - root - 2019-11-28 09:10:04,274 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,275 - flatten (Flatten)            (None, 50176)             0         
+INFO - root - 2019-11-28 09:10:04,275 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,275 - dense (Dense)                (None, 500)               25088500  
+INFO - root - 2019-11-28 09:10:04,276 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,276 - dense_1 (Dense)              (None, 2)                 1002      
+INFO - root - 2019-11-28 09:10:04,276 - =================================================================
+INFO - root - 2019-11-28 09:10:04,278 - Total params: 25,112,798
+INFO - root - 2019-11-28 09:10:04,278 - Trainable params: 25,112,798
+INFO - root - 2019-11-28 09:10:04,278 - Non-trainable params: 0
+INFO - root - 2019-11-28 09:10:04,278 - _________________________________________________________________
+INFO - root - 2019-11-28 09:10:04,617 - LOGGING END. Data was saved to logs_dir: /labs/logs/test_data_cnn_trenovanie, models_dir: /labs/models/test_data_cnn_trenovanie
