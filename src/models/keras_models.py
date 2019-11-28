@@ -54,7 +54,7 @@ def get_cnn_with(hparams, seed, classes):
     # Add fully connected layers.
     dense_neurons = 32
     for _ in xrange(hparams[config.HP_DENSE_LAYERS]):
-        model.add(Dense(dense_neurons, activation=config.hidden_activation))
+        model.add(tf.keras.layers.Dense(dense_neurons, activation=config.hidden_activation))
         dense_neurons *= 2
 
     # Add the final output layer.
@@ -89,7 +89,7 @@ def get_resnet50(input_shape, classes):
 
     return Sequential([
         resnet50,
-        Flatten(),
-        Dense(config.units, activation=config.hidden_activation),
-        Dense(len(classes), activation=config.output_activation)
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dense(config.units, activation=config.hidden_activation),
+        tf.keras.layers.Dense(len(classes), activation=config.output_activation)
     ])

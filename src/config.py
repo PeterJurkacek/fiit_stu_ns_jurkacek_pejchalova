@@ -4,8 +4,8 @@ from tensorboard.plugins.hparams import api as hp
 import tensorflow as tf
 
 path = Path('/labs').resolve()
-dataset_name = 'test_dataset'
-logs_name = 'test_data_cnn_trenovanie'
+dataset_name = 'DATASET'
+logs_name = 'dataset_cnn_trenovanie_freq_batch'
 
 # data
 logs_dir = path / 'logs' / logs_name
