@@ -119,7 +119,7 @@ def get_experiment_0_config():
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
-                    epochs=10,
+                    epochs=2,
                     batch_size=16,
                     buffer_size=1024,
                     cache=False,
@@ -140,14 +140,14 @@ def get_experiment_0_config():
     return config
 
 
-def get_experiment_1_2_config():
+def get_experiment_1_config():
     dataset_name = 'DATASET'
     config = Config(experiment_name="experiment_1",
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
-                    epochs=2,
-                    batch_size=1,
+                    epochs=7,
+                    batch_size=256,
                     buffer_size=1024,
                     cache=False,
                     summary_freq=500,
@@ -165,17 +165,41 @@ def get_experiment_1_2_config():
                     units=512)
     return config
 
+def get_experiment_2_config():
+    dataset_name = 'DATASET'
+    config = Config(experiment_name="experiment_2",
+                    train_data_path=data_raw_dir / dataset_name / 'TRAIN',
+                    test_data_path=data_raw_dir / dataset_name / 'TEST',
+                    greyscale=False,
+                    epochs=7,
+                    batch_size=256,
+                    buffer_size=1024,
+                    cache=False,
+                    summary_freq=500,
+                    histogram_freq=1,
+                    update_freq='epoch',
+                    profile_batch=3,
+                    image_shape=(224, 224),
+                    learning_rate=0.001,
+                    loss='categorical_crossentropy',
+                    metrics=['accuracy'],
+                    optimizer='adam',
+                    padding='same',
+                    hidden_activation='relu',
+                    output_activation='softmax',
+                    units=512)
+    return config
 
 def get_experiment_3_config():
     train_dataset_name = 'anime'
     test_dataset_name = 'DATASET'
 
-    config = Config(experiment_name="experiment_1",
-                    train_data_path=data_raw_dir / train_dataset_name / 'TRAIN',
+    config = Config(experiment_name="experiment_3",
+                    train_data_path=data_processed_dir / train_dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / test_dataset_name / 'TEST',
                     greyscale=False,
-                    epochs=2,
-                    batch_size=16,
+                    epochs=7,
+                    batch_size=256,
                     buffer_size=1024,
                     cache=False,
                     summary_freq=500,
@@ -196,7 +220,7 @@ def get_experiment_3_config():
 
 def get_experiment_4_config():
     dataset_name = 'DATASET'
-    config = Config(experiment_name="experiment_2",
+    config = Config(experiment_name="experiment_4",
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
