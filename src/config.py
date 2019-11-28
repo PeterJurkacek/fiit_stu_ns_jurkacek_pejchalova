@@ -4,7 +4,7 @@ from tensorboard.plugins.hparams import api as hp
 import tensorflow as tf
 
 path = Path('/labs').resolve()
-dataset_name = 'DATASET'
+dataset_name = 'test_dataset'
 logs_name = 'tunning_parametrov_cnn_2'
 
 # data
@@ -19,7 +19,7 @@ data_processed_train_dir = data_processed_dir / 'TRAIN'
 data_processed_test_dir = data_processed_dir / 'TEST'
 
 epochs = 10
-batch_size = 64
+batch_size = 1
 buffer_size = 1024
 cache = "cache_file"
 num_session_groups = 10
