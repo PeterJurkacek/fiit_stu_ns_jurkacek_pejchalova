@@ -24,11 +24,11 @@ buffer_size = 1024
 cache = "cache_file"
 num_session_groups = 10
 experiment_name = 'tunning_parametrov_cnn'
-summary_freq = 256
+summary_freq = 500
 
 # logger
 histogram_freq = 1
-update_freq='epoch'
+update_freq='batch'
 profile_batch = 3
 
 # NN architecture
