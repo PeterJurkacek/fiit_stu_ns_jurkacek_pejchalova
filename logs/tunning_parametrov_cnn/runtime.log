@@ -1,0 +1,98 @@
+INFO - root - 2019-11-27 00:15:09,396 - Started: tunning_parametrov_cnn
+INFO - root - 2019-11-27 00:15:09,396 - log_id: tunning_parametrov_cnn
+INFO - root - 2019-11-27 00:15:09,397 - log_file_path: /labs/logs/tunning_parametrov_cnn/runtime.log
+INFO - root - 2019-11-27 00:15:09,397 - logs_dir: /labs/logs/tunning_parametrov_cnn
+INFO - root - 2019-11-27 00:15:09,397 - models_dir: /labs/models/tunning_parametrov_cnn
+INFO - root - 2019-11-27 00:15:09,397 - Saving output to /labs/logs/tunning_parametrov_cnn.
+INFO - root - 2019-11-27 00:15:09,406 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:15:09,412 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:15:09,412 - from path: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:15:09,775 - images_count: 22564
+INFO - root - 2019-11-27 00:15:09,775 - from path: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:15:09,811 - images_count: 2513
+INFO - root - 2019-11-27 00:15:14,153 - from path: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:15:14,424 - images_count: 22564
+INFO - root - 2019-11-27 00:15:14,535 - from path: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:15:14,561 - images_count: 2513
+INFO - root - 2019-11-27 00:15:14,574 - --- Running training session 1, 10
+INFO - root - 2019-11-27 00:15:14,574 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 1, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.17767502508788902, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adam'}
+INFO - root - 2019-11-27 00:15:14,574 - --- repeat #: 1
+INFO - root - 2019-11-27 00:15:14,574 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:15:14,575 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:15:14,590 - run_id: 0
+DEBUG - root - 2019-11-27 00:15:14,590 - model.fit
+INFO - root - 2019-11-27 00:20:02,174 - model_path: /labs/models/tunning_parametrov_cnn/model_0.h5
+INFO - root - 2019-11-27 00:20:02,174 - --- Running training session 2, 10
+INFO - root - 2019-11-27 00:20:02,174 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 1, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.17767502508788902, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adam'}
+INFO - root - 2019-11-27 00:20:02,175 - --- repeat #: 2
+INFO - root - 2019-11-27 00:20:02,175 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:20:02,175 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:20:02,185 - run_id: 1
+DEBUG - root - 2019-11-27 00:20:02,186 - model.fit
+INFO - root - 2019-11-27 00:24:45,869 - model_path: /labs/models/tunning_parametrov_cnn/model_1.h5
+INFO - root - 2019-11-27 00:24:45,870 - --- Running training session 3, 10
+INFO - root - 2019-11-27 00:24:45,870 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.20741481240849652, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+INFO - root - 2019-11-27 00:24:45,871 - --- repeat #: 1
+INFO - root - 2019-11-27 00:24:45,871 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:24:45,871 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:24:45,883 - run_id: 2
+DEBUG - root - 2019-11-27 00:24:45,883 - model.fit
+INFO - root - 2019-11-27 00:29:29,148 - model_path: /labs/models/tunning_parametrov_cnn/model_2.h5
+INFO - root - 2019-11-27 00:29:29,149 - --- Running training session 4, 10
+INFO - root - 2019-11-27 00:29:29,149 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.20741481240849652, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+INFO - root - 2019-11-27 00:29:29,149 - --- repeat #: 2
+INFO - root - 2019-11-27 00:29:29,150 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:29:29,150 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:29:29,161 - run_id: 3
+DEBUG - root - 2019-11-27 00:29:29,162 - model.fit
+INFO - root - 2019-11-27 00:34:12,209 - model_path: /labs/models/tunning_parametrov_cnn/model_3.h5
+INFO - root - 2019-11-27 00:34:12,210 - --- Running training session 5, 10
+INFO - root - 2019-11-27 00:34:12,210 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.14192373549000367, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+INFO - root - 2019-11-27 00:34:12,211 - --- repeat #: 1
+INFO - root - 2019-11-27 00:34:12,211 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:34:12,211 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:34:12,224 - run_id: 4
+DEBUG - root - 2019-11-27 00:34:12,224 - model.fit
+INFO - root - 2019-11-27 00:38:51,139 - model_path: /labs/models/tunning_parametrov_cnn/model_4.h5
+INFO - root - 2019-11-27 00:38:51,139 - --- Running training session 6, 10
+INFO - root - 2019-11-27 00:38:51,139 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.14192373549000367, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+INFO - root - 2019-11-27 00:38:51,139 - --- repeat #: 2
+INFO - root - 2019-11-27 00:38:51,140 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:38:51,140 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:38:51,153 - run_id: 5
+DEBUG - root - 2019-11-27 00:38:51,153 - model.fit
+INFO - root - 2019-11-27 00:43:32,624 - model_path: /labs/models/tunning_parametrov_cnn/model_5.h5
+INFO - root - 2019-11-27 00:43:32,625 - --- Running training session 7, 10
+INFO - root - 2019-11-27 00:43:32,625 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.394835642811296, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+INFO - root - 2019-11-27 00:43:32,625 - --- repeat #: 1
+INFO - root - 2019-11-27 00:43:32,625 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:43:32,626 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:43:32,642 - run_id: 6
+DEBUG - root - 2019-11-27 00:43:32,642 - model.fit
+INFO - root - 2019-11-27 00:48:30,977 - model_path: /labs/models/tunning_parametrov_cnn/model_6.h5
+INFO - root - 2019-11-27 00:48:30,977 - --- Running training session 8, 10
+INFO - root - 2019-11-27 00:48:30,977 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.394835642811296, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+INFO - root - 2019-11-27 00:48:30,977 - --- repeat #: 2
+INFO - root - 2019-11-27 00:48:30,978 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:48:30,978 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:48:30,993 - run_id: 7
+DEBUG - root - 2019-11-27 00:48:30,994 - model.fit
+INFO - root - 2019-11-27 00:53:27,890 - model_path: /labs/models/tunning_parametrov_cnn/model_7.h5
+INFO - root - 2019-11-27 00:53:27,890 - --- Running training session 9, 10
+INFO - root - 2019-11-27 00:53:27,891 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.12212273008861754, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adam'}
+INFO - root - 2019-11-27 00:53:27,891 - --- repeat #: 1
+INFO - root - 2019-11-27 00:53:27,891 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:53:27,892 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:53:27,903 - run_id: 8
+DEBUG - root - 2019-11-27 00:53:27,904 - model.fit
+INFO - root - 2019-11-27 00:58:06,257 - model_path: /labs/models/tunning_parametrov_cnn/model_8.h5
+INFO - root - 2019-11-27 00:58:06,257 - --- Running training session 10, 10
+INFO - root - 2019-11-27 00:58:06,257 - {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.12212273008861754, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adam'}
+INFO - root - 2019-11-27 00:58:06,258 - --- repeat #: 2
+INFO - root - 2019-11-27 00:58:06,258 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+INFO - root - 2019-11-27 00:58:06,258 - dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+INFO - root - 2019-11-27 00:58:06,272 - run_id: 9
+DEBUG - root - 2019-11-27 00:58:06,272 - model.fit
+INFO - root - 2019-11-27 01:02:45,462 - model_path: /labs/models/tunning_parametrov_cnn/model_9.h5
+INFO - root - 2019-11-27 01:02:45,462 - Done. Output saved to /labs/logs/tunning_parametrov_cnn.
+INFO - root - 2019-11-27 01:02:45,462 - Finished: tunning_parametrov_cnn
