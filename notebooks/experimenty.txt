@@ -1,0 +1,33 @@
+Naše experimenty sme vykonali na viacerých architektúrach konvolučných neurónových sietí. 
+
+experiment_0:
+Aby sme otestovali validnosť našej infraštruktúry projektu rozhodli sme sa natrénovať ResNet, CNN, Optimalizáciu hyperparametrov CNN na menšom datasete odvodenom z hlavného datasetu.
+
+utils.load_result_df(experiment_0_result.csv)
+
+'Experiment', 'Model', 'Trieda', 'Počet obrázkov', 'Úspešnosť'
+
+experiment_1:
+V prvom kroku na princípe transferlearningu natrénovali architektúru neurónovej siete ResNet, ktorej úspešnosť sme použili ako referenčnú. 
+
+utils.load_result_df(experiment_1_result.csv)
+
+experiment_2:
+V druhom kroku sme natrénovali vlastnú architektúru konvolučnej neuonovej siete. Trénovacia a testovacia sada ostala rovnaká.
+
+utils.load_result_df(experiment_2_result.csv)
+
+experiment_3:
+Kedže výslednosť našej architektúry konvolučnej neurónovej siete bola podozrivo vysoká rohodli sme sa otestovať architektúru na pozmenenej dátovej sade. Z hlavného datasetu sme vybrali animované obrázky. Testovaciu sadu sme zachovali. Očakávali sme zníženie úspešnosti.
+
+utils.load_result_df(experiment_3_result.csv)
+
+experiment_4:
+Pre vlastnú architektúru sme experimentovali aj s optimalizáciou hyperparametrov.
+
+utils.load_result_df(experiment_4_result.csv)
+
+
+
+
+

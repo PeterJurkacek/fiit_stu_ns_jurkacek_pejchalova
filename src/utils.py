@@ -5,6 +5,9 @@ import matplotlib.pyplot as plt
 import datetime
 import time
 
+import numpy as np
+import pandas as pd
+
 default_timeit_steps = 1000
 
 
@@ -36,31 +39,31 @@ def show_loaded_data(labeled_ds, number_of_images=2):
 
 def timestamp():
     _timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    #logging.info(f"timestamp: {timestamp}")
+    # logging.info(f"timestamp: {timestamp}")
     return _timestamp
 
 
 def get_dirs(path: Path):
     dirs = [item.stem for item in path.iterdir() if item.is_dir()]
     # print(f"DIRS: {dirs} on PATH: {path}")
-    #logging.info(f"dirs: {dirs}, from: {path}")
+    logging.info(f"dirs: {dirs}, from: {path}")
     return dirs
 
 
 def count_dirs(path: Path):
     count = len(get_dirs(path))
-    #logging.info(f"count_dirs: {count}")
+    # logging.info(f"count_dirs: {count}")
     return count
 
 
 def images_count(path: Path):
     count = len(list(jpg_images_from(path)))
-    #logging.info(f"images_count: {count}")
+    # logging.info(f"images_count: {count}")
     return count
 
 
 def jpg_images_from(path: Path):
-    #logging.info(f"from path: {path}")
+    # logging.info(f"from path: {path}")
     return path.glob('**/*.jpg')
 
 
@@ -87,3 +90,40 @@ def timeit(ds, batch_size, steps=default_timeit_steps):
     duration = end - start
     print("{} batches: {} s".format(steps, duration))
     print("{:0.5f} Images/s".format(batch_size * steps / duration))
+
+
+def load_result_df(file_path: Path):
+    return pd.read_csv(str(file_path),
+                       header=None,
+                       index=None,
+                       names=['Experiment', 'Trieda', 'Počet obrázkov', 'Úspešnosť'])
+
+
+def get_number_of_channels(greyscale: bool):
+    logging.info(f"Greyscale: {greyscale}")
+    return 1 if greyscale else 3
+
+
+def get_input_shape(image_shape: tuple, number_of_channels: int):
+    logging.info(f"Number of channels: {number_of_channels}")
+    return image_shape + (number_of_channels,)
+
+
+class Label:
+    def __init__(self, name: str, number: int):
+        self.name = name
+        self.number = number
+
+
+class LabelMapper:
+    def __init__(self, classes_name: [str]):
+        self.classes_name = np.array(classes_name)
+        self.labels = [Label(name=name, number=index) for (index, name) in enumerate(classes_name)]
+        logging.info(f"labels: {[(label.name, label.number) for label in self.labels]}")
+        self.name_by_number = {}
+        self.num_by_name = {}
+        for label in self.labels:
+            self.name_by_number.update({label.number: label.name})
+            self.num_by_name.update({label.name: label.number})
+        logging.debug(f"self.name_by_number: {self.name_by_number}")
+        logging.debug(f"self.num_by_name: {self.num_by_name}")
