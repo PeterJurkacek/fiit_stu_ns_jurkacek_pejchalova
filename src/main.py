@@ -7,7 +7,7 @@ from absl import app, logging
 
 tf.executing_eagerly()
 
-from src.config import get_experiment_1_config, get_experiment_2_config, get_experiment_3_config, \
+from src.config import get_experiment_1_config, get_experiment_3_config, \
     get_experiment_4_config, get_experiment_5_config, get_experiment_6_config, get_experiment_7_config
 from src.data.load_dataset import ImageDataLoader
 from src.logger import Logger
