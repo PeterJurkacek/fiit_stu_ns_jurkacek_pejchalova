@@ -8,7 +8,7 @@ from absl import app, logging
 tf.executing_eagerly()
 
 from src.config import get_experiment_1_config, get_experiment_3_config, \
-    get_experiment_4_config, get_experiment_5_config, get_experiment_6_config, get_experiment_7_config
+    get_experiment_4_config, get_experiment_5_config
 from src.data.load_dataset import ImageDataLoader
 from src.logger import Logger
 from src.models.keras_models import get_cnn, get_resnet50, get_mobilenet, get_vgg16, get_densenet121
@@ -107,12 +107,12 @@ def experiment_5():
 
 
 def main(argv):
-    experiment_1(trainable=False)
+    # experiment_1(trainable=False)
     experiment_3()
-    experiment_4()
-    experiment_5()
+    #experiment_4()
+    #experiment_5()
     # experiment_6()
-    experiment_1(trainable=True)
+    #experiment_1(trainable=True)
 
 
 if __name__ == '__main__':
