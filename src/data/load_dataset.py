@@ -104,5 +104,5 @@ class ImageDataLoader:
         ds = ds.batch(data_info.batch_size)
         # `prefetch` lets the dataset fetch batches in the background while the model
         # is training.
-        ds = ds.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
+        # ds = ds.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
         return ds
