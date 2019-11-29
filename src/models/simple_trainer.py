@@ -1,40 +1,38 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 import tensorflow as tf
-import logging
+from absl import logging
 from src.logger import Logger
 from src.data.load_dataset import ImageDataLoader
 from src.utils import calculate_steps_per_epoch, timestamp
-from src.config import Config
+from src.config import Config, get_metrics
 
 
 class Trainer:
-    def __init__(self, config: Config, loader: ImageDataLoader, logger: Logger):
-        self.config = config
+    def __init__(self, config: Config, loader: ImageDataLoader):
+        self.logger = config.logger
         self.loader = loader
         self.loss = config.loss
         self.epochs = config.epochs
-        self.metrics = config.metrics
         self.optimizer = config.optimizer
-        self.steps_per_epoch = calculate_steps_per_epoch(loader.train_data_info.count, loader.batch_size)
-        self.validation_steps = calculate_steps_per_epoch(loader.test_data_info.count, loader.batch_size)
-        self.logger = logger
+        self.steps_per_epoch = calculate_steps_per_epoch(loader.train_data_info.count,
+                                                         loader.train_data_info.batch_size)
+        self.validation_steps = calculate_steps_per_epoch(loader.test_data_info.count, loader.test_data_info.batch_size)
 
     def start(self, model, run_id=timestamp()):
         self.compile(model)
         self.train(model=model, train_data=self.loader.train_data, validation_data=self.loader.test_data, run_id=run_id)
-        #self.evaluate(run_id=run_id, test_data=self.loader.test_data, steps=self.loader.test_data_info.count)
+        self.evaluate(run_id=run_id, test_data=self.loader.test_data, steps=self.loader.test_data_info.count)
 
     def compile(self, model):
         logging.info(f"model.compile()")
         logging.info(f"loss:{self.loss}")
-        logging.info(f"metrics:{self.metrics}")
         logging.info(f"optimizer:{self.optimizer}")
-        #logging.info(f"learning_rate:{self.learning_rate}")
+        # logging.info(f"learning_rate:{self.learning_rate}")
 
         model.compile(
             loss=self.loss,
-            optimizer = self.optimizer,
-            metrics=self.metrics,
+            optimizer=self.optimizer,
+            metrics=get_metrics(),
         )
         return model
 
@@ -45,7 +43,8 @@ class Trainer:
         logging.info(f"steps_per_epoch:{self.steps_per_epoch}")
         logging.info(f"validation_steps:{self.validation_steps}")
 
-        log_callbacks = [self.logger.create_tensorboard_callback(run_id),self.logger.create_csv_logger_callback(run_id)]
+        log_callbacks = [self.logger.create_tensorboard_callback(run_id),
+                         self.logger.create_csv_logger_callback(run_id)]
         history = model.fit(train_data,
                             steps_per_epoch=self.steps_per_epoch,
                             epochs=self.epochs,

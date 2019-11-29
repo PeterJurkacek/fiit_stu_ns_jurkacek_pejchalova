@@ -1,8 +1,7 @@
-import logging
+from absl import logging
 import random
 import tensorflow as tf
 from six.moves import xrange
-from tensorflow.keras.applications.resnet import ResNet50
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import MaxPool2D, Input, Flatten, Dropout, Dense, Conv2D, Reshape
 
@@ -66,29 +65,80 @@ def get_cnn_with(hparams, seed,
     return model
 
 
+number_of_imagenet_classes = 1000
+
+
 def get_cnn(hidden_activation, output_activation, input_shape, number_of_classes):
-    return Sequential([
-        Conv2D(16, 3, padding='same', activation=hidden_activation, input_shape=input_shape),
-        MaxPool2D(pool_size=3),
-        Conv2D(32, 3, padding='same', activation=hidden_activation),
-        MaxPool2D(pool_size=3),
-        Conv2D(64, 3, padding='same', activation=hidden_activation),
-        MaxPool2D(pool_size=3),
-        Flatten(),
-        Dense(512, activation=hidden_activation),
-        Dense(number_of_classes, activation=output_activation)
-    ])
-
-
-def get_resnet50(hidden_activation, output_activation, input_shape, number_of_classes):
-    resnet_include_top = True,
-    resnet_weights = 'imagenet'
-    resnet50 = ResNet50(input_shape=input_shape, include_top=resnet_include_top, weights=resnet_weights)
-    resnet50.summary()
-
-    return Sequential([
-        resnet50,
+    return tf.keras.models.Sequential([
+        tf.keras.layers.Conv2D(16, 3, padding='same', activation=hidden_activation, input_shape=input_shape),
+        tf.keras.layers.MaxPool2D(pool_size=3),
+        tf.keras.layers.Conv2D(32, 3, padding='same', activation=hidden_activation),
+        tf.keras.layers.MaxPool2D(pool_size=3),
+        tf.keras.layers.Conv2D(64, 3, padding='same', activation=hidden_activation),
+        tf.keras.layers.MaxPool2D(pool_size=3),
         tf.keras.layers.Flatten(),
         tf.keras.layers.Dense(512, activation=hidden_activation),
         tf.keras.layers.Dense(number_of_classes, activation=output_activation)
     ])
+
+
+def get_resnet50(hidden_activation, output_activation, input_shape, number_of_classes, trainable: bool):
+    base_model = tf.keras.applications.ResNet50(input_shape=input_shape, include_top=False, weights='imagenet')
+    base_model.trainable = trainable
+
+    model = tf.keras.Sequential([
+        base_model,
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dense(number_of_imagenet_classes, activation=hidden_activation),
+        tf.keras.layers.Dense(number_of_classes, activation=output_activation)
+    ])
+
+    model.summary(print_fn=logging.info)
+
+    return model
+
+
+def get_mobilenet(hidden_activation, output_activation, input_shape, number_of_classes, trainable: bool):
+    base_model = tf.keras.applications.MobileNetV2(input_shape=input_shape, include_top=False, weights='imagenet')
+    base_model.trainable = trainable
+    model = tf.keras.Sequential([
+        base_model,
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dense(number_of_imagenet_classes, activation=hidden_activation),
+        tf.keras.layers.Dense(number_of_classes, activation=output_activation)
+    ])
+
+    model.summary(print_fn=logging.info)
+
+    return model
+
+
+def get_vgg16(hidden_activation, output_activation, input_shape, number_of_classes, trainable: bool):
+    base_model = tf.keras.applications.VGG16(input_shape=input_shape, include_top=False, weights='imagenet')
+    base_model.trainable = trainable
+    model = tf.keras.Sequential([
+        base_model,
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dense(number_of_imagenet_classes, activation=hidden_activation),
+        tf.keras.layers.Dense(number_of_classes, activation=output_activation)
+    ])
+
+    model.summary(print_fn=logging.info)
+
+    return model
+
+
+def get_densenet121(hidden_activation, output_activation, input_shape, number_of_classes, trainable: bool):
+    base_model = tf.keras.applications.densenet.DenseNet121(input_shape=input_shape, include_top=False,
+                                                            weights='imagenet')
+    base_model.trainable = trainable
+    model = tf.keras.Sequential([
+        base_model,
+        tf.keras.layers.Flatten(),
+        tf.keras.layers.Dense(number_of_imagenet_classes, activation=hidden_activation),
+        tf.keras.layers.Dense(number_of_classes, activation=output_activation)
+    ])
+
+    model.summary(print_fn=logging.info)
+
+    return model

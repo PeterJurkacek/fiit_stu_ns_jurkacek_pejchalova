@@ -1,13 +1,27 @@
+import shutil
 from pathlib import Path
 
 from tensorboard.plugins.hparams import api as hp
 import tensorflow as tf
 
 from src import utils
+from src.logger import Logger
 
 project_path = Path('/labs').resolve()
 data_raw_dir = project_path / 'data' / 'raw'
 data_processed_dir = project_path / 'data' / 'processed'
+
+
+def get_metrics():
+    return [tf.keras.metrics.CategoricalAccuracy(),
+            tf.keras.metrics.AUC(),
+            tf.keras.metrics.TrueNegatives(),
+            tf.keras.metrics.FalseNegatives(),
+            tf.keras.metrics.TruePositives(),
+            tf.keras.metrics.FalsePositives(),
+            tf.keras.metrics.Recall(),
+            tf.keras.metrics.Precision()
+            ]
 
 
 class Hyperparams:
@@ -68,26 +82,32 @@ class Config:
                  buffer_size: int,
                  image_shape: tuple,
                  cache: bool,
-                 summary_freq: int,
                  histogram_freq: int,
                  update_freq: str,
                  profile_batch: int,
                  learning_rate: float,
                  loss: str,
-                 metrics: [],
                  optimizer: str,
                  padding: str,
                  hidden_activation: str,
                  output_activation: str,
                  units: int,
                  hyperparams=None):
-        self.logs_dir = project_path / 'logs' / experiment_name
-        self.models_dir = project_path / 'models' / experiment_name
-
         self.greyscale = greyscale
         self.train_data_path = train_data_path
         self.test_data_path = test_data_path
         self.cache = cache
+        if not cache:
+            cache_files_dir = data_processed_dir / experiment_name
+            shutil.rmtree(cache_files_dir, ignore_errors=True)
+            cache_files_dir.mkdir(parents=True)
+            proccesed_train_dataset_file_name = f"{train_data_path.parent.stem}{train_data_path.stem}.tfcache"
+            self.proccesed_train_dataset_file_path = cache_files_dir / proccesed_train_dataset_file_name
+            proccesed_test_dataset_file_name = f"{test_data_path.parent.stem}{test_data_path.stem}.tfcache"
+            self.proccessed_test_dataset_file_path = cache_files_dir / proccesed_test_dataset_file_name
+        else:
+            self.proccesed_train_dataset_file_path = None
+            self.proccessed_test_dataset_file_path = None
 
         self.epochs = epochs
         self.buffer_size = buffer_size
@@ -95,22 +115,23 @@ class Config:
         self.image_shape = image_shape
         self.input_shape = utils.get_input_shape(self.image_shape, self.number_of_channels)
         self.batch_size = batch_size
+        self.hyperparams = hyperparams
 
         # Logger
-        self.metrics = metrics
-        self.optimizer = optimizer
+        self.logger = Logger(logs_dir=project_path / 'logs' / experiment_name,
+                             models_dir=project_path / 'models' / experiment_name,
+                             hyperparams=hyperparams,
+                             histogram_freq=histogram_freq,
+                             profile_batch=profile_batch,
+                             update_freq=update_freq)
 
-        self.summary_freq = summary_freq
-        self.histogram_freq = histogram_freq
-        self.update_freq = update_freq
-        self.profile_batch = profile_batch
+        self.optimizer = optimizer
         self.learning_rate = learning_rate
         self.loss = loss
         self.padding = padding
         self.hidden_activation = hidden_activation
         self.output_activation = output_activation
         self.units = units
-        self.hyperparams = hyperparams
 
 
 def get_experiment_0_config():
@@ -119,18 +140,16 @@ def get_experiment_0_config():
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
-                    epochs=2,
+                    epochs=3,
                     batch_size=16,
                     buffer_size=1024,
                     cache=False,
-                    summary_freq=500,
                     histogram_freq=1,
                     update_freq='epoch',
                     profile_batch=3,
                     image_shape=(224, 224),
                     learning_rate=0.001,
                     loss='categorical_crossentropy',
-                    metrics=['accuracy'],
                     optimizer='adam',
                     padding='same',
                     hidden_activation='relu',
@@ -140,24 +159,22 @@ def get_experiment_0_config():
     return config
 
 
-def get_experiment_1_config():
+def get_experiment_1_config(experiment_name='experiment_1'):
     dataset_name = 'DATASET'
-    config = Config(experiment_name="experiment_1",
+    config = Config(experiment_name=experiment_name,
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
-                    epochs=7,
-                    batch_size=256,
+                    epochs=10,
+                    batch_size=128,
                     buffer_size=1024,
                     cache=False,
-                    summary_freq=500,
                     histogram_freq=1,
                     update_freq='epoch',
                     profile_batch=3,
                     image_shape=(224, 224),
                     learning_rate=0.001,
                     loss='categorical_crossentropy',
-                    metrics=['accuracy'],
                     optimizer='adam',
                     padding='same',
                     hidden_activation='relu',
@@ -165,51 +182,26 @@ def get_experiment_1_config():
                     units=512)
     return config
 
-def get_experiment_2_config():
-    dataset_name = 'DATASET'
-    config = Config(experiment_name="experiment_2",
-                    train_data_path=data_raw_dir / dataset_name / 'TRAIN',
-                    test_data_path=data_raw_dir / dataset_name / 'TEST',
-                    greyscale=False,
-                    epochs=7,
-                    batch_size=256,
-                    buffer_size=1024,
-                    cache=False,
-                    summary_freq=500,
-                    histogram_freq=1,
-                    update_freq='epoch',
-                    profile_batch=3,
-                    image_shape=(224, 224),
-                    learning_rate=0.001,
-                    loss='categorical_crossentropy',
-                    metrics=['accuracy'],
-                    optimizer='adam',
-                    padding='same',
-                    hidden_activation='relu',
-                    output_activation='softmax',
-                    units=512)
-    return config
 
 def get_experiment_3_config():
     train_dataset_name = 'anime'
     test_dataset_name = 'DATASET'
+    experiment_name = "experiment_3"
 
-    config = Config(experiment_name="experiment_3",
+    config = Config(experiment_name=experiment_name,
                     train_data_path=data_processed_dir / train_dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / test_dataset_name / 'TEST',
                     greyscale=False,
-                    epochs=7,
-                    batch_size=256,
+                    epochs=10,
+                    batch_size=128,
                     buffer_size=1024,
                     cache=False,
-                    summary_freq=500,
                     histogram_freq=1,
                     update_freq='epoch',
                     profile_batch=3,
                     image_shape=(224, 224),
                     learning_rate=0.001,
                     loss='categorical_crossentropy',
-                    metrics=['accuracy'],
                     optimizer='adam',
                     padding='same',
                     hidden_activation='relu',
@@ -224,18 +216,91 @@ def get_experiment_4_config():
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
-                    epochs=2,
-                    batch_size=16,
+                    epochs=10,
+                    batch_size=128,
                     buffer_size=1024,
                     cache=False,
-                    summary_freq=500,
                     histogram_freq=1,
                     update_freq='epoch',
                     profile_batch=3,
                     image_shape=(224, 224),
                     learning_rate=0.001,
                     loss='categorical_crossentropy',
-                    metrics=['accuracy'],
+                    optimizer='adam',
+                    padding='same',
+                    hidden_activation='relu',
+                    output_activation='softmax',
+                    units=512,
+                    hyperparams=Hyperparams(num_session_groups=3))
+    return config
+
+
+def get_experiment_5_config():
+    dataset_name = 'DATASER'
+    config = Config(experiment_name="experiment_5",
+                    train_data_path=data_raw_dir / dataset_name / 'TRAIN',
+                    test_data_path=data_raw_dir / dataset_name / 'TEST',
+                    greyscale=True,
+                    epochs=10,
+                    batch_size=128,
+                    buffer_size=1024,
+                    cache=False,
+                    histogram_freq=1,
+                    update_freq='epoch',
+                    profile_batch=3,
+                    image_shape=(224, 224),
+                    learning_rate=0.001,
+                    loss='categorical_crossentropy',
+                    optimizer='adam',
+                    padding='same',
+                    hidden_activation='relu',
+                    output_activation='softmax',
+                    units=512,
+                    hyperparams=Hyperparams())
+    return config
+
+
+def get_experiment_6_config():
+    dataset_name = 'test_dataset'
+    config = Config(experiment_name="experiment_6",
+                    train_data_path=data_raw_dir / dataset_name / 'TRAIN',
+                    test_data_path=data_raw_dir / dataset_name / 'TEST',
+                    greyscale=False,
+                    epochs=10,
+                    batch_size=4,
+                    buffer_size=1024,
+                    cache=False,
+                    histogram_freq=1,
+                    update_freq='epoch',
+                    profile_batch=3,
+                    image_shape=(224, 224),
+                    learning_rate=0.001,
+                    loss='categorical_crossentropy',
+                    optimizer='adam',
+                    padding='same',
+                    hidden_activation='relu',
+                    output_activation='softmax',
+                    units=512,
+                    hyperparams=Hyperparams())
+    return config
+
+
+def get_experiment_7_config():
+    dataset_name = 'test_dataset'
+    config = Config(experiment_name="experiment_7",
+                    train_data_path=data_raw_dir / dataset_name / 'TRAIN',
+                    test_data_path=data_raw_dir / dataset_name / 'TEST',
+                    greyscale=True,
+                    epochs=15,
+                    batch_size=4,
+                    buffer_size=1024,
+                    cache=False,
+                    histogram_freq=1,
+                    update_freq='epoch',
+                    profile_batch=3,
+                    image_shape=(224, 224),
+                    learning_rate=0.001,
+                    loss='categorical_crossentropy',
                     optimizer='adam',
                     padding='same',
                     hidden_activation='relu',

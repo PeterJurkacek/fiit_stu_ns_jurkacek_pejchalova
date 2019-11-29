@@ -1,42 +1,42 @@
 import shutil
+
+import absl
 import tensorflow as tf
-import logging
+from absl import logging
 from tensorflow.keras.callbacks import CSVLogger, TensorBoard, EarlyStopping, ModelCheckpoint
 from tensorboard.plugins.hparams import api as hp
 
-# https://docs.python.org/2/howto/logging.html
-from src.config import Config
-
-
 class Logger:
-    def __init__(self, config: Config):
-        self.logs_dir = config.logs_dir
-        self.models_dir = config.models_dir
+    def __init__(self, logs_dir,
+                 models_dir,
+                 hyperparams,
+                 histogram_freq,
+                 profile_batch,
+                 update_freq):
+        self.logs_dir = logs_dir
+        self.models_dir = models_dir
+        self.hparams = hyperparams
+        self.histogram_freq = histogram_freq
+        self.profile_batch = profile_batch
+        self.update_freq = update_freq
         shutil.rmtree(self.logs_dir, ignore_errors=True)
         shutil.rmtree(self.models_dir, ignore_errors=True)
         self.logs_dir.mkdir(parents=True)
         self.models_dir.mkdir(parents=True)
-        self.metrics = config.metrics
-        self.logger = logging.getLogger()  # RESOLVED BUG https://stackoverflow.com/questions/30861524/logging-basicconfig-not-creating-log-file-when-i-run-in-pycharm
-        self.log_file_path = self.logs_dir / 'runtime.log'
-        self.fhandler = logging.FileHandler(filename=self.log_file_path, mode='a')
-        self.hparams = config.hyperparams
-        self.histogram_freq = config.histogram_freq
-        self.profile_batch = config.profile_batch
+        logging.get_absl_handler().use_absl_log_file('runtime.log', self.logs_dir)
+        absl.flags.FLAGS.mark_as_parsed()
+        logging.set_verbosity(logging.INFO)
+        self.log_file_path = f"file://{logging.get_log_file_name()}"
 
     def start(self):
         if self.hparams is not None:
             with tf.summary.create_file_writer(str(self.logs_dir)).as_default():
                 hp.hparams_config(hparams=self.hparams.HPARAMS, metrics=self.hparams.METRICS)
-        formatter = logging.Formatter('%(levelname)s - %(name)s - %(asctime)s - %(message)s')
-        self.fhandler.setFormatter(formatter)
-        self.logger.addHandler(self.fhandler)
-        self.logger.setLevel(logging.DEBUG)
         logging.info(f"LOGGING START. Data are saving to logs_dir: {self.logs_dir}, models_dir: {self.models_dir}")
+        logging.info(f"log_file_name:{self.log_file_path}")
 
     def end(self):
         logging.info(f"LOGGING END. Data was saved to logs_dir: {self.logs_dir}, models_dir: {self.models_dir}")
-        self.logger.removeHandler(self.fhandler)
 
     def get_model_path(self, run_id):
         model_path = self.models_dir / f"model_{run_id}.h5"
@@ -70,3 +70,8 @@ class Logger:
                                mode='min',
                                save_best_only=True,
                                verbose=1)
+
+    def create_scalar_summary(self, run_id, hparams, accuracy):
+        with tf.summary.create_file_writer(str(self.logs_dir / run_id)).as_default():
+            hp.hparams(hparams)  # record the values used in this trial
+            tf.summary.scalar(name='Accuracy', data=accuracy, step=int(run_id))

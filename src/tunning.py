@@ -18,34 +18,34 @@ See also `hparams_minimal_demo.py` in this directory for a demo that
 runs much faster, using synthetic data instead of actually training
 MNIST models.
 """
-import logging
+import numpy as np
+import tensorflow as tf
+from absl import logging
 import random
 
 from absl import flags
 from six.moves import xrange  # pylint: disable=redefined-builtin
 
-import src.data.load_dataset as loader
-from src import config
+from src.data.load_dataset import ImageDataLoader
 from src.config import Config
 from src.logger import Logger
-from src.models import hyper_trainer
 from src.models.keras_models import get_cnn_with
 from src.models.simple_trainer import Trainer
 
 
 class HyperTrainer(Trainer):
-    def __init__(self, config: Config, loader: loader.ImageDataLoader, logger: Logger):
-        super().__init__(config=config, loader=loader, logger=logger)
+    def __init__(self, config: Config, loader: ImageDataLoader):
+        super().__init__(config=config, loader=loader)
         self.input_shape = config.input_shape
         logging.info(f"input_shape:{self.input_shape}")
-        self.number_of_classes = len(self.loader.labbel_mapper.labels)
+        self.number_of_classes = len(self.loader.labbel_mapper.classes_name)
         logging.info(f"number_of_classes:{self.number_of_classes}")
         self.hyperparams = config.hyperparams
         self.hidden_activation = config.hidden_activation
         self.output_activation = config.output_activation
         self.padding = config.padding
 
-    def start_tunning(self, verbose=False):
+    def start_tunning(self, verbose=True):
         rng = random.Random(0)
         sessions_per_group = 2
         num_sessions = self.hyperparams.num_session_groups * sessions_per_group
@@ -71,8 +71,12 @@ class HyperTrainer(Trainer):
     def run(self, model, session_id, hparams):
         self.build(model, hparams)
         self.train_one(model=model, run_id=session_id,
-                       train_data=self.loader.train_data, validation_data=self.loader.test_data, hparams=hparams)
-        self.evaluate(run_id=session_id, test_data=self.loader.test_data, steps=self.loader.test_data_info.count)
+                       train_data=self.loader.train_data, validation_data=self.loader.test_data,
+                       hparams=hparams)
+        self.evaluate_one(run_id=session_id,
+                          test_data=self.loader.test_data,
+                          steps=self.loader.test_data_info.count,
+                          hparams=hparams)
 
     def train_one(self, model, train_data, validation_data, run_id, hparams):
         logging.info(f"model.fit()")
@@ -85,12 +89,17 @@ class HyperTrainer(Trainer):
                          self.logger.create_csv_logger_callback(run_id),
                          self.logger.create_hp_params_callback(run_id, hparams)]
 
-        history = model.fit(train_data,
-                            steps_per_epoch=self.steps_per_epoch,
-                            epochs=self.epochs,
-                            validation_data=validation_data,
-                            validation_steps=self.validation_steps,
-                            callbacks=log_callbacks)
+        training_history = model.fit(train_data,
+                                     steps_per_epoch=self.steps_per_epoch,
+                                     epochs=self.epochs,
+                                     validation_data=validation_data,
+                                     validation_steps=self.validation_steps,
+                                     callbacks=log_callbacks)
+
+        tf.print("Average test loss: ", np.average(training_history.history['loss']),
+                 output_stream=self.logger.log_file_path)
+        tf.print("Average test accuracy: ", np.average(training_history.history['accuracy']),
+                 output_stream=self.logger.log_file_path)
         # Save the model
         model_path = self.logger.get_model_path(run_id)
         model.save(model_path)
@@ -98,14 +107,28 @@ class HyperTrainer(Trainer):
 
     def build(self, model, hparams):
         logging.info(f"model.build()")
-        logging.info(f"loss:{self.loss}")
-        logging.info(f"metrics:{self.metrics}")
-        logging.info(f"optimizer:{self.optimizer}")
         # logging.info(f"learning_rate:{self.learning_rate}")
 
         model.compile(
             loss=self.loss,
             optimizer=hparams[self.hyperparams.HP_OPTIMIZER],
-            metrics=self.metrics,
+            metrics=['accuracy'],
         )
         return model
+
+    def evaluate_one(self, run_id, test_data, steps, hparams):
+        # Recreate the exact same model, including its weights and the optimizer
+        logging.info(f"model.evaluate()")
+        logging.info(f"run_id: {run_id}")
+        logging.info(f"steps: {steps}")
+        model_path = self.logger.get_model_path(run_id)
+        model = tf.keras.models.load_model(model_path)
+        logging.info(f"model was loaded from{model_path}")
+
+        # Show the model architecture
+        model.summary(print_fn=logging.info)
+        _, accuracy = model.evaluate(test_data,
+                                     steps=steps,
+                                     callbacks=[self.logger.create_tensorboard_callback(run_id=run_id)])
+        tf.print("accuracy:", accuracy, output_stream=self.logger.log_file_path)
+        self.logger.create_scalar_summary(run_id=run_id, accuracy=accuracy, hparams=hparams)

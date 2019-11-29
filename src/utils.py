@@ -1,5 +1,5 @@
 from pathlib import Path
-import logging
+from absl import logging
 
 import matplotlib.pyplot as plt
 import datetime
@@ -109,21 +109,6 @@ def get_input_shape(image_shape: tuple, number_of_channels: int):
     return image_shape + (number_of_channels,)
 
 
-class Label:
-    def __init__(self, name: str, number: int):
-        self.name = name
-        self.number = number
-
-
 class LabelMapper:
     def __init__(self, classes_name: [str]):
         self.classes_name = np.array(classes_name)
-        self.labels = [Label(name=name, number=index) for (index, name) in enumerate(classes_name)]
-        logging.info(f"labels: {[(label.name, label.number) for label in self.labels]}")
-        self.name_by_number = {}
-        self.num_by_name = {}
-        for label in self.labels:
-            self.name_by_number.update({label.number: label.name})
-            self.num_by_name.update({label.name: label.number})
-        logging.debug(f"self.name_by_number: {self.name_by_number}")
-        logging.debug(f"self.num_by_name: {self.num_by_name}")
