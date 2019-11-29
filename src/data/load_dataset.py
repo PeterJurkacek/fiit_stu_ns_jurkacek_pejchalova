@@ -96,7 +96,7 @@ class ImageDataLoader:
         else:
             ds = ds.cache()
 
-        ds = ds.shuffle(buffer_size=data_info.count)
+        ds = ds.shuffle(buffer_size=1024)
 
         # Repeat forever
         ds = ds.repeat()
@@ -104,5 +104,5 @@ class ImageDataLoader:
         ds = ds.batch(data_info.batch_size)
         # `prefetch` lets the dataset fetch batches in the background while the model
         # is training.
-        # ds = ds.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
+        ds = ds.prefetch(buffer_size=tf.data.experimental.AUTOTUNE)
         return ds
