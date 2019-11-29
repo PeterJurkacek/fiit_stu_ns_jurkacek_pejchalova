@@ -231,7 +231,7 @@ def get_experiment_4_config():
                     hidden_activation='relu',
                     output_activation='softmax',
                     units=512,
-                    hyperparams=Hyperparams(num_session_groups=3))
+                    hyperparams=Hyperparams())
     return config
 
 
