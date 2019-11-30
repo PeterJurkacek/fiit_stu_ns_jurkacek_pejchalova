@@ -6,13 +6,16 @@ from absl import logging
 from tensorflow.keras.callbacks import CSVLogger, TensorBoard, EarlyStopping, ModelCheckpoint
 from tensorboard.plugins.hparams import api as hp
 
+
 class Logger:
     def __init__(self, logs_dir,
                  models_dir,
+                 cache_files_dir,
                  hyperparams,
                  histogram_freq,
                  profile_batch,
                  update_freq):
+        self.cache_files_dir = cache_files_dir
         self.logs_dir = logs_dir
         self.models_dir = models_dir
         self.hparams = hyperparams
@@ -36,6 +39,8 @@ class Logger:
         logging.info(f"log_file_name:{self.log_file_path}")
 
     def end(self):
+        logging.info(f"Removing cache_file_dir: {self.cache_files_dir}")
+        shutil.rmtree(self.cache_files_dir, ignore_errors=True)
         logging.info(f"LOGGING END. Data was saved to logs_dir: {self.logs_dir}, models_dir: {self.models_dir}")
 
     def get_model_path(self, run_id):

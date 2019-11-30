@@ -97,14 +97,14 @@ class Config:
         self.train_data_path = train_data_path
         self.test_data_path = test_data_path
         self.cache = cache
+        self.cache_files_dir = data_processed_dir / experiment_name
         if not cache:
-            cache_files_dir = data_processed_dir / experiment_name
-            shutil.rmtree(cache_files_dir, ignore_errors=True)
-            cache_files_dir.mkdir(parents=True)
+            shutil.rmtree(self.cache_files_dir, ignore_errors=True)
+            self.cache_files_dir.mkdir(parents=True)
             proccesed_train_dataset_file_name = f"{train_data_path.parent.stem}{train_data_path.stem}.tfcache"
-            self.proccesed_train_dataset_file_path = cache_files_dir / proccesed_train_dataset_file_name
+            self.proccesed_train_dataset_file_path = self.cache_files_dir / proccesed_train_dataset_file_name
             proccesed_test_dataset_file_name = f"{test_data_path.parent.stem}{test_data_path.stem}.tfcache"
-            self.proccessed_test_dataset_file_path = cache_files_dir / proccesed_test_dataset_file_name
+            self.proccessed_test_dataset_file_path = self.cache_files_dir / proccesed_test_dataset_file_name
         else:
             self.proccesed_train_dataset_file_path = None
             self.proccessed_test_dataset_file_path = None
@@ -120,6 +120,7 @@ class Config:
         # Logger
         self.logger = Logger(logs_dir=project_path / 'logs' / experiment_name,
                              models_dir=project_path / 'models' / experiment_name,
+                             cache_files_dir=self.cache_files_dir,
                              hyperparams=hyperparams,
                              histogram_freq=histogram_freq,
                              profile_batch=profile_batch,
@@ -185,7 +186,7 @@ def get_experiment_1_config(experiment_name='experiment_1'):
 
 def get_experiment_3_config():
     train_dataset_name = 'anime'
-    test_dataset_name = 'DATASET'
+    test_dataset_name = 'test_dataset'
     experiment_name = "experiment_3"
 
     config = Config(experiment_name=experiment_name,

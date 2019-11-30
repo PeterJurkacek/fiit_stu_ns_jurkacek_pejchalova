@@ -96,7 +96,8 @@ class ImageDataLoader:
         else:
             ds = ds.cache()
 
-        ds = ds.shuffle(buffer_size=1024)
+        shuffle_buffer_size = data_info.count if data_info.count < 128 else 128
+        ds = ds.shuffle(buffer_size=128)
 
         # Repeat forever
         ds = ds.repeat()
