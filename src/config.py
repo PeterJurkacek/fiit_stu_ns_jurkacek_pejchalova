@@ -298,26 +298,3 @@ def get_experiment_7_config():
                     output_activation='softmax',
                     units=512)
     return config
-
-def get_experiment_7_config():
-    dataset_name = 'test_dataset'
-    config = Config(experiment_name="experiment_7",
-                    train_data_path=data_raw_dir / dataset_name / 'TRAIN',
-                    test_data_path=data_raw_dir / dataset_name / 'TEST',
-                    greyscale=True,
-                    epochs=15,
-                    batch_size=4,
-                    cache=False,
-                    histogram_freq=1,
-                    update_freq='epoch',
-                    profile_batch=3,
-                    image_shape=(224, 224),
-                    learning_rate=0.001,
-                    loss='categorical_crossentropy',
-                    optimizer='adam',
-                    padding='same',
-                    hidden_activation='relu',
-                    output_activation='softmax',
-                    units=512,
-                    hyperparams=Hyperparams())
-    return config
