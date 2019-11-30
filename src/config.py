@@ -262,7 +262,7 @@ def get_experiment_6_config():
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=True,
                     epochs=10,
-                    batch_size=4,
+                    batch_size=64,
                     cache=False,
                     histogram_freq=1,
                     update_freq='epoch',

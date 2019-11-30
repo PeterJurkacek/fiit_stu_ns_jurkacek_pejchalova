@@ -87,8 +87,7 @@ def experiment_4():
 
 def experiment_5():
     config = get_experiment_5_config()
-    logger = Logger(config)
-    logger.start()
+    config.logger.start()
     loader = ImageDataLoader(config)
     input_shape = config.input_shape
     logging.info(f"input_shape:{input_shape}")
@@ -99,12 +98,11 @@ def experiment_5():
                                 output_activation=config.output_activation,
                                 input_shape=input_shape, number_of_classes=number_of_classes),
                   run_id="cnn_model_greyscale")
-    logger.end()
+    config.logger.end()
 
 def experiment_6():
     config = get_experiment_6_config()
-    logger = Logger(config)
-    logger.start()
+    config.logger.start()
     loader = ImageDataLoader(config)
     input_shape = config.input_shape
     logging.info(f"input_shape:{input_shape}")
@@ -115,7 +113,7 @@ def experiment_6():
                                 output_activation=config.output_activation,
                                 input_shape=input_shape, number_of_classes=number_of_classes),
                   run_id="cnn_model_greyscale")
-    logger.end()
+    config.logger.end()
 
 def main(argv):
     # experiment_1(trainable=False)
