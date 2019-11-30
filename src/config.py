@@ -79,7 +79,6 @@ class Config:
                  greyscale: bool,
                  epochs: int,
                  batch_size: int,
-                 buffer_size: int,
                  image_shape: tuple,
                  cache: bool,
                  histogram_freq: int,
@@ -110,7 +109,6 @@ class Config:
             self.proccessed_test_dataset_file_path = None
 
         self.epochs = epochs
-        self.buffer_size = buffer_size
         self.number_of_channels = utils.get_number_of_channels(greyscale)
         self.image_shape = image_shape
         self.input_shape = utils.get_input_shape(self.image_shape, self.number_of_channels)
@@ -143,7 +141,6 @@ def get_experiment_0_config():
                     greyscale=False,
                     epochs=3,
                     batch_size=16,
-                    buffer_size=1024,
                     cache=False,
                     histogram_freq=1,
                     update_freq='epoch',
@@ -167,8 +164,7 @@ def get_experiment_1_config(experiment_name='experiment_1'):
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
                     epochs=10,
-                    batch_size=128,
-                    buffer_size=1024,
+                    batch_size=64,
                     cache=False,
                     histogram_freq=1,
                     update_freq='epoch',
@@ -186,7 +182,7 @@ def get_experiment_1_config(experiment_name='experiment_1'):
 
 def get_experiment_3_config():
     train_dataset_name = 'anime'
-    test_dataset_name = 'test_dataset'
+    test_dataset_name = 'anime'
     experiment_name = "experiment_3"
 
     config = Config(experiment_name=experiment_name,
@@ -194,8 +190,7 @@ def get_experiment_3_config():
                     test_data_path=data_raw_dir / test_dataset_name / 'TEST',
                     greyscale=False,
                     epochs=10,
-                    batch_size=128,
-                    buffer_size=1024,
+                    batch_size=64,
                     cache=False,
                     histogram_freq=1,
                     update_freq='epoch',
@@ -218,8 +213,7 @@ def get_experiment_4_config():
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
                     epochs=10,
-                    batch_size=128,
-                    buffer_size=1024,
+                    batch_size=64,
                     cache=False,
                     histogram_freq=1,
                     update_freq='epoch',
@@ -237,13 +231,13 @@ def get_experiment_4_config():
 
 
 def get_experiment_5_config():
-    dataset_name = 'DATASER'
+    dataset_name = 'DATASET'
     config = Config(experiment_name="experiment_5",
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=True,
                     epochs=10,
-                    batch_size=128,
+                    batch_size=64,
                     buffer_size=1024,
                     cache=False,
                     histogram_freq=1,
@@ -269,7 +263,6 @@ def get_experiment_6_config():
                     greyscale=False,
                     epochs=10,
                     batch_size=4,
-                    buffer_size=1024,
                     cache=False,
                     histogram_freq=1,
                     update_freq='epoch',
@@ -294,7 +287,6 @@ def get_experiment_7_config():
                     greyscale=True,
                     epochs=15,
                     batch_size=4,
-                    buffer_size=1024,
                     cache=False,
                     histogram_freq=1,
                     update_freq='epoch',
