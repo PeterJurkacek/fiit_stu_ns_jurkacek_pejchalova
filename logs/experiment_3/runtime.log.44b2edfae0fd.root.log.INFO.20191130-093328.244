@@ -1,0 +1,193 @@
+I1130 09:33:28.975758 139695427413824 logger.py:38] LOGGING START. Data are saving to logs_dir: /labs/logs/experiment_3, models_dir: /labs/models/experiment_3
+I1130 09:33:28.975926 139695427413824 logger.py:39] log_file_name:file:///labs/logs/experiment_3/runtime.log.44b2edfae0fd.root.log.INFO.20191130-093328.244
+I1130 09:33:28.976012 139695427413824 utils.py:103] Greyscale: False
+I1130 09:33:28.983987 139695427413824 utils.py:49] dirs: ['O', 'R'], from: /labs/data/processed/anime/TRAIN
+I1130 09:33:28.984101 139695427413824 load_dataset.py:22] DataInfo => dir_path: /labs/data/processed/anime/TRAIN, count: 760, cache_file_path: /labs/data/processed/experiment_3/animeTRAIN.tfcache
+I1130 09:33:28.989204 139695427413824 utils.py:49] dirs: ['O', 'R'], from: /labs/data/processed/anime/TEST
+I1130 09:33:28.989348 139695427413824 load_dataset.py:22] DataInfo => dir_path: /labs/data/processed/anime/TEST, count: 16, cache_file_path: /labs/data/processed/experiment_3/animeTEST.tfcache
+I1130 09:33:28.989438 139695427413824 utils.py:108] Number of channels: 3
+I1130 09:33:32.854252 139695427413824 load_dataset.py:105] batch_size:64
+BatchInfo => Count of images in one batch:64
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+I1130 09:33:34.124630 139695427413824 load_dataset.py:105] batch_size:1
+BatchInfo => Count of images in one batch:1
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['O'], dtype='<U1')
+I1130 09:33:34.182913 139695427413824 main.py:72] input_shape:(224, 224, 3)
+I1130 09:33:34.183102 139695427413824 main.py:74] number_of_classes:2
+I1130 09:33:34.183196 139695427413824 utils.py:72] steps_per_epoch: 11
+I1130 09:33:34.183273 139695427413824 utils.py:73] total_num_of_samples: 760
+I1130 09:33:34.183344 139695427413824 utils.py:74] batch_size: 64
+I1130 09:33:34.183417 139695427413824 utils.py:72] steps_per_epoch: 16
+I1130 09:33:34.183486 139695427413824 utils.py:73] total_num_of_samples: 16
+I1130 09:33:34.183555 139695427413824 utils.py:74] batch_size: 1
+I1130 09:33:34.300333 139695427413824 simple_trainer.py:27] model.compile()
+I1130 09:33:34.300558 139695427413824 simple_trainer.py:28] loss:categorical_crossentropy
+I1130 09:33:34.300640 139695427413824 simple_trainer.py:29] optimizer:adam
+I1130 09:33:34.863138 139695427413824 simple_trainer.py:40] model.fit()
+I1130 09:33:34.863334 139695427413824 simple_trainer.py:41] run_id: cnn_model
+I1130 09:33:34.863429 139695427413824 simple_trainer.py:42] epochs:10
+I1130 09:33:34.863519 139695427413824 simple_trainer.py:43] steps_per_epoch:11
+I1130 09:33:34.863590 139695427413824 simple_trainer.py:44] validation_steps:16
+W1130 09:33:41.337652 139695427413824 callbacks.py:244] Method (on_train_batch_end) is slow compared to the batch update (0.149215). Check your callbacks.
+I1130 09:33:57.773723 139695427413824 simple_trainer.py:57] Model cnn_model saved to model_path: /labs/models/experiment_3/model_cnn_model.h5
+I1130 09:33:57.773945 139695427413824 simple_trainer.py:61] model.evaluate()
+I1130 09:33:57.774031 139695427413824 simple_trainer.py:62] run_id: cnn_model
+I1130 09:33:57.774288 139695427413824 simple_trainer.py:63] test_data: <DatasetV1Adapter shapes: ((None, 224, 224, 3), (None, 2)), types: (tf.float32, tf.bool)>
+I1130 09:33:57.774405 139695427413824 simple_trainer.py:64] steps: 16
+I1130 09:33:59.125317 139695427413824 simple_trainer.py:67] model was loaded from/labs/models/experiment_3/model_cnn_model.h5
+I1130 09:33:59.125553 139695427413824 layer_utils.py:165] Model: "sequential"
+I1130 09:33:59.125642 139695427413824 layer_utils.py:166] _________________________________________________________________
+I1130 09:33:59.125745 139695427413824 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 09:33:59.125815 139695427413824 layer_utils.py:168] =================================================================
+I1130 09:33:59.126137 139695427413824 layer_utils.py:163] conv2d (Conv2D)              (None, 224, 224, 16)      448       
+I1130 09:33:59.126228 139695427413824 layer_utils.py:232] _________________________________________________________________
+I1130 09:33:59.126346 139695427413824 layer_utils.py:163] max_pooling2d (MaxPooling2D) (None, 74, 74, 16)        0         
+I1130 09:33:59.126420 139695427413824 layer_utils.py:232] _________________________________________________________________
+I1130 09:33:59.126592 139695427413824 layer_utils.py:163] conv2d_1 (Conv2D)            (None, 74, 74, 32)        4640      
+I1130 09:33:59.126673 139695427413824 layer_utils.py:232] _________________________________________________________________
+I1130 09:33:59.126791 139695427413824 layer_utils.py:163] max_pooling2d_1 (MaxPooling2 (None, 24, 24, 32)        0         
+I1130 09:33:59.126862 139695427413824 layer_utils.py:232] _________________________________________________________________
+I1130 09:33:59.127044 139695427413824 layer_utils.py:163] conv2d_2 (Conv2D)            (None, 24, 24, 64)        18496     
+I1130 09:33:59.127123 139695427413824 layer_utils.py:232] _________________________________________________________________
+I1130 09:33:59.127229 139695427413824 layer_utils.py:163] max_pooling2d_2 (MaxPooling2 (None, 8, 8, 64)          0         
+I1130 09:33:59.127301 139695427413824 layer_utils.py:232] _________________________________________________________________
+I1130 09:33:59.127407 139695427413824 layer_utils.py:163] flatten (Flatten)            (None, 4096)              0         
+I1130 09:33:59.127478 139695427413824 layer_utils.py:232] _________________________________________________________________
+I1130 09:33:59.127645 139695427413824 layer_utils.py:163] dense (Dense)                (None, 512)               2097664   
+I1130 09:33:59.127724 139695427413824 layer_utils.py:232] _________________________________________________________________
+I1130 09:33:59.127973 139695427413824 layer_utils.py:163] dense_1 (Dense)              (None, 2)                 1026      
+I1130 09:33:59.128064 139695427413824 layer_utils.py:230] =================================================================
+I1130 09:33:59.128718 139695427413824 layer_utils.py:242] Total params: 2,122,274
+I1130 09:33:59.128815 139695427413824 layer_utils.py:243] Trainable params: 2,122,274
+I1130 09:33:59.128900 139695427413824 layer_utils.py:244] Non-trainable params: 0
+I1130 09:33:59.128972 139695427413824 layer_utils.py:245] _________________________________________________________________
+I1130 09:34:00.355612 139695427413824 logger.py:42] Removing cache_file_dir: /labs/data/processed/experiment_3
+I1130 09:34:00.417503 139695427413824 logger.py:44] LOGGING END. Data was saved to logs_dir: /labs/logs/experiment_3, models_dir: /labs/models/experiment_3
