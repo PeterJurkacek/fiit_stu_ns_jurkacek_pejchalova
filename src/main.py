@@ -4,9 +4,6 @@ from __future__ import print_function
 
 import tensorflow as tf
 from absl import app, logging
-
-tf.executing_eagerly()
-
 from src.config import get_experiment_1_config, get_experiment_3_config, \
     get_experiment_4_config, get_experiment_5_config
 from src.data.load_dataset import ImageDataLoader
@@ -14,7 +11,6 @@ from src.logger import Logger
 from src.models.keras_models import get_cnn, get_resnet50, get_mobilenet, get_vgg16, get_densenet121
 from src.models.simple_trainer import Trainer
 from src.tunning import HyperTrainer
-
 
 def experiment_1(trainable: bool):
     if trainable:
@@ -116,4 +112,5 @@ def main(argv):
 
 
 if __name__ == '__main__':
+    print(tf.__version__)
     app.run(main)
