@@ -107,9 +107,9 @@ def experiment_5():
 
 
 def main(argv):
-    experiment_1(trainable=False)
+    #experiment_1(trainable=False)
     experiment_3()
-    experiment_4()
+    #experiment_4()
     #experiment_5()
     # experiment_6()
     #experiment_1(trainable=True)

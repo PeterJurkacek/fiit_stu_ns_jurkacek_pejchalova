@@ -187,7 +187,7 @@ def get_experiment_3_config():
 
     config = Config(experiment_name=experiment_name,
                     train_data_path=data_processed_dir / train_dataset_name / 'TRAIN',
-                    test_data_path=data_raw_dir / test_dataset_name / 'TEST',
+                    test_data_path=data_processed_dir / test_dataset_name / 'TEST',
                     greyscale=False,
                     epochs=10,
                     batch_size=64,
