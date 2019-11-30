@@ -256,11 +256,11 @@ def get_experiment_5_config():
 
 
 def get_experiment_6_config():
-    dataset_name = 'test_dataset'
+    dataset_name = 'DATASET'
     config = Config(experiment_name="experiment_6",
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
-                    greyscale=False,
+                    greyscale=True,
                     epochs=10,
                     batch_size=4,
                     cache=False,
@@ -274,8 +274,7 @@ def get_experiment_6_config():
                     padding='same',
                     hidden_activation='relu',
                     output_activation='softmax',
-                    units=512,
-                    hyperparams=Hyperparams())
+                    units=512)
     return config
 
 
