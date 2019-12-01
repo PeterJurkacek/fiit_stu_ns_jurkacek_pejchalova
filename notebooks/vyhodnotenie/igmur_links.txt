@@ -1,0 +1,21 @@
+
+![Najlepšie nájdené Hyperparametre](https://i.imgur.com/tXXpKKx.jpg)
+![Kombinácie skúšaných hyperparametrov.](https://i.imgur.com/1DNo5Zc.jpg)
+
+
+
+![Zmena výsledkov Loss funkcie po každej epoche pre skúšané Hyperparametre na testovacej sade.](https://i.imgur.com/1RjDMxz.jpg)
+![Zmena výsledkov Loss funkcie po každej epoche pre existujúce architektúry na testovacej sade](https://i.imgur.com/uHsfPvw.jpg)
+
+
+![Zmena výsledkov metriky Accuracy po každej epoche pre skúšané Hyperparametre na trénovacej sade.](https://i.imgur.com/LOzHXW7.jpg)
+![Zmena výsledkov metriky Accuracy po každej epoche pre skúšané Hyperparametre na testovacej sade.](https://i.imgur.com/Uc9Kbke.jpg)
+
+
+![Zmena výsledkov Loss funkcie po každej epoche pre existujúce architektúry na trénovacej sade](https://i.imgur.com/INJkyOo.jpg)
+
+
+![Zmena výsledkov metriky Accuracy po každej epoche pre existujúce architektúry trénovacej sade](https://i.imgur.com/onT0flL.jpg)
+![Zmena výsledkov metriky Accuracy po každej epoche pre existujúce architektúry testovacej sade](https://i.imgur.com/rk5yR1r.jpg)
+
+
