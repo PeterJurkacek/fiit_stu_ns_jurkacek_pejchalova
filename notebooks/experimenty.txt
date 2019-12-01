@@ -28,6 +28,118 @@ Pre vlastnú architektúru sme experimentovali aj s optimalizáciou hyperparamet
 utils.load_result_df(experiment_4_result.csv)
 
 
+#%%
 
+from src.results_utils import experiment_hystory_table, plot_results
+from IPython.display import display
+import matplotlib.pyplot as plt
+plt.close('all')
+
+
+#%% md
+
+## 0. Overenie implementovanej infraštruktúry projektu
+
+Aby sme otestovali validnosť našej infraštruktúry projektu rozhodli sme sa natrénovať model ResNet a našu navrhnutú architektúru CNN a Optimalizáciu hyperparametrov CNN na menšom datasete odvodenom z hlavného datasetu.
+
+
+#%% md
+
+## 1. Porovnanie existujúcich architektúr s našou architektúrou
+V našom projekte sme sa rozhodli otestovať viaceré existujúce architektúry. Aby sme odpovedali na hypotézu 1 stiahli sme modely MobileNet, VGG16, ResNet50, DenseNet121 natrenované na datasete imagenet[ZDROJ] s 1000 tried.
+V tomto experimente sme pozorovali, či neurónovej sietí stačí poznať aký objekt sa nachádza na obrázku. Napríklad ak je na obrázku flaša neurónová sieť sa naučí, že sa zaraduje do triedy recyklovateľného odpadu.
+Na princípe transfer learningu sme dotrénovali stiahnuté modely na našej trénovacej sade 22564 obrázkov na klasifikáciu do dvoch tried(bioodpad, recyklovatelný odpad). Siete boli trénované v 10 epochách s veľkosťou dávky (angl. batch size) 64 obrázkov.
+Dotrénovanie prebiehalo len v rámci poslednej plne prepojenej vrstvy (angl. Dense layer) s počtom neurónov 1000. Týmto sme chceli zabezpečiť aby si sieť myslela, že výstup predikuje do objektov na ktorých bola natrénovaná.
+Výstupná vrstva pozostávala z 2 neurónov a aby sme videli s akou pravdepodobnosťou sieť klasifikuje do našich tried (O == Bio, R == Recyklovateľný odpad) použili sme aktivačnú funkciu "softmax".
+Výsledky existujúcich architektúr sú zobrazené nižšie (Naša architektúra je označená ako cnn)
+
+#%%
+
+table_name, df = experiment_hystory_table(experiment_name='experiment_1_trainable_false', test=True)
+plot_results(df, table_name)
+
+#%%
+
+table_name, df = experiment_hystory_table(experiment_name='experiment_1_trainable_false', test=False)
+plot_results(df, table_name)
+
+#%% md
+
+Na obrázkoch môžeme pozorovať, že sieti DenseNet121 sa podarilo klasifikovať bio a recykovateľný odpad s úspešnosťou 93% na testovacej sade.
+Týmto sa nám podarilo odpovedať na 1. Otázku. VGG16 a Naša architektúra CNN dosiahli podobnú úspešnosť
+
+## 2. Optimalizácia hyperparametrov
+Vykonali sme optimalizáciu hyperparametrov viacerých architektúr aby sme prekonali úspešnosť architektúry DenseNet121.
+Skúšané hyperparametre:
+Počet konvolučných vrstviev z intervalu prirodzených čísel <1, 3>
+Veľkosť filtrov z hodnôt {3, 5}
+Dropout z intervalu reálnych hodnôt <0.1, 0.4>
+Optimizer z hodnôt {adam, adagrad}
+
+#%%
+
+table_name, df = experiment_hystory_table(experiment_name='experiment_4', test=False)
+plot_results(df, table_name)
+
+#%% md
+
+## 3. Zvýšenie náročnosti klasifikácie na čiernobielych obrázkoch
+Naša architektúra v prvom experimente dosiahla pomerne vysokú úspešnosť 89%. Myslíme si, že to môže byť spôsobené, farbami jednotlivých obrázkov.
+Totižto v obrázkoch bio odpadu dominujú jasnejšie farby ako na obŕazkoch s recyklovateľným odpadom.
+Práve preto sme sa rozhodli vyhodnotiť úspešnosť nášho modelu na čiernobielych obrázkoch.
+
+#%%
+
+table_name, df = experiment_hystory_table(experiment_name='experiment_6', test=False)
+plot_results(df, table_name)
+
+#%%
+
+table_name, df = experiment_hystory_table(experiment_name='experiment_6', test=True)
+plot_results(df, table_name)
+
+#%% md
+
+## 4. Klasifikácia materiálu na animovaných obrázkoch
+Z hlavného datasetu sa nám podarilo vyfiltrovať vzorku animovaných obrázkov odpadu.
+Pre zaujímavosť sme sa rozhodli na tomto vytvorenom datasete otestovať našu architektúru konvolučnej neurónovej siete.
+Nový model sme natrénovali na 700 obrázkoch a testovali na 16.
+
+#%%
+
+table_name, df = experiment_hystory_table(experiment_name='experiment_3', test=True)
+plot_results(df, table_name)
+
+# Opis trénovania modelu
+
+## Dátová pipeline
+Keďže náš dataset je tvorený z obrázkových súborov bolo potrebné zabezpečiť aby sme mali efektívnu dátovú pipelinu.
+Najprv sme implementovali načítané dát pomocou [generátoru](https://www.tensorflow.org/api_docs/python/tf/keras/preprocessing).
+Podľa [dokumentácie](https://www.tensorflow.org/tutorials/load_data/images) sme nahradili generátor pomocou tf.data.Dataset API.
+tf.data.Dataset objekt sme si vytvorili jeden pre trénovaciu množinu a jeden pre testovaciu množinu.
+Proces načítania obrázkov sa vykonáva pomocou súboru load_dataset.py nasledovne:
+
+1. Iterovaním cez súbory s koncovkou .jpg uložené v priečinku TRAIN vytvoríme list ciest k súborom. Cesty sú v náhodnom poradí
+2. Následne sa vykoná nad listom ciest k súborom operácia map, ktorá parsuje metadata (Triedu O alebo R a Obrázok). Výsledkom je olablovaný dataset
+3. Dataset sa načíta buď do cache alebo do súboru. (Podľa configu)
+4. Následne dodatočne zamiešame prvých 2*batch_size prvkov z datasetu (Celý dataset shufflovať bolo náročné na CPU)
+5. Pomocou tensorflow funkcií sa zoberie prvý batch.
+6. Pomocou tensorflow funkcie prefetch posielame batch do trénovania modelu.
+
+Tento spôsob by mal byť najefektívnejší na využitie prostriedkov podľa tensorflow dokumentácie, keďže CPU čiastočne načítava súbory a GPU súbežne trénuje model na batchoch
+
+## Trénovanie modelu
+Model bol trénovaný v prostredí Google Cloud Compute Engine na GPU pomocou containeru vytvoreného z imagu tensorflow/tensorflow:2.0.0-gpu-py3
+V našom projekte trénovanie vykonávajú triedy Trainer (simple_trainer.py) a HyperTrainer (tunning.py).
+Počas trénovania logujeme pomocou callbackov historiu celého tréningu (history.csv) a vytvárame súbory spustiteľné pre tensorboard
+Modely sme trénovali na netriviálnej (23000) obrázkovej sade, po každej epoche sme model vyhodnocovali na testovacej sade (2500).
+Model sa po trénigu uloží do priečinka "models/".
+
+Pre vytvorenie architektúr sme používali tf.keras.Sequential API. Trénovanie bolo vykonávané v 10 epochách, veľkosťou dávky 64 obrázkov.
+
+Vykonali sme aj optimalizáciu hyperparametrov
+
+## Vyhodnocovanie modelu
+Načítame uložený model zo súboru a overujeme ho na testovacej sade. Kedže náš model neplánujeme nasadzovať do produkcie nevideli sme význam vytvára.
 
 

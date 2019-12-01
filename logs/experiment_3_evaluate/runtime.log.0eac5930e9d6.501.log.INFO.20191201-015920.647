@@ -1,0 +1,5 @@
+I1201 01:59:20.243393 140362021549888 logger.py:38] LOGGING START. Data are saving to logs_dir: /labs/logs/experiment_3_evaluate, models_dir: /labs/models/experiment_3_evaluate
+I1201 01:59:20.243911 140362021549888 logger.py:39] log_file_name:file:///labs/logs/experiment_3_evaluate/runtime.log.0eac5930e9d6.501.log.INFO.20191201-015920.647
+I1201 01:59:20.244286 140362021549888 utils.py:103] Greyscale: False
+I1201 01:59:20.332066 140362021549888 utils.py:49] dirs: ['R', 'O'], from: /labs/data/processed/anime/TRAIN
+I1201 01:59:20.332601 140362021549888 load_dataset.py:22] DataInfo => dir_path: /labs/data/processed/anime/TRAIN, count: 760, cache_file_path: /labs/data/processed/experiment_3_evaluate/animeTRAIN.tfcache

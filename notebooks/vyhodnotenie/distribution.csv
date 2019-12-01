@@ -1,0 +1,17 @@
+distribution,count,class,purpose
+all,15,O,TEST
+all,31,R,TEST
+all,167,O,TRAIN
+all,216,R,TRAIN
+anime,2,O,TEST
+anime,0,R,TEST
+anime,33,O,TRAIN
+anime,28,R,TRAIN
+blank,10,O,TEST
+blank,17,R,TEST
+blank,110,O,TRAIN
+blank,264,R,TRAIN
+mixed,23,O,TEST
+mixed,2,R,TEST
+mixed,215,O,TRAIN
+mixed,42,R,TRAIN

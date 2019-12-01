@@ -183,11 +183,11 @@ def get_experiment_1_config(experiment_name='experiment_1'):
 def get_experiment_3_config():
     train_dataset_name = 'anime'
     test_dataset_name = 'anime'
-    experiment_name = "experiment_3"
+    experiment_name = "experiment_3_evaluate"
 
     config = Config(experiment_name=experiment_name,
                     train_data_path=data_processed_dir / train_dataset_name / 'TRAIN',
-                    test_data_path=data_processed_dir / test_dataset_name / 'TEST',
+                    test_data_path=data_raw_dir / test_dataset_name / 'TEST',
                     greyscale=False,
                     epochs=10,
                     batch_size=64,
@@ -207,13 +207,13 @@ def get_experiment_3_config():
 
 
 def get_experiment_4_config():
-    dataset_name = 'DATASET'
+    dataset_name = 'test_dataset'
     config = Config(experiment_name="experiment_4",
                     train_data_path=data_raw_dir / dataset_name / 'TRAIN',
                     test_data_path=data_raw_dir / dataset_name / 'TEST',
                     greyscale=False,
-                    epochs=10,
-                    batch_size=64,
+                    epochs=2,
+                    batch_size=16,
                     cache=False,
                     histogram_freq=1,
                     update_freq='epoch',

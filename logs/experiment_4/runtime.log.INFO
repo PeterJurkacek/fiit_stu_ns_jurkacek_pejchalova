@@ -1,0 +1,807 @@
+I1130 10:01:24.644496 140600914376512 logger.py:38] LOGGING START. Data are saving to logs_dir: /labs/logs/experiment_4, models_dir: /labs/models/experiment_4
+I1130 10:01:24.644674 140600914376512 logger.py:39] log_file_name:file:///labs/logs/experiment_4/runtime.log.44b2edfae0fd.root.log.INFO.20191130-100124.355
+I1130 10:01:24.644761 140600914376512 utils.py:103] Greyscale: False
+I1130 10:01:25.041645 140600914376512 utils.py:49] dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TRAIN
+I1130 10:01:25.041849 140600914376512 load_dataset.py:22] DataInfo => dir_path: /labs/data/raw/DATASET/TRAIN, count: 22564, cache_file_path: /labs/data/processed/experiment_4/DATASETTRAIN.tfcache
+I1130 10:01:25.081811 140600914376512 utils.py:49] dirs: ['O', 'R'], from: /labs/data/raw/DATASET/TEST
+I1130 10:01:25.081974 140600914376512 load_dataset.py:22] DataInfo => dir_path: /labs/data/raw/DATASET/TEST, count: 2513, cache_file_path: /labs/data/processed/experiment_4/DATASETTEST.tfcache
+I1130 10:01:25.082059 140600914376512 utils.py:108] Number of channels: 3
+I1130 10:01:26.548955 140600914376512 load_dataset.py:105] batch_size:64
+BatchInfo => Count of images in one batch:64
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+I1130 10:01:27.856124 140600914376512 load_dataset.py:105] batch_size:64
+BatchInfo => Count of images in one batch:64
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([False,  True]) -> array(['R'], dtype='<U1')
+One image Shape:  (224, 224, 3)
+Label:  array([ True, False]) -> array(['O'], dtype='<U1')
+I1130 10:01:28.965420 140600914376512 utils.py:72] steps_per_epoch: 352
+I1130 10:01:28.965603 140600914376512 utils.py:73] total_num_of_samples: 22564
+I1130 10:01:28.965693 140600914376512 utils.py:74] batch_size: 64
+I1130 10:01:28.965779 140600914376512 utils.py:72] steps_per_epoch: 39
+I1130 10:01:28.965844 140600914376512 utils.py:73] total_num_of_samples: 2513
+I1130 10:01:28.965907 140600914376512 utils.py:74] batch_size: 64
+I1130 10:01:28.965979 140600914376512 tunning.py:40] input_shape:(224, 224, 3)
+I1130 10:01:28.966058 140600914376512 tunning.py:42] number_of_classes:2
+I1130 10:01:28.966424 140600914376512 tunning.py:60] --- Running training session 1, 20
+I1130 10:01:28.966506 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 1, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.17767502508788902, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adam'}
+I1130 10:01:28.966655 140600914376512 tunning.py:62] --- repeat #: 1
+I1130 10:01:28.969652 140600914376512 keras_models.py:35] index: 0
+I1130 10:01:29.000849 140600914376512 keras_models.py:35] index: 1
+I1130 10:01:29.080268 140600914376512 tunning.py:109] model.build()
+I1130 10:01:29.127976 140600914376512 tunning.py:82] model.fit()
+I1130 10:01:29.128108 140600914376512 tunning.py:83] run_id: 0
+I1130 10:01:29.128190 140600914376512 tunning.py:84] epochs:10
+I1130 10:01:29.128262 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 10:01:29.128331 140600914376512 tunning.py:86] validation_steps:39
+W1130 10:01:32.378868 140600914376512 callbacks.py:244] Method (on_train_batch_end) is slow compared to the batch update (0.154468). Check your callbacks.
+Average test loss:  0.2497860155676873
+Average test accuracy:  0.8962847
+I1130 11:39:02.357866 140600914376512 tunning.py:106] Model 0 saved to model_path: /labs/models/experiment_4/model_0.h5
+I1130 11:39:02.358295 140600914376512 tunning.py:121] model.evaluate()
+I1130 11:39:02.358391 140600914376512 tunning.py:122] run_id: 0
+I1130 11:39:02.358466 140600914376512 tunning.py:123] steps: 2513
+I1130 11:39:03.105347 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_0.h5
+I1130 11:39:03.105572 140600914376512 layer_utils.py:165] Model: "sequential"
+I1130 11:39:03.105657 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 11:39:03.105748 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 11:39:03.105818 140600914376512 layer_utils.py:168] =================================================================
+I1130 11:39:03.106134 140600914376512 layer_utils.py:163] conv2d (Conv2D)              (None, 224, 224, 8)       608       
+I1130 11:39:03.106226 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 11:39:03.106346 140600914376512 layer_utils.py:163] max_pooling2d (MaxPooling2D) (None, 112, 112, 8)       0         
+I1130 11:39:03.106422 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 11:39:03.106614 140600914376512 layer_utils.py:163] conv2d_1 (Conv2D)            (None, 112, 112, 16)      3216      
+I1130 11:39:03.106696 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 11:39:03.106802 140600914376512 layer_utils.py:163] max_pooling2d_1 (MaxPooling2 (None, 56, 56, 16)        0         
+I1130 11:39:03.106885 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 11:39:03.107001 140600914376512 layer_utils.py:163] flatten (Flatten)            (None, 50176)             0         
+I1130 11:39:03.107073 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 11:39:03.107178 140600914376512 layer_utils.py:163] dropout (Dropout)            (None, 50176)             0         
+I1130 11:39:03.107248 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 11:39:03.107416 140600914376512 layer_utils.py:163] dense (Dense)                (None, 32)                1605664   
+I1130 11:39:03.107494 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 11:39:03.107667 140600914376512 layer_utils.py:163] dense_1 (Dense)              (None, 2)                 66        
+I1130 11:39:03.107744 140600914376512 layer_utils.py:230] =================================================================
+I1130 11:39:03.108381 140600914376512 layer_utils.py:242] Total params: 1,609,554
+I1130 11:39:03.108483 140600914376512 layer_utils.py:243] Trainable params: 1,609,554
+I1130 11:39:03.108558 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 11:39:03.108627 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.8463987
+I1130 11:41:19.983405 140600914376512 tunning.py:60] --- Running training session 2, 20
+I1130 11:41:19.983650 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 1, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.17767502508788902, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adam'}
+I1130 11:41:19.983735 140600914376512 tunning.py:62] --- repeat #: 2
+I1130 11:41:19.984613 140600914376512 keras_models.py:35] index: 0
+I1130 11:41:20.005304 140600914376512 keras_models.py:35] index: 1
+I1130 11:41:20.076113 140600914376512 tunning.py:109] model.build()
+I1130 11:41:20.117273 140600914376512 tunning.py:82] model.fit()
+I1130 11:41:20.117391 140600914376512 tunning.py:83] run_id: 1
+I1130 11:41:20.117478 140600914376512 tunning.py:84] epochs:10
+I1130 11:41:20.117548 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 11:41:20.117615 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.2523097298941469
+Average test accuracy:  0.8943182
+I1130 13:02:47.691713 140600914376512 tunning.py:106] Model 1 saved to model_path: /labs/models/experiment_4/model_1.h5
+I1130 13:02:47.692128 140600914376512 tunning.py:121] model.evaluate()
+I1130 13:02:47.692213 140600914376512 tunning.py:122] run_id: 1
+I1130 13:02:47.692284 140600914376512 tunning.py:123] steps: 2513
+I1130 13:02:48.445569 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_1.h5
+I1130 13:02:48.445828 140600914376512 layer_utils.py:165] Model: "sequential_1"
+I1130 13:02:48.445916 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 13:02:48.446001 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 13:02:48.446078 140600914376512 layer_utils.py:168] =================================================================
+I1130 13:02:48.446408 140600914376512 layer_utils.py:163] conv2d_2 (Conv2D)            (None, 224, 224, 8)       608       
+I1130 13:02:48.446506 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 13:02:48.446623 140600914376512 layer_utils.py:163] max_pooling2d_2 (MaxPooling2 (None, 112, 112, 8)       0         
+I1130 13:02:48.446696 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 13:02:48.446863 140600914376512 layer_utils.py:163] conv2d_3 (Conv2D)            (None, 112, 112, 16)      3216      
+I1130 13:02:48.446941 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 13:02:48.447046 140600914376512 layer_utils.py:163] max_pooling2d_3 (MaxPooling2 (None, 56, 56, 16)        0         
+I1130 13:02:48.447117 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 13:02:48.447228 140600914376512 layer_utils.py:163] flatten_1 (Flatten)          (None, 50176)             0         
+I1130 13:02:48.447298 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 13:02:48.447401 140600914376512 layer_utils.py:163] dropout_1 (Dropout)          (None, 50176)             0         
+I1130 13:02:48.447480 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 13:02:48.447649 140600914376512 layer_utils.py:163] dense_2 (Dense)              (None, 32)                1605664   
+I1130 13:02:48.447727 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 13:02:48.447956 140600914376512 layer_utils.py:163] dense_3 (Dense)              (None, 2)                 66        
+I1130 13:02:48.448043 140600914376512 layer_utils.py:230] =================================================================
+I1130 13:02:48.448642 140600914376512 layer_utils.py:242] Total params: 1,609,554
+I1130 13:02:48.448734 140600914376512 layer_utils.py:243] Trainable params: 1,609,554
+I1130 13:02:48.448806 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 13:02:48.448873 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.8666932
+I1130 13:05:04.561955 140600914376512 tunning.py:60] --- Running training session 3, 20
+I1130 13:05:04.562189 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.20741481240849652, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+I1130 13:05:04.562274 140600914376512 tunning.py:62] --- repeat #: 1
+I1130 13:05:04.563119 140600914376512 keras_models.py:35] index: 0
+I1130 13:05:04.583647 140600914376512 keras_models.py:35] index: 1
+I1130 13:05:04.668189 140600914376512 tunning.py:109] model.build()
+I1130 13:05:04.710983 140600914376512 tunning.py:82] model.fit()
+I1130 13:05:04.711152 140600914376512 tunning.py:83] run_id: 2
+I1130 13:05:04.711232 140600914376512 tunning.py:84] epochs:10
+I1130 13:05:04.711302 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 13:05:04.711369 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.3914822897281159
+Average test accuracy:  0.8287198
+I1130 14:25:43.870755 140600914376512 tunning.py:106] Model 2 saved to model_path: /labs/models/experiment_4/model_2.h5
+I1130 14:25:43.871204 140600914376512 tunning.py:121] model.evaluate()
+I1130 14:25:43.871289 140600914376512 tunning.py:122] run_id: 2
+I1130 14:25:43.871373 140600914376512 tunning.py:123] steps: 2513
+I1130 14:25:44.571249 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_2.h5
+I1130 14:25:44.571492 140600914376512 layer_utils.py:165] Model: "sequential_2"
+I1130 14:25:44.571576 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 14:25:44.571657 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 14:25:44.571723 140600914376512 layer_utils.py:168] =================================================================
+I1130 14:25:44.572112 140600914376512 layer_utils.py:163] conv2d_4 (Conv2D)            (None, 224, 224, 8)       608       
+I1130 14:25:44.572212 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 14:25:44.572329 140600914376512 layer_utils.py:163] max_pooling2d_4 (MaxPooling2 (None, 112, 112, 8)       0         
+I1130 14:25:44.572412 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 14:25:44.572587 140600914376512 layer_utils.py:163] conv2d_5 (Conv2D)            (None, 112, 112, 16)      3216      
+I1130 14:25:44.572665 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 14:25:44.572770 140600914376512 layer_utils.py:163] max_pooling2d_5 (MaxPooling2 (None, 56, 56, 16)        0         
+I1130 14:25:44.572841 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 14:25:44.572944 140600914376512 layer_utils.py:163] flatten_2 (Flatten)          (None, 50176)             0         
+I1130 14:25:44.573014 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 14:25:44.573117 140600914376512 layer_utils.py:163] dropout_2 (Dropout)          (None, 50176)             0         
+I1130 14:25:44.573186 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 14:25:44.573348 140600914376512 layer_utils.py:163] dense_4 (Dense)              (None, 32)                1605664   
+I1130 14:25:44.573435 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 14:25:44.573593 140600914376512 layer_utils.py:163] dense_5 (Dense)              (None, 64)                2112      
+I1130 14:25:44.573668 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 14:25:44.573823 140600914376512 layer_utils.py:163] dense_6 (Dense)              (None, 2)                 130       
+I1130 14:25:44.573898 140600914376512 layer_utils.py:230] =================================================================
+I1130 14:25:44.574573 140600914376512 layer_utils.py:242] Total params: 1,611,730
+I1130 14:25:44.574669 140600914376512 layer_utils.py:243] Trainable params: 1,611,730
+I1130 14:25:44.574741 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 14:25:44.574807 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.85953045
+I1130 14:27:58.795530 140600914376512 tunning.py:60] --- Running training session 4, 20
+I1130 14:27:58.795744 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.20741481240849652, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+I1130 14:27:58.795897 140600914376512 tunning.py:62] --- repeat #: 2
+I1130 14:27:58.796722 140600914376512 keras_models.py:35] index: 0
+I1130 14:27:58.818374 140600914376512 keras_models.py:35] index: 1
+I1130 14:27:58.908530 140600914376512 tunning.py:109] model.build()
+I1130 14:27:58.952363 140600914376512 tunning.py:82] model.fit()
+I1130 14:27:58.952511 140600914376512 tunning.py:83] run_id: 3
+I1130 14:27:58.952592 140600914376512 tunning.py:84] epochs:10
+I1130 14:27:58.952664 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 14:27:58.952731 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.40508258081549275
+Average test accuracy:  0.8217195
+I1130 15:48:36.196201 140600914376512 tunning.py:106] Model 3 saved to model_path: /labs/models/experiment_4/model_3.h5
+I1130 15:48:36.196584 140600914376512 tunning.py:121] model.evaluate()
+I1130 15:48:36.196667 140600914376512 tunning.py:122] run_id: 3
+I1130 15:48:36.196738 140600914376512 tunning.py:123] steps: 2513
+I1130 15:48:36.910248 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_3.h5
+I1130 15:48:36.910468 140600914376512 layer_utils.py:165] Model: "sequential_3"
+I1130 15:48:36.910552 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 15:48:36.910634 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 15:48:36.910711 140600914376512 layer_utils.py:168] =================================================================
+I1130 15:48:36.910988 140600914376512 layer_utils.py:163] conv2d_6 (Conv2D)            (None, 224, 224, 8)       608       
+I1130 15:48:36.911078 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 15:48:36.911195 140600914376512 layer_utils.py:163] max_pooling2d_6 (MaxPooling2 (None, 112, 112, 8)       0         
+I1130 15:48:36.911269 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 15:48:36.911451 140600914376512 layer_utils.py:163] conv2d_7 (Conv2D)            (None, 112, 112, 16)      3216      
+I1130 15:48:36.911533 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 15:48:36.911640 140600914376512 layer_utils.py:163] max_pooling2d_7 (MaxPooling2 (None, 56, 56, 16)        0         
+I1130 15:48:36.911712 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 15:48:36.911878 140600914376512 layer_utils.py:163] flatten_3 (Flatten)          (None, 50176)             0         
+I1130 15:48:36.911969 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 15:48:36.912078 140600914376512 layer_utils.py:163] dropout_3 (Dropout)          (None, 50176)             0         
+I1130 15:48:36.912149 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 15:48:36.912324 140600914376512 layer_utils.py:163] dense_7 (Dense)              (None, 32)                1605664   
+I1130 15:48:36.912413 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 15:48:36.912580 140600914376512 layer_utils.py:163] dense_8 (Dense)              (None, 64)                2112      
+I1130 15:48:36.912658 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 15:48:36.912826 140600914376512 layer_utils.py:163] dense_9 (Dense)              (None, 2)                 130       
+I1130 15:48:36.912902 140600914376512 layer_utils.py:230] =================================================================
+I1130 15:48:36.913541 140600914376512 layer_utils.py:242] Total params: 1,611,730
+I1130 15:48:36.913634 140600914376512 layer_utils.py:243] Trainable params: 1,611,730
+I1130 15:48:36.913707 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 15:48:36.913775 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.87425387
+I1130 15:50:53.099373 140600914376512 tunning.py:60] --- Running training session 5, 20
+I1130 15:50:53.099595 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.14192373549000367, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+I1130 15:50:53.099691 140600914376512 tunning.py:62] --- repeat #: 1
+I1130 15:50:53.100600 140600914376512 keras_models.py:35] index: 0
+I1130 15:50:53.121585 140600914376512 keras_models.py:35] index: 1
+I1130 15:50:53.140289 140600914376512 keras_models.py:35] index: 2
+I1130 15:50:53.229742 140600914376512 tunning.py:109] model.build()
+I1130 15:50:53.271584 140600914376512 tunning.py:82] model.fit()
+I1130 15:50:53.271700 140600914376512 tunning.py:83] run_id: 4
+I1130 15:50:53.271779 140600914376512 tunning.py:84] epochs:10
+I1130 15:50:53.271877 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 15:50:53.271946 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.3800497217611833
+Average test accuracy:  0.8349387
+I1130 17:11:31.630859 140600914376512 tunning.py:106] Model 4 saved to model_path: /labs/models/experiment_4/model_4.h5
+I1130 17:11:31.631277 140600914376512 tunning.py:121] model.evaluate()
+I1130 17:11:31.631372 140600914376512 tunning.py:122] run_id: 4
+I1130 17:11:31.631447 140600914376512 tunning.py:123] steps: 2513
+I1130 17:11:32.440612 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_4.h5
+I1130 17:11:32.440834 140600914376512 layer_utils.py:165] Model: "sequential_4"
+I1130 17:11:32.440922 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 17:11:32.441004 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 17:11:32.441073 140600914376512 layer_utils.py:168] =================================================================
+I1130 17:11:32.441359 140600914376512 layer_utils.py:163] conv2d_8 (Conv2D)            (None, 224, 224, 8)       224       
+I1130 17:11:32.441451 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.441569 140600914376512 layer_utils.py:163] max_pooling2d_8 (MaxPooling2 (None, 112, 112, 8)       0         
+I1130 17:11:32.441643 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.441814 140600914376512 layer_utils.py:163] conv2d_9 (Conv2D)            (None, 112, 112, 16)      1168      
+I1130 17:11:32.441905 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.442014 140600914376512 layer_utils.py:163] max_pooling2d_9 (MaxPooling2 (None, 56, 56, 16)        0         
+I1130 17:11:32.442086 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.442285 140600914376512 layer_utils.py:163] conv2d_10 (Conv2D)           (None, 56, 56, 32)        4640      
+I1130 17:11:32.442365 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.442471 140600914376512 layer_utils.py:163] max_pooling2d_10 (MaxPooling (None, 28, 28, 32)        0         
+I1130 17:11:32.442543 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.442648 140600914376512 layer_utils.py:163] flatten_4 (Flatten)          (None, 25088)             0         
+I1130 17:11:32.442719 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.442831 140600914376512 layer_utils.py:163] dropout_4 (Dropout)          (None, 25088)             0         
+I1130 17:11:32.442906 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.443074 140600914376512 layer_utils.py:163] dense_10 (Dense)             (None, 32)                802848    
+I1130 17:11:32.443172 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.443338 140600914376512 layer_utils.py:163] dense_11 (Dense)             (None, 64)                2112      
+I1130 17:11:32.443416 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 17:11:32.443573 140600914376512 layer_utils.py:163] dense_12 (Dense)             (None, 2)                 130       
+I1130 17:11:32.443650 140600914376512 layer_utils.py:230] =================================================================
+I1130 17:11:32.444468 140600914376512 layer_utils.py:242] Total params: 811,122
+I1130 17:11:32.444570 140600914376512 layer_utils.py:243] Trainable params: 811,122
+I1130 17:11:32.444644 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 17:11:32.444711 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.88261044
+I1130 17:13:50.496260 140600914376512 tunning.py:60] --- Running training session 6, 20
+I1130 17:13:50.496471 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.14192373549000367, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+I1130 17:13:50.496561 140600914376512 tunning.py:62] --- repeat #: 2
+I1130 17:13:50.497460 140600914376512 keras_models.py:35] index: 0
+I1130 17:13:50.518522 140600914376512 keras_models.py:35] index: 1
+I1130 17:13:50.537931 140600914376512 keras_models.py:35] index: 2
+I1130 17:13:50.627635 140600914376512 tunning.py:109] model.build()
+I1130 17:13:50.817208 140600914376512 tunning.py:82] model.fit()
+I1130 17:13:50.817399 140600914376512 tunning.py:83] run_id: 5
+I1130 17:13:50.817481 140600914376512 tunning.py:84] epochs:10
+I1130 17:13:50.817552 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 17:13:50.817619 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.3814171652097932
+Average test accuracy:  0.8347123
+I1130 18:34:37.005134 140600914376512 tunning.py:106] Model 5 saved to model_path: /labs/models/experiment_4/model_5.h5
+I1130 18:34:37.005522 140600914376512 tunning.py:121] model.evaluate()
+I1130 18:34:37.005608 140600914376512 tunning.py:122] run_id: 5
+I1130 18:34:37.005686 140600914376512 tunning.py:123] steps: 2513
+I1130 18:34:37.804777 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_5.h5
+I1130 18:34:37.804999 140600914376512 layer_utils.py:165] Model: "sequential_5"
+I1130 18:34:37.805091 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 18:34:37.805173 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 18:34:37.805242 140600914376512 layer_utils.py:168] =================================================================
+I1130 18:34:37.805552 140600914376512 layer_utils.py:163] conv2d_11 (Conv2D)           (None, 224, 224, 8)       224       
+I1130 18:34:37.805642 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.805763 140600914376512 layer_utils.py:163] max_pooling2d_11 (MaxPooling (None, 112, 112, 8)       0         
+I1130 18:34:37.805837 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.806007 140600914376512 layer_utils.py:163] conv2d_12 (Conv2D)           (None, 112, 112, 16)      1168      
+I1130 18:34:37.806087 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.806217 140600914376512 layer_utils.py:163] max_pooling2d_12 (MaxPooling (None, 56, 56, 16)        0         
+I1130 18:34:37.806291 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.806474 140600914376512 layer_utils.py:163] conv2d_13 (Conv2D)           (None, 56, 56, 32)        4640      
+I1130 18:34:37.806554 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.806659 140600914376512 layer_utils.py:163] max_pooling2d_13 (MaxPooling (None, 28, 28, 32)        0         
+I1130 18:34:37.806730 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.806836 140600914376512 layer_utils.py:163] flatten_5 (Flatten)          (None, 25088)             0         
+I1130 18:34:37.806906 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.807009 140600914376512 layer_utils.py:163] dropout_5 (Dropout)          (None, 25088)             0         
+I1130 18:34:37.807080 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.807244 140600914376512 layer_utils.py:163] dense_13 (Dense)             (None, 32)                802848    
+I1130 18:34:37.807321 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.807493 140600914376512 layer_utils.py:163] dense_14 (Dense)             (None, 64)                2112      
+I1130 18:34:37.807572 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 18:34:37.807730 140600914376512 layer_utils.py:163] dense_15 (Dense)             (None, 2)                 130       
+I1130 18:34:37.807842 140600914376512 layer_utils.py:230] =================================================================
+I1130 18:34:37.808684 140600914376512 layer_utils.py:242] Total params: 811,122
+I1130 18:34:37.808800 140600914376512 layer_utils.py:243] Trainable params: 811,122
+I1130 18:34:37.808896 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 18:34:37.808982 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.87942696
+I1130 18:36:53.343200 140600914376512 tunning.py:60] --- Running training session 7, 20
+I1130 18:36:53.343401 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.394835642811296, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+I1130 18:36:53.343484 140600914376512 tunning.py:62] --- repeat #: 1
+I1130 18:36:53.344399 140600914376512 keras_models.py:35] index: 0
+I1130 18:36:53.365476 140600914376512 keras_models.py:35] index: 1
+I1130 18:36:53.384838 140600914376512 keras_models.py:35] index: 2
+I1130 18:36:53.490196 140600914376512 tunning.py:109] model.build()
+I1130 18:36:53.532731 140600914376512 tunning.py:82] model.fit()
+I1130 18:36:53.532886 140600914376512 tunning.py:83] run_id: 6
+I1130 18:36:53.532967 140600914376512 tunning.py:84] epochs:10
+I1130 18:36:53.533039 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 18:36:53.533107 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.3910310452084311
+Average test accuracy:  0.8286576
+I1130 19:57:31.673307 140600914376512 tunning.py:106] Model 6 saved to model_path: /labs/models/experiment_4/model_6.h5
+I1130 19:57:31.673707 140600914376512 tunning.py:121] model.evaluate()
+I1130 19:57:31.673788 140600914376512 tunning.py:122] run_id: 6
+I1130 19:57:31.673859 140600914376512 tunning.py:123] steps: 2513
+I1130 19:57:32.735893 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_6.h5
+I1130 19:57:32.736095 140600914376512 layer_utils.py:165] Model: "sequential_6"
+I1130 19:57:32.736177 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 19:57:32.736257 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 19:57:32.736326 140600914376512 layer_utils.py:168] =================================================================
+I1130 19:57:32.736615 140600914376512 layer_utils.py:163] conv2d_14 (Conv2D)           (None, 224, 224, 8)       608       
+I1130 19:57:32.736703 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.736819 140600914376512 layer_utils.py:163] max_pooling2d_14 (MaxPooling (None, 112, 112, 8)       0         
+I1130 19:57:32.736893 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.737059 140600914376512 layer_utils.py:163] conv2d_15 (Conv2D)           (None, 112, 112, 16)      3216      
+I1130 19:57:32.737138 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.737244 140600914376512 layer_utils.py:163] max_pooling2d_15 (MaxPooling (None, 56, 56, 16)        0         
+I1130 19:57:32.737315 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.737503 140600914376512 layer_utils.py:163] conv2d_16 (Conv2D)           (None, 56, 56, 32)        12832     
+I1130 19:57:32.737582 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.737686 140600914376512 layer_utils.py:163] max_pooling2d_16 (MaxPooling (None, 28, 28, 32)        0         
+I1130 19:57:32.737756 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.737858 140600914376512 layer_utils.py:163] flatten_6 (Flatten)          (None, 25088)             0         
+I1130 19:57:32.737927 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.738029 140600914376512 layer_utils.py:163] dropout_6 (Dropout)          (None, 25088)             0         
+I1130 19:57:32.738097 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.738256 140600914376512 layer_utils.py:163] dense_16 (Dense)             (None, 32)                802848    
+I1130 19:57:32.738360 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.738579 140600914376512 layer_utils.py:163] dense_17 (Dense)             (None, 64)                2112      
+I1130 19:57:32.738679 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.738832 140600914376512 layer_utils.py:163] dense_18 (Dense)             (None, 128)               8320      
+I1130 19:57:32.738922 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 19:57:32.739118 140600914376512 layer_utils.py:163] dense_19 (Dense)             (None, 2)                 258       
+I1130 19:57:32.739192 140600914376512 layer_utils.py:230] =================================================================
+I1130 19:57:32.739980 140600914376512 layer_utils.py:242] Total params: 830,194
+I1130 19:57:32.740075 140600914376512 layer_utils.py:243] Trainable params: 830,194
+I1130 19:57:32.740147 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 19:57:32.740216 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.87664145
+I1130 19:59:53.359161 140600914376512 tunning.py:60] --- Running training session 8, 20
+I1130 19:59:53.359400 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 5, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.394835642811296, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+I1130 19:59:53.359501 140600914376512 tunning.py:62] --- repeat #: 2
+I1130 19:59:53.360368 140600914376512 keras_models.py:35] index: 0
+I1130 19:59:53.381051 140600914376512 keras_models.py:35] index: 1
+I1130 19:59:53.400028 140600914376512 keras_models.py:35] index: 2
+I1130 19:59:53.502352 140600914376512 tunning.py:109] model.build()
+I1130 19:59:53.545489 140600914376512 tunning.py:82] model.fit()
+I1130 19:59:53.545609 140600914376512 tunning.py:83] run_id: 7
+I1130 19:59:53.545686 140600914376512 tunning.py:84] epochs:10
+I1130 19:59:53.545755 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 19:59:53.545822 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.37563553184524856
+Average test accuracy:  0.8374956
+I1130 21:20:31.019923 140600914376512 tunning.py:106] Model 7 saved to model_path: /labs/models/experiment_4/model_7.h5
+I1130 21:20:31.020301 140600914376512 tunning.py:121] model.evaluate()
+I1130 21:20:31.020398 140600914376512 tunning.py:122] run_id: 7
+I1130 21:20:31.020472 140600914376512 tunning.py:123] steps: 2513
+I1130 21:20:32.102051 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_7.h5
+I1130 21:20:32.102262 140600914376512 layer_utils.py:165] Model: "sequential_7"
+I1130 21:20:32.102345 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 21:20:32.102441 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 21:20:32.102512 140600914376512 layer_utils.py:168] =================================================================
+I1130 21:20:32.102804 140600914376512 layer_utils.py:163] conv2d_17 (Conv2D)           (None, 224, 224, 8)       608       
+I1130 21:20:32.102892 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.103009 140600914376512 layer_utils.py:163] max_pooling2d_17 (MaxPooling (None, 112, 112, 8)       0         
+I1130 21:20:32.103083 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.103249 140600914376512 layer_utils.py:163] conv2d_18 (Conv2D)           (None, 112, 112, 16)      3216      
+I1130 21:20:32.103328 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.103449 140600914376512 layer_utils.py:163] max_pooling2d_18 (MaxPooling (None, 56, 56, 16)        0         
+I1130 21:20:32.103538 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.103737 140600914376512 layer_utils.py:163] conv2d_19 (Conv2D)           (None, 56, 56, 32)        12832     
+I1130 21:20:32.103869 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.104001 140600914376512 layer_utils.py:163] max_pooling2d_19 (MaxPooling (None, 28, 28, 32)        0         
+I1130 21:20:32.104074 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.104181 140600914376512 layer_utils.py:163] flatten_7 (Flatten)          (None, 25088)             0         
+I1130 21:20:32.104252 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.104371 140600914376512 layer_utils.py:163] dropout_7 (Dropout)          (None, 25088)             0         
+I1130 21:20:32.104446 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.104643 140600914376512 layer_utils.py:163] dense_20 (Dense)             (None, 32)                802848    
+I1130 21:20:32.104723 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.104884 140600914376512 layer_utils.py:163] dense_21 (Dense)             (None, 64)                2112      
+I1130 21:20:32.104961 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.105118 140600914376512 layer_utils.py:163] dense_22 (Dense)             (None, 128)               8320      
+I1130 21:20:32.105195 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 21:20:32.105351 140600914376512 layer_utils.py:163] dense_23 (Dense)             (None, 2)                 258       
+I1130 21:20:32.105441 140600914376512 layer_utils.py:230] =================================================================
+I1130 21:20:32.106205 140600914376512 layer_utils.py:242] Total params: 830,194
+I1130 21:20:32.106298 140600914376512 layer_utils.py:243] Trainable params: 830,194
+I1130 21:20:32.106383 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 21:20:32.106455 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.88937527
+I1130 21:22:49.082970 140600914376512 tunning.py:60] --- Running training session 9, 20
+I1130 21:22:49.083172 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.12212273008861754, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adam'}
+I1130 21:22:49.083252 140600914376512 tunning.py:62] --- repeat #: 1
+I1130 21:22:49.084124 140600914376512 keras_models.py:35] index: 0
+I1130 21:22:49.105126 140600914376512 keras_models.py:35] index: 1
+I1130 21:22:49.210043 140600914376512 tunning.py:109] model.build()
+I1130 21:22:49.253659 140600914376512 tunning.py:82] model.fit()
+I1130 21:22:49.253786 140600914376512 tunning.py:83] run_id: 8
+I1130 21:22:49.253867 140600914376512 tunning.py:84] epochs:10
+I1130 21:22:49.253938 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 21:22:49.254007 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.22621835655141204
+Average test accuracy:  0.90819865
+I1130 22:43:26.333032 140600914376512 tunning.py:106] Model 8 saved to model_path: /labs/models/experiment_4/model_8.h5
+I1130 22:43:26.333426 140600914376512 tunning.py:121] model.evaluate()
+I1130 22:43:26.333506 140600914376512 tunning.py:122] run_id: 8
+I1130 22:43:26.333577 140600914376512 tunning.py:123] steps: 2513
+I1130 22:43:27.126216 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_8.h5
+I1130 22:43:27.126544 140600914376512 layer_utils.py:165] Model: "sequential_8"
+I1130 22:43:27.126650 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1130 22:43:27.126735 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1130 22:43:27.126806 140600914376512 layer_utils.py:168] =================================================================
+I1130 22:43:27.127105 140600914376512 layer_utils.py:163] conv2d_20 (Conv2D)           (None, 224, 224, 8)       224       
+I1130 22:43:27.127193 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.127314 140600914376512 layer_utils.py:163] max_pooling2d_20 (MaxPooling (None, 112, 112, 8)       0         
+I1130 22:43:27.127389 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.127601 140600914376512 layer_utils.py:163] conv2d_21 (Conv2D)           (None, 112, 112, 16)      1168      
+I1130 22:43:27.127686 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.127838 140600914376512 layer_utils.py:163] max_pooling2d_21 (MaxPooling (None, 56, 56, 16)        0         
+I1130 22:43:27.127968 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.128084 140600914376512 layer_utils.py:163] flatten_8 (Flatten)          (None, 50176)             0         
+I1130 22:43:27.128157 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.128274 140600914376512 layer_utils.py:163] dropout_8 (Dropout)          (None, 50176)             0         
+I1130 22:43:27.128345 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.128524 140600914376512 layer_utils.py:163] dense_24 (Dense)             (None, 32)                1605664   
+I1130 22:43:27.128603 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.128765 140600914376512 layer_utils.py:163] dense_25 (Dense)             (None, 64)                2112      
+I1130 22:43:27.128843 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.129015 140600914376512 layer_utils.py:163] dense_26 (Dense)             (None, 128)               8320      
+I1130 22:43:27.129092 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1130 22:43:27.129259 140600914376512 layer_utils.py:163] dense_27 (Dense)             (None, 2)                 258       
+I1130 22:43:27.129336 140600914376512 layer_utils.py:230] =================================================================
+I1130 22:43:27.130046 140600914376512 layer_utils.py:242] Total params: 1,617,746
+I1130 22:43:27.130142 140600914376512 layer_utils.py:243] Trainable params: 1,617,746
+I1130 22:43:27.130215 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1130 22:43:27.130283 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.86589736
+I1130 22:45:42.249938 140600914376512 tunning.py:60] --- Running training session 10, 20
+I1130 22:45:42.250154 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 3, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.12212273008861754, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adam'}
+I1130 22:45:42.250238 140600914376512 tunning.py:62] --- repeat #: 2
+I1130 22:45:42.251045 140600914376512 keras_models.py:35] index: 0
+I1130 22:45:42.273866 140600914376512 keras_models.py:35] index: 1
+I1130 22:45:42.377901 140600914376512 tunning.py:109] model.build()
+I1130 22:45:42.420769 140600914376512 tunning.py:82] model.fit()
+I1130 22:45:42.420898 140600914376512 tunning.py:83] run_id: 9
+I1130 22:45:42.420982 140600914376512 tunning.py:84] epochs:10
+I1130 22:45:42.421061 140600914376512 tunning.py:85] steps_per_epoch:352
+I1130 22:45:42.421129 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.23344378071686317
+Average test accuracy:  0.90217066
+I1201 00:06:55.995375 140600914376512 tunning.py:106] Model 9 saved to model_path: /labs/models/experiment_4/model_9.h5
+I1201 00:06:55.995746 140600914376512 tunning.py:121] model.evaluate()
+I1201 00:06:55.995954 140600914376512 tunning.py:122] run_id: 9
+I1201 00:06:55.996063 140600914376512 tunning.py:123] steps: 2513
+I1201 00:06:56.799548 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_9.h5
+I1201 00:06:56.799879 140600914376512 layer_utils.py:165] Model: "sequential_9"
+I1201 00:06:56.799983 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1201 00:06:56.800067 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1201 00:06:56.800137 140600914376512 layer_utils.py:168] =================================================================
+I1201 00:06:56.800470 140600914376512 layer_utils.py:163] conv2d_22 (Conv2D)           (None, 224, 224, 8)       224       
+I1201 00:06:56.800558 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.800675 140600914376512 layer_utils.py:163] max_pooling2d_22 (MaxPooling (None, 112, 112, 8)       0         
+I1201 00:06:56.800750 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.800919 140600914376512 layer_utils.py:163] conv2d_23 (Conv2D)           (None, 112, 112, 16)      1168      
+I1201 00:06:56.800999 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.801107 140600914376512 layer_utils.py:163] max_pooling2d_23 (MaxPooling (None, 56, 56, 16)        0         
+I1201 00:06:56.801180 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.801286 140600914376512 layer_utils.py:163] flatten_9 (Flatten)          (None, 50176)             0         
+I1201 00:06:56.801357 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.801477 140600914376512 layer_utils.py:163] dropout_9 (Dropout)          (None, 50176)             0         
+I1201 00:06:56.801548 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.801716 140600914376512 layer_utils.py:163] dense_28 (Dense)             (None, 32)                1605664   
+I1201 00:06:56.801795 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.802012 140600914376512 layer_utils.py:163] dense_29 (Dense)             (None, 64)                2112      
+I1201 00:06:56.802090 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.802249 140600914376512 layer_utils.py:163] dense_30 (Dense)             (None, 128)               8320      
+I1201 00:06:56.802327 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 00:06:56.802497 140600914376512 layer_utils.py:163] dense_31 (Dense)             (None, 2)                 258       
+I1201 00:06:56.802576 140600914376512 layer_utils.py:230] =================================================================
+I1201 00:06:56.803262 140600914376512 layer_utils.py:242] Total params: 1,617,746
+I1201 00:06:56.803355 140600914376512 layer_utils.py:243] Trainable params: 1,617,746
+I1201 00:06:56.803442 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1201 00:06:56.803511 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.8396339
+I1201 00:09:13.407644 140600914376512 tunning.py:60] --- Running training session 11, 20
+I1201 00:09:13.407912 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.23025155063613512, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+I1201 00:09:13.408004 140600914376512 tunning.py:62] --- repeat #: 1
+I1201 00:09:13.408861 140600914376512 keras_models.py:35] index: 0
+I1201 00:09:13.431297 140600914376512 keras_models.py:35] index: 1
+I1201 00:09:13.522540 140600914376512 tunning.py:109] model.build()
+I1201 00:09:13.568066 140600914376512 tunning.py:82] model.fit()
+I1201 00:09:13.568187 140600914376512 tunning.py:83] run_id: 10
+I1201 00:09:13.568268 140600914376512 tunning.py:84] epochs:10
+I1201 00:09:13.568359 140600914376512 tunning.py:85] steps_per_epoch:352
+I1201 00:09:13.568430 140600914376512 tunning.py:86] validation_steps:39
+Average test loss:  0.4069594734263691
+Average test accuracy:  0.8193537
+I1201 01:29:52.056849 140600914376512 tunning.py:106] Model 10 saved to model_path: /labs/models/experiment_4/model_10.h5
+I1201 01:29:52.057271 140600914376512 tunning.py:121] model.evaluate()
+I1201 01:29:52.057357 140600914376512 tunning.py:122] run_id: 10
+I1201 01:29:52.057429 140600914376512 tunning.py:123] steps: 2513
+I1201 01:29:52.834523 140600914376512 tunning.py:126] model was loaded from/labs/models/experiment_4/model_10.h5
+I1201 01:29:52.834741 140600914376512 layer_utils.py:165] Model: "sequential_10"
+I1201 01:29:52.834825 140600914376512 layer_utils.py:166] _________________________________________________________________
+I1201 01:29:52.834920 140600914376512 layer_utils.py:163] Layer (type)                 Output Shape              Param #   
+I1201 01:29:52.834992 140600914376512 layer_utils.py:168] =================================================================
+I1201 01:29:52.835271 140600914376512 layer_utils.py:163] conv2d_24 (Conv2D)           (None, 224, 224, 8)       224       
+I1201 01:29:52.835361 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 01:29:52.835477 140600914376512 layer_utils.py:163] max_pooling2d_24 (MaxPooling (None, 112, 112, 8)       0         
+I1201 01:29:52.835553 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 01:29:52.835733 140600914376512 layer_utils.py:163] conv2d_25 (Conv2D)           (None, 112, 112, 16)      1168      
+I1201 01:29:52.835874 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 01:29:52.836006 140600914376512 layer_utils.py:163] max_pooling2d_25 (MaxPooling (None, 56, 56, 16)        0         
+I1201 01:29:52.836081 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 01:29:52.836191 140600914376512 layer_utils.py:163] flatten_10 (Flatten)         (None, 50176)             0         
+I1201 01:29:52.836263 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 01:29:52.836369 140600914376512 layer_utils.py:163] dropout_10 (Dropout)         (None, 50176)             0         
+I1201 01:29:52.836440 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 01:29:52.836612 140600914376512 layer_utils.py:163] dense_32 (Dense)             (None, 32)                1605664   
+I1201 01:29:52.836691 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 01:29:52.836853 140600914376512 layer_utils.py:163] dense_33 (Dense)             (None, 64)                2112      
+I1201 01:29:52.836944 140600914376512 layer_utils.py:232] _________________________________________________________________
+I1201 01:29:52.837104 140600914376512 layer_utils.py:163] dense_34 (Dense)             (None, 2)                 130       
+I1201 01:29:52.837195 140600914376512 layer_utils.py:230] =================================================================
+I1201 01:29:52.837881 140600914376512 layer_utils.py:242] Total params: 1,609,298
+I1201 01:29:52.837977 140600914376512 layer_utils.py:243] Trainable params: 1,609,298
+I1201 01:29:52.838051 140600914376512 layer_utils.py:244] Non-trainable params: 0
+I1201 01:29:52.838118 140600914376512 layer_utils.py:245] _________________________________________________________________
+accuracy: 0.85953045
+I1201 01:32:10.812235 140600914376512 tunning.py:60] --- Running training session 12, 20
+I1201 01:32:10.812446 140600914376512 tunning.py:61] {HParam(name='conv_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='conv_kernel_size', domain=Discrete([3, 5]), display_name=None, description=None): 3, HParam(name='dense_layers', domain=IntInterval(1, 3), display_name=None, description=None): 2, HParam(name='dropout', domain=RealInterval(0.1, 0.4), display_name=None, description=None): 0.23025155063613512, HParam(name='optimizer', domain=Discrete(['adagrad', 'adam']), display_name=None, description=None): 'adagrad'}
+I1201 01:32:10.812530 140600914376512 tunning.py:62] --- repeat #: 2
+I1201 01:32:10.813338 140600914376512 keras_models.py:35] index: 0
+I1201 01:32:10.834031 140600914376512 keras_models.py:35] index: 1
+I1201 01:32:10.921683 140600914376512 tunning.py:109] model.build()
+I1201 01:32:10.963608 140600914376512 tunning.py:82] model.fit()
+I1201 01:32:10.963734 140600914376512 tunning.py:83] run_id: 11
+I1201 01:32:10.963836 140600914376512 tunning.py:84] epochs:10
+I1201 01:32:10.963923 140600914376512 tunning.py:85] steps_per_epoch:352
+I1201 01:32:10.963993 140600914376512 tunning.py:86] validation_steps:39

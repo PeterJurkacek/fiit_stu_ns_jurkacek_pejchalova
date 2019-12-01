@@ -73,8 +73,20 @@ def experiment_3():
                                 output_activation=config.output_activation,
                                 input_shape=input_shape, number_of_classes=number_of_classes),
                   run_id="cnn_model")
+    trainer.evaluate(run_id='cnn_model', test_data=loader.test_data, steps=loader.test_data_info.count)
     config.logger.end()
 
+def experiment_3_evaluate():
+    config = get_experiment_3_config()
+    config.logger.start()
+    loader = ImageDataLoader(config)
+    input_shape = config.input_shape
+    logging.info(f"input_shape:{input_shape}")
+    number_of_classes = len(loader.labbel_mapper.classes_name)
+    logging.info(f"number_of_classes:{number_of_classes}")
+    trainer = Trainer(config=config, loader=loader)
+    trainer.evaluate(run_id='cnn_model', test_data=loader.test_data, steps=loader.test_data_info.count)
+    config.logger.end()
 
 def experiment_4():
     config = get_experiment_4_config()
@@ -131,11 +143,12 @@ def experiment_7():
     config.logger.end()
 
 def main(argv):
+    experiment_3_evaluate()
     # experiment_1(trainable=False)
     #experiment_3()
     #experiment_4()
     #experiment_5()
-    experiment_7()
+    #experiment_7()
     #experiment_1(trainable=True)
 
 

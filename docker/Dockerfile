@@ -57,7 +57,7 @@ RUN ${PIP} install scipy
 RUN ${PIP} install Pillow
 RUN ${PIP} search yaml
 RUN ${PIP} install pyyaml
-RUN ${PIP} install click
+RUN ${PIP} install plotly
 
 
 RUN jupyter serverextension enable --py jupyter_http_over_ws
