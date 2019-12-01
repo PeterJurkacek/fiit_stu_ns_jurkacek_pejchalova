@@ -158,6 +158,3 @@ def fancy_plot_distributions(purpose):
     plt.title(purpose)
     plt.tight_layout()
     plt.show()
-
-def model_summary(experiment_name):
-    path = config.project_path / 'models' /
